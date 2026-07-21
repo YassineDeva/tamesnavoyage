@@ -86,7 +86,7 @@ export default async function ContactPage({ params }: Props) {
             <div className="mt-8 overflow-hidden rounded-[1.75rem] border border-surface-200 shadow-[var(--shadow-soft)]">
               <iframe
                 title={t("mapTitle")}
-                src="https://maps.google.com/maps?q=Av.%20Ya%C3%A2koub%20El%20Mansour%2C%20Tamesna%2C%20T%C3%A9mara%2C%20Maroc&z=15&output=embed"
+                src="https://maps.google.com/maps?q=Tamesna%20Voyages&ll=33.8349991,-6.9208849&z=17&output=embed"
                 className="h-64 w-full border-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
