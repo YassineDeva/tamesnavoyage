@@ -1,0 +1,261 @@
+{
+  "meta": {
+    "brand": "Tamesna Voyage",
+    "tagline": "L'art de voyager au Maroc",
+    "home": {
+      "title": "Tamesna Voyage — Voyages d'exception au Maroc",
+      "description": "Agence de voyage marocaine sur-mesure. Circuits privés, riads d'exception et expériences authentiques du désert à l'Atlantique. Créez le voyage dont vous rêvez."
+    }
+  },
+  "nav": {
+    "home": "Accueil",
+    "destinations": "Destinations",
+    "tours": "Circuits",
+    "about": "À propos",
+    "testimonials": "Avis",
+    "contact": "Contact",
+    "cta": "Planifier mon voyage",
+    "menu": "Menu",
+    "close": "Fermer",
+    "needHelp": "Besoin d'aide ?",
+    "langLabel": "Langue"
+  },
+  "common": {
+    "from": "À partir de",
+    "perPerson": "/ personne",
+    "days": "jours",
+    "nights": "nuits",
+    "viewAll": "Voir tout",
+    "discover": "Découvrir",
+    "readMore": "Lire la suite",
+    "bookNow": "Réserver",
+    "explore": "Explorer",
+    "learnMore": "En savoir plus",
+    "backTo": "Retour à"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Explorer · Rêver · Vivre le Maroc",
+      "titleLine1": "Le Maroc,",
+      "titleAccent": "autrement.",
+      "titleLine2": "Des voyages taillés pour vous.",
+      "subtitle": "Du sable ocre de l'Erg Chebbi aux ruelles bleues de Chefchaouen : des itinéraires privés, des riads d'exception et des rencontres qui restent.",
+      "ctaPrimary": "Composer mon voyage",
+      "ctaSecondary": "Voir les circuits",
+      "scroll": "Faites défiler",
+      "stat1": "12 ans d'expertise",
+      "stat2": "2 400+ voyageurs",
+      "stat3": "Note 4,9/5"
+    },
+    "search": {
+      "title": "Où commence votre histoire ?",
+      "destination": "Destination",
+      "destinationPlaceholder": "Marrakech, Sahara, Atlas…",
+      "date": "Dates",
+      "datePlaceholder": "Choisir une période",
+      "travelers": "Voyageurs",
+      "travelersValue": "2 adultes",
+      "style": "Style de voyage",
+      "stylePlaceholder": "Aventure, détente, culture…",
+      "submit": "Rechercher"
+    },
+    "destinations": {
+      "eyebrow": "Destinations phares",
+      "title": "Où irez-vous ?",
+      "subtitle": "Quatre visages du Maroc, une seule promesse : l'émerveillement.",
+      "cta": "Toutes les destinations"
+    },
+    "why": {
+      "eyebrow": "Pourquoi Tamesna",
+      "title": "Un voyage pensé dans le moindre détail",
+      "subtitle": "Nous concevons chaque itinéraire comme une pièce unique, portée par des artisans du voyage.",
+      "items": {
+        "tailor": {
+          "title": "100 % sur-mesure",
+          "desc": "Chaque circuit est dessiné autour de vos envies, votre rythme et votre budget."
+        },
+        "local": {
+          "title": "Experts locaux",
+          "desc": "Des guides marocains passionnés qui ouvrent les portes de leur pays."
+        },
+        "riads": {
+          "title": "Adresses d'exception",
+          "desc": "Riads, kasbahs et camps de luxe sélectionnés un à un."
+        },
+        "care": {
+          "title": "Accompagnement 24/7",
+          "desc": "Un conseiller dédié, présent avant, pendant et après votre voyage."
+        }
+      }
+    },
+    "experiences": {
+      "eyebrow": "Expériences signature",
+      "title": "Des instants que l'on ne raconte pas, on les vit",
+      "subtitle": "Nos expériences les plus demandées, réservables en un clic."
+    },
+    "plan": {
+      "eyebrow": "Sur-mesure",
+      "title": "Un voyage aussi unique que vous",
+      "subtitle": "Confiez-nous vos envies. Nous composons un itinéraire privé, jusqu'au moindre détail.",
+      "cta": "Démarrer la conversation",
+      "step1": "Partagez vos envies",
+      "step2": "Recevez votre itinéraire",
+      "step3": "Partez l'esprit léger"
+    },
+    "testimonials": {
+      "eyebrow": "Ils ont voyagé avec nous",
+      "title": "Ce que disent nos voyageurs",
+      "cta": "Tous les avis"
+    },
+    "cta": {
+      "eyebrow": "Prêt à partir ?",
+      "title": "Votre prochaine aventure marocaine commence ici",
+      "subtitle": "Un conseiller vous répond sous 24 h avec une première proposition d'itinéraire.",
+      "button": "Planifier mon voyage"
+    },
+    "newsletter": {
+      "title": "Recevez l'inspiration",
+      "subtitle": "Récits, adresses secrètes et offres privées, une fois par mois.",
+      "placeholder": "Votre adresse e-mail",
+      "button": "S'inscrire",
+      "consent": "En vous inscrivant, vous acceptez notre politique de confidentialité."
+    }
+  },
+  "footer": {
+    "tagline": "Créateur de voyages d'exception au Maroc depuis 2013.",
+    "explore": "Explorer",
+    "company": "Agence",
+    "support": "Assistance",
+    "contact": "Contact",
+    "address": "12 Derb Sidi Bouloukat, Médina, Marrakech 40000, Maroc",
+    "hours": "Lun – Sam · 9h – 19h",
+    "rights": "Tous droits réservés.",
+    "legal": "Mentions légales",
+    "privacy": "Confidentialité",
+    "terms": "Conditions générales",
+    "newsletterTitle": "L'inspiration, dans votre boîte mail",
+    "backToTop": "Haut de page"
+  },
+  "pages": {
+    "destinations": {
+      "metaTitle": "Destinations au Maroc — Tamesna Voyage",
+      "metaDesc": "Marrakech, Sahara, Fès, Chefchaouen, Essaouira, Atlas : explorez nos destinations phares et composez votre itinéraire sur-mesure.",
+      "eyebrow": "Nos destinations",
+      "title": "Le Maroc, du désert à l'océan",
+      "subtitle": "Six territoires, mille visages. Choisissez le point de départ de votre histoire.",
+      "breadcrumb": "Destinations"
+    },
+    "tours": {
+      "metaTitle": "Circuits & voyages au Maroc — Tamesna Voyage",
+      "metaDesc": "Circuits privés sur-mesure : Grand Sud, villes impériales, Atlas, côte atlantique. Des voyages d'exception guidés par des experts locaux.",
+      "eyebrow": "Nos circuits",
+      "title": "Des itinéraires taillés à la main",
+      "subtitle": "Chaque circuit est privatisable et modulable. Voyagez à votre rythme.",
+      "breadcrumb": "Circuits",
+      "resultsLabel": "circuits",
+      "all": "Tous",
+      "sortLabel": "Trier"
+    },
+    "tourDetail": {
+      "overview": "Aperçu",
+      "itinerary": "Itinéraire",
+      "highlights": "Points forts",
+      "included": "Ce qui est inclus",
+      "map": "Régions traversées",
+      "day": "Jour",
+      "bookTitle": "Réserver ce circuit",
+      "bookSubtitle": "Sans engagement — réponse sous 24 h.",
+      "duration": "Durée",
+      "bestPeriod": "Meilleure période",
+      "level": "Niveau",
+      "rating": "Note voyageurs",
+      "relatedTitle": "Vous aimerez aussi",
+      "includedList": {
+        "i1": "Guide francophone privé",
+        "i2": "Hébergements en riads & camps de luxe",
+        "i3": "Transport privatisé et transferts",
+        "i4": "Petits-déjeuners et dîners typiques"
+      },
+      "breadcrumb": "Circuits"
+    },
+    "about": {
+      "metaTitle": "À propos — Tamesna Voyage, créateur de voyages au Maroc",
+      "metaDesc": "Depuis 2013, Tamesna Voyage conçoit des voyages sur-mesure au Maroc, portés par des experts locaux et une exigence de l'authenticité.",
+      "eyebrow": "Notre maison",
+      "title": "Des artisans du voyage, enracinés au Maroc",
+      "lede": "Nous sommes une équipe de passionnés marocains. Notre métier : transformer vos envies en souvenirs qui durent toute une vie.",
+      "storyTitle": "Notre histoire",
+      "story1": "Tamesna Voyage est née à Marrakech en 2013, de la conviction qu'un voyage au Maroc ne se résume pas à une liste de sites à cocher. C'est une rencontre — avec des paysages, des saveurs, des gens.",
+      "story2": "Aujourd'hui, nous accompagnons chaque année des centaines de voyageurs du monde entier, en tissant des liens durables avec les familles, artisans et guides qui font la richesse de nos itinéraires.",
+      "valuesTitle": "Ce qui nous porte",
+      "values": {
+        "v1t": "Authenticité",
+        "v1d": "Des expériences vraies, loin du tourisme de masse.",
+        "v2t": "Excellence",
+        "v2d": "Un souci du détail digne des plus belles adresses.",
+        "v3t": "Engagement local",
+        "v3d": "Un tourisme qui bénéficie aux communautés marocaines."
+      },
+      "statsTitle": "En quelques chiffres",
+      "stats": {
+        "s1": "2013",
+        "s1l": "Année de création",
+        "s2": "2 400+",
+        "s2l": "Voyageurs accompagnés",
+        "s3": "4,9/5",
+        "s3l": "Note moyenne",
+        "s4": "60+",
+        "s4l": "Partenaires locaux"
+      },
+      "teamTitle": "L'équipe",
+      "breadcrumb": "À propos"
+    },
+    "contact": {
+      "metaTitle": "Contact — Planifiez votre voyage au Maroc | Tamesna Voyage",
+      "metaDesc": "Parlez-nous de votre projet de voyage au Maroc. Un conseiller dédié vous répond sous 24 h avec une première proposition d'itinéraire.",
+      "eyebrow": "Parlons de votre voyage",
+      "title": "Composons votre Maroc, ensemble",
+      "subtitle": "Remplissez le formulaire : un conseiller vous répond sous 24 h.",
+      "infoTitle": "Nous contacter",
+      "hoursTitle": "Horaires",
+      "breadcrumb": "Contact"
+    },
+    "testimonials": {
+      "metaTitle": "Avis voyageurs — Tamesna Voyage",
+      "metaDesc": "Découvrez les récits de nos voyageurs. Note moyenne de 4,9/5 sur plus de 400 avis vérifiés.",
+      "eyebrow": "Ils nous ont fait confiance",
+      "title": "Des voyages qui laissent une trace",
+      "subtitle": "Plus de 400 avis vérifiés, une note moyenne de 4,9/5.",
+      "statRating": "Note moyenne",
+      "statReviews": "Avis vérifiés",
+      "statRepeat": "Voyageurs fidèles",
+      "breadcrumb": "Avis"
+    }
+  },
+  "booking": {
+    "title": "Demande de voyage",
+    "name": "Nom complet",
+    "namePlaceholder": "Votre nom",
+    "email": "E-mail",
+    "emailPlaceholder": "vous@exemple.com",
+    "phone": "Téléphone",
+    "phonePlaceholder": "+212 …",
+    "tour": "Circuit souhaité",
+    "travelers": "Voyageurs",
+    "date": "Période envisagée",
+    "message": "Votre message",
+    "messagePlaceholder": "Dites-nous tout sur le voyage dont vous rêvez…",
+    "submit": "Envoyer ma demande",
+    "sending": "Envoi…",
+    "success": "Merci ! Votre demande est bien reçue. Un conseiller vous répond sous 24 h.",
+    "required": "Champ requis"
+  },
+  "destinationsData": {
+    "marrakech": { "name": "Marrakech", "region": "La ville rouge", "blurb": "Souks, palais et jardins secrets au pied de l'Atlas." },
+    "sahara": { "name": "Sahara – Merzouga", "region": "Les dunes d'or", "blurb": "Nuit sous les étoiles au cœur de l'Erg Chebbi." },
+    "chefchaouen": { "name": "Chefchaouen", "region": "La perle bleue", "blurb": "Ruelles indigo et douceur de vivre du Rif." },
+    "fes": { "name": "Fès", "region": "La cité impériale", "blurb": "Mille ans d'artisanat dans la plus vieille médina du monde." },
+    "essaouira": { "name": "Essaouira", "region": "L'alizé atlantique", "blurb": "Remparts, embruns et musique gnaoua." },
+    "atlas": { "name": "Haut Atlas", "region": "Les cimes berbères", "blurb": "Villages perchés et vallées émeraude." }
+  }
+}

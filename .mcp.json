@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "higgsfield": {
+      "type": "http",
+      "url": "https://mcp.higgsfield.ai/mcp"
+    }
+  },
+  "vercel": {
+      "type": "http",
+      "url": "https://mcp.vercel.com"
+  }
+}
