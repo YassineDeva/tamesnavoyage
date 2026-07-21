@@ -374,6 +374,10 @@
       "subtitle": "املأ النموذج: يجيبك مستشار خلال 24 ساعة.",
       "infoTitle": "تواصل معنا",
       "hoursTitle": "أوقات العمل",
+      "addressLabel": "العنوان",
+      "phoneLabel": "الهاتف",
+      "emailLabel": "البريد الإلكتروني",
+      "mapTitle": "موقعنا",
       "breadcrumb": "اتصل بنا"
     },
     "testimonials": {

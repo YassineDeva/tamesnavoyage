@@ -374,6 +374,10 @@
       "subtitle": "Remplissez le formulaire : un conseiller vous répond sous 24 h.",
       "infoTitle": "Nous contacter",
       "hoursTitle": "Horaires",
+      "addressLabel": "Adresse",
+      "phoneLabel": "Téléphone",
+      "emailLabel": "E-mail",
+      "mapTitle": "Notre localisation",
       "breadcrumb": "Contact"
     },
     "testimonials": {

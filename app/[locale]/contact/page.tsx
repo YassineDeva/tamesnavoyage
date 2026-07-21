@@ -45,15 +45,15 @@ export default async function ContactPage({ params }: Props) {
           <div>
             <p className="eyebrow text-terracotta-500">{t("infoTitle")}</p>
             <ul className="mt-8 space-y-6">
-              <InfoRow icon={<MapPin className="h-5 w-5" />} title={t("breadcrumb")}>
+              <InfoRow icon={<MapPin className="h-5 w-5" />} title={t("addressLabel")}>
                 {tf("address")}
               </InfoRow>
-              <InfoRow icon={<Phone className="h-5 w-5" />} title="Tél.">
+              <InfoRow icon={<Phone className="h-5 w-5" />} title={t("phoneLabel")}>
                 <a href={contact.phoneHref} className="hover:text-terracotta-600">
                   {contact.phone}
                 </a>
               </InfoRow>
-              <InfoRow icon={<Mail className="h-5 w-5" />} title="E-mail">
+              <InfoRow icon={<Mail className="h-5 w-5" />} title={t("emailLabel")}>
                 <a href={`mailto:${contact.email}`} className="hover:text-terracotta-600">
                   {contact.email}
                 </a>
@@ -82,11 +82,16 @@ export default async function ContactPage({ params }: Props) {
               ))}
             </div>
 
-            {/* Map placeholder */}
-            <div className="zellige mt-8 flex h-56 items-center justify-center rounded-[1.75rem] border border-sand-200">
-              <span className="rounded-full bg-sand-50/90 px-4 py-2 text-sm font-medium text-ink-800 backdrop-blur">
-                Tamesna · Témara
-              </span>
+            {/* Location map */}
+            <div className="mt-8 overflow-hidden rounded-[1.75rem] border border-surface-200 shadow-[var(--shadow-soft)]">
+              <iframe
+                title={t("mapTitle")}
+                src="https://maps.google.com/maps?q=Av.%20Ya%C3%A2koub%20El%20Mansour%2C%20Tamesna%2C%20T%C3%A9mara%2C%20Maroc&z=15&output=embed"
+                className="h-64 w-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
             </div>
           </div>
 
