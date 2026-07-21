@@ -168,6 +168,14 @@
     font-family: var(--font-arabic-display);
   }
 
+  /* Brand wordmark: always the Latin script font, never swapped under RTL. */
+  .font-wordmark {
+    font-family: var(--font-display);
+  }
+  .font-tagline {
+    font-family: var(--font-sans);
+  }
+
   ::selection {
     background-color: var(--color-azure-500);
     color: #fff;

@@ -20,14 +20,15 @@ export function Logo({
     <Link
       href="/"
       aria-label={t("brand")}
+      dir="ltr"
       className={cn("group inline-flex items-center gap-2.5 focus-ring", className)}
     >
       <GlobeMark className="h-11 w-11 shrink-0 transition-transform duration-500 group-hover:-rotate-6" />
       <span className="flex flex-col leading-none">
-        <span className={cn("font-display text-[1.35rem] leading-none", name)}>
-          {t("brand")}
+        <span className={cn("font-wordmark text-[1.35rem] leading-none", name)}>
+          Tamesna Voyages
         </span>
-        <span className="mt-1 text-[8.5px] font-semibold uppercase tracking-[0.34em] text-amber-500">
+        <span className="font-tagline mt-1 text-[8.5px] font-semibold uppercase tracking-[0.34em] text-amber-500">
           Tourisme &amp; Events
         </span>
       </span>
