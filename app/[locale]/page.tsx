@@ -4,6 +4,7 @@ import { Hero } from "@/components/landing/hero";
 import { SearchWidget } from "@/components/landing/search-widget";
 import { TrustBar } from "@/components/landing/trust-bar";
 import { PopularDestinations } from "@/components/landing/popular-destinations";
+import { Services } from "@/components/landing/services";
 import { WhyChoose } from "@/components/landing/why-choose";
 import { Newsletter } from "@/components/landing/newsletter";
 
@@ -21,6 +22,7 @@ export default async function HomePage({
       <SearchWidget />
       <TrustBar />
       <PopularDestinations />
+      <Services />
       <WhyChoose />
       <Newsletter />
     </>

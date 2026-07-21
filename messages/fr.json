@@ -14,6 +14,7 @@
     "flights": "Vols",
     "hotels": "Hôtels",
     "blog": "Blog",
+    "services": "Services",
     "about": "À propos",
     "testimonials": "Avis",
     "contact": "Contact",
@@ -122,6 +123,12 @@
       "placeholder": "Votre adresse e-mail",
       "button": "S'inscrire",
       "consent": "En vous inscrivant, vous acceptez notre politique de confidentialité."
+    },
+    "servicesSection": {
+      "eyebrow": "Nos services",
+      "title": "Une agence, tous vos voyages",
+      "subtitle": "Affaires, événements, pèlerinage ou évasion : nous orchestrons chaque voyage de bout en bout.",
+      "cta": "Découvrir nos services"
     }
   },
   "landing": {
@@ -209,12 +216,48 @@
   },
   "pages": {
     "destinations": {
-      "metaTitle": "Destinations au Maroc — Tamesna Voyage",
-      "metaDesc": "Marrakech, Sahara, Fès, Chefchaouen, Essaouira, Atlas : explorez nos destinations phares et composez votre itinéraire sur-mesure.",
+      "metaTitle": "Destinations — Maroc & international | Tamesna Voyages",
+      "metaDesc": "Du Maroc à la Turquie, Bali, les Maldives, le Japon ou un safari : explorez nos destinations phares et composez votre voyage sur-mesure.",
       "eyebrow": "Nos destinations",
-      "title": "Le Maroc, du désert à l'océan",
-      "subtitle": "Six territoires, mille visages. Choisissez le point de départ de votre histoire.",
-      "breadcrumb": "Destinations"
+      "title": "Du Maroc au monde entier",
+      "subtitle": "Nos terres de cœur et nos plus belles évasions à l'international.",
+      "breadcrumb": "Destinations",
+      "moroccoEyebrow": "Nos racines",
+      "moroccoTitle": "Le Maroc",
+      "moroccoSubtitle": "Du désert ocre à l'océan, nos terres de cœur.",
+      "intlEyebrow": "Top destinations",
+      "intlTitle": "Le monde avec Tamesna",
+      "intlSubtitle": "Nos destinations internationales les plus demandées."
+    },
+    "services": {
+      "metaTitle": "Nos services — Voyages d'affaires, MICE, Hajj & Omra | Tamesna Voyages",
+      "metaDesc": "Voyages d'affaires, séminaires et incentives (MICE), Hajj & Omra et séjours sur-mesure. Une prise en charge complète, une assistance 24/7.",
+      "eyebrow": "Nos services",
+      "title": "Tous vos voyages, un seul partenaire",
+      "subtitle": "Des particuliers en quête d'évasion aux entreprises soucieuses d'optimiser leurs déplacements, nous organisons tous types de voyages, au Maroc et à l'international.",
+      "breadcrumb": "Services",
+      "pillarsEyebrow": "Ce que nous faisons",
+      "pillarsTitle": "Quatre expertises, un même souci du détail",
+      "engagement": {
+        "eyebrow": "Notre engagement",
+        "title": "Un voyage sans stress, parfaitement orchestré",
+        "subtitle": "Notre engagement est simple : vous offrir une expérience de voyage sereine, parfaitement organisée et adaptée à vos attentes.",
+        "stat": "999+",
+        "statLabel": "voyages organisés",
+        "items": {
+          "e1": "Un accompagnement personnalisé à chaque étape",
+          "e2": "Des solutions optimisées selon vos contraintes budgétaires et logistiques",
+          "e3": "Une disponibilité 24/7",
+          "e4": "Une transparence totale sur nos services et nos tarifs",
+          "e5": "Une veille constante pour les meilleures options du marché"
+        }
+      },
+      "alacarte": {
+        "eyebrow": "Nos services voyages",
+        "title": "Tout ce qu'il vous faut, à la carte",
+        "subtitle": "Billetterie, transport, hôtellerie et bien plus : composez votre voyage élément par élément."
+      },
+      "cta": "En savoir plus"
     },
     "tours": {
       "metaTitle": "Circuits & voyages au Maroc — Tamesna Voyage",
@@ -277,6 +320,29 @@
         "s3l": "Note moyenne",
         "s4": "60+",
         "s4l": "Partenaires locaux"
+      },
+      "missionTitle": "Notre mission",
+      "missionLede": "Offrir des voyages personnalisés alliant qualité, sécurité et prix compétitifs, et accompagner nos clients à chaque étape pour transformer leurs rêves de voyage en réalité.",
+      "mission": {
+        "m1": "Accompagner les entreprises dans l'organisation optimisée de leurs déplacements, séminaires et événements, à l'échelle locale et internationale.",
+        "m2": "Fournir un service personnalisé, réactif et sécurisé, tout en maîtrisant les coûts et en garantissant un haut niveau de satisfaction.",
+        "m3": "Être un partenaire stratégique de confiance, capable d'anticiper les besoins et d'offrir des solutions innovantes de bout en bout."
+      },
+      "visionTitle": "Notre vision",
+      "visionLede": "Redéfinir les standards du voyage professionnel et événementiel.",
+      "vision": {
+        "vi1": "Devenir un acteur de référence dans la gestion de la mobilité et du voyage d'affaires, au Maroc et à l'international.",
+        "vi2": "Proposer des solutions de voyage fiables et sur-mesure pour accompagner la croissance et la performance des organisations.",
+        "vi3": "Créer un pont entre service de qualité, technologie et expérience client.",
+        "vi4": "Anticiper les besoins et garantir une gestion fluide, de bout en bout."
+      },
+      "expertiseTitle": "Notre expertise",
+      "expertiseLede": "Avec une connaissance approfondie du tourisme et de l'événementiel, Tamesna Voyages vous fait bénéficier d'une expertise locale et internationale.",
+      "expertise": {
+        "c1t": "Expertise dédiée",
+        "c1d": "Plus qu'un prestataire, nous sommes votre partenaire stratégique pour des voyages sans imprévus, où chaque détail compte.",
+        "c2t": "Expérience fiable",
+        "c2d": "Simplifier vos déplacements, optimiser votre temps et offrir une expérience de voyage fluide, fiable et personnalisée."
       },
       "teamTitle": "L'équipe",
       "breadcrumb": "À propos"

@@ -64,6 +64,7 @@ export function Footer() {
 
           <FooterCol title={t("explore")}>
             <FooterLink href="/destinations">{tn("destinations")}</FooterLink>
+            <FooterLink href="/services">{tn("services")}</FooterLink>
             <FooterLink href="/tours">{tn("tours")}</FooterLink>
             <FooterLink href="/testimonials">{tn("testimonials")}</FooterLink>
             <FooterLink href="/about">{tn("about")}</FooterLink>

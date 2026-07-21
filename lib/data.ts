@@ -419,6 +419,235 @@ export const testimonials: Testimonial[] = [
   },
 ];
 
+/* -------------------------------------------------------------------------- */
+/*  International destinations (catalogue « Top destinations »)                */
+/* -------------------------------------------------------------------------- */
+export const internationalDestinations: Destination[] = [
+  {
+    id: "turkey",
+    slug: "turquie",
+    name: { fr: "Turquie", ar: "تركيا" },
+    region: { fr: "Istanbul & Cappadoce", ar: "إسطنبول وكابادوكيا" },
+    blurb: {
+      fr: "Montgolfières au lever du jour, bazars et merveilles ottomanes.",
+      ar: "مناطيد عند الفجر، أسواق وعجائب عثمانية.",
+    },
+    image: "/media/destinations/intl/turkey.webp",
+    tag: { fr: "Tendance", ar: "رائج" },
+  },
+  {
+    id: "bali",
+    slug: "bali",
+    name: { fr: "Bali", ar: "بالي" },
+    region: { fr: "Indonésie", ar: "إندونيسيا" },
+    blurb: {
+      fr: "Rizières émeraude, temples et plages de rêve.",
+      ar: "حقول أرزّ زمرّدية، معابد وشواطئ ساحرة.",
+    },
+    image: "/media/dest-bali.webp",
+    tag: { fr: "Best-seller", ar: "الأكثر مبيعًا" },
+  },
+  {
+    id: "zanzibar",
+    slug: "zanzibar",
+    name: { fr: "Zanzibar", ar: "زنجبار" },
+    region: { fr: "Tanzanie", ar: "تنزانيا" },
+    blurb: {
+      fr: "Lagons turquoise, épices et boutres traditionnels.",
+      ar: "بحيرات فيروزية، توابل وقوارب تقليدية.",
+    },
+    image: "/media/destinations/intl/zanzibar.webp",
+    tag: { fr: "Évasion", ar: "استجمام" },
+  },
+  {
+    id: "saudi",
+    slug: "arabie-saoudite",
+    name: { fr: "Arabie Saoudite", ar: "المملكة العربية السعودية" },
+    region: { fr: "La Mecque & Médine", ar: "مكة المكرمة والمدينة المنوّرة" },
+    blurb: {
+      fr: "Hajj & Omra organisés dans le respect des rites religieux.",
+      ar: "الحج والعمرة بتنظيم يراعي المناسك الدينية.",
+    },
+    image: "/media/destinations/intl/saudi.webp",
+    tag: { fr: "Hajj & Omra", ar: "الحج والعمرة" },
+  },
+  {
+    id: "maldives",
+    slug: "maldives",
+    name: { fr: "Maldives", ar: "جزر المالديف" },
+    region: { fr: "Océan Indien", ar: "المحيط الهندي" },
+    blurb: {
+      fr: "Villas sur pilotis et eaux cristallines à perte de vue.",
+      ar: "فيلات فوق الماء ومياه صافية بلا حدود.",
+    },
+    image: "/media/destinations/intl/maldives.webp",
+    tag: { fr: "Luxe", ar: "فخامة" },
+  },
+  {
+    id: "japan",
+    slug: "japon",
+    name: { fr: "Japon", ar: "اليابان" },
+    region: { fr: "Tokyo & Kyoto", ar: "طوكيو وكيوتو" },
+    blurb: {
+      fr: "Cerisiers en fleurs, temples millénaires et modernité.",
+      ar: "أزهار الكرز، معابد عريقة وحداثة.",
+    },
+    image: "/media/destinations/intl/japan.webp",
+    tag: { fr: "Culture", ar: "ثقافة" },
+  },
+  {
+    id: "safari",
+    slug: "safari",
+    name: { fr: "Safari", ar: "سفاري" },
+    region: { fr: "Afrique de l'Est", ar: "شرق إفريقيا" },
+    blurb: {
+      fr: "La grande faune au cœur des savanes dorées.",
+      ar: "الحياة البرّية في قلب السافانا الذهبية.",
+    },
+    image: "/media/destinations/intl/safari.webp",
+    tag: { fr: "Aventure", ar: "مغامرة" },
+  },
+  {
+    id: "europe",
+    slug: "europe",
+    name: { fr: "Europe", ar: "أوروبا" },
+    region: { fr: "Grandes capitales", ar: "كبرى العواصم" },
+    blurb: {
+      fr: "Paris, Rome, Barcelone : l'art de vivre à l'européenne.",
+      ar: "باريس، روما، برشلونة: فنّ العيش الأوروبي.",
+    },
+    image: "/media/destinations/intl/europe.webp",
+    tag: { fr: "Incontournable", ar: "الأبرز" },
+  },
+];
+
+/* -------------------------------------------------------------------------- */
+/*  Services (catalogue « Nos Services »)                                     */
+/* -------------------------------------------------------------------------- */
+export type Service = {
+  id: string;
+  /** lucide icon key, resolved in the component */
+  icon: string;
+  title: L;
+  tagline: L;
+  description: L;
+  bullets: L[];
+  image: string;
+};
+
+export const services: Service[] = [
+  {
+    id: "affaires",
+    icon: "briefcase",
+    title: { fr: "Voyages d'affaires", ar: "أسفار الأعمال" },
+    tagline: {
+      fr: "Déplacements professionnels de A à Z",
+      ar: "تنقّلات مهنية من الألف إلى الياء",
+    },
+    description: {
+      fr: "Organisation complète de vos déplacements professionnels : vols, hébergement, transferts et location de voiture, avec une assistance 24/7 et une gestion des urgences.",
+      ar: "تنظيم كامل لتنقّلاتكم المهنية: تذاكر الطيران، الإقامة، النقل وكراء السيارات، مع مساعدة على مدار الساعة وإدارة للطوارئ.",
+    },
+    bullets: [
+      { fr: "Vols, hôtels & transferts", ar: "طيران، فنادق ونقل" },
+      { fr: "Location de voiture", ar: "كراء السيارات" },
+      { fr: "Assistance 24/7 & urgences", ar: "مساعدة 24/7 وطوارئ" },
+      { fr: "Tarifs corporate négociés", ar: "أسعار مفاوَضة للشركات" },
+    ],
+    image: "/media/services/affaires.webp",
+  },
+  {
+    id: "mice",
+    icon: "users",
+    title: { fr: "MICE & voyages de groupe", ar: "MICE وأسفار المجموعات" },
+    tagline: {
+      fr: "Séminaires, congrès & incentives",
+      ar: "ندوات، مؤتمرات وحوافز",
+    },
+    description: {
+      fr: "Organisation de séminaires, congrès, expositions et voyages de récompense (incentive), avec une coordination logistique de A à Z, sur place et à distance.",
+      ar: "تنظيم الندوات والمؤتمرات والمعارض وأسفار المكافآت، مع تنسيق لوجستي كامل، حضوريًّا وعن بُعد.",
+    },
+    bullets: [
+      { fr: "Séminaires & congrès", ar: "ندوات ومؤتمرات" },
+      { fr: "Expositions & événements", ar: "معارض وفعاليات" },
+      { fr: "Voyages incentive", ar: "أسفار تحفيزية" },
+      { fr: "Logistique A → Z", ar: "لوجستيك من الألف إلى الياء" },
+    ],
+    image: "/media/services/mice.webp",
+  },
+  {
+    id: "pelerinage",
+    icon: "moon",
+    title: { fr: "Hajj & Omra", ar: "الحج والعمرة" },
+    tagline: {
+      fr: "Le pèlerinage en toute sérénité",
+      ar: "الحج والعمرة في طمأنينة تامة",
+    },
+    description: {
+      fr: "Organisation complète du Hajj et de la Omra dans le respect des normes religieuses, avec des formules adaptées à tous les budgets et un accompagnement à chaque étape.",
+      ar: "تنظيم كامل للحج والعمرة وفق الضوابط الشرعية، مع صيغ تناسب جميع الميزانيات ومرافقة في كل خطوة.",
+    },
+    bullets: [
+      { fr: "Organisation complète", ar: "تنظيم شامل" },
+      { fr: "Respect des rites", ar: "احترام المناسك" },
+      { fr: "Formules tous budgets", ar: "صيغ لكل الميزانيات" },
+      { fr: "Accompagnement dédié", ar: "مرافقة مخصّصة" },
+    ],
+    image: "/media/services/pelerinage.webp",
+  },
+  {
+    id: "sur-mesure",
+    icon: "compass",
+    title: { fr: "Voyages sur-mesure", ar: "أسفار حسب الطلب" },
+    tagline: {
+      fr: "Vacances, noces & croisières",
+      ar: "عطل، أعراس ورحلات بحرية",
+    },
+    description: {
+      fr: "Pour les particuliers, nous créons des séjours 100 % sur-mesure : vacances, voyages de noces, croisières et itinéraires personnalisés (aventure, détente, culture).",
+      ar: "للأفراد، نصمّم إقامات مخصّصة 100٪: عطل، شهر العسل، رحلات بحرية ومسارات شخصية (مغامرة، استجمام، ثقافة).",
+    },
+    bullets: [
+      { fr: "Voyages de noces", ar: "شهر العسل" },
+      { fr: "Croisières", ar: "رحلات بحرية" },
+      { fr: "Aventure, détente, culture", ar: "مغامرة، استجمام، ثقافة" },
+      { fr: "Tarifs privilégiés partenaires", ar: "أسعار تفضيلية مع الشركاء" },
+    ],
+    image: "/media/services/sur-mesure.webp",
+  },
+];
+
+/** « Nos services voyages » à la carte (slide 11). */
+export type AlaCarteService = { id: string; icon: string; label: L; desc: L };
+
+export const alaCarteServices: AlaCarteService[] = [
+  {
+    id: "tickets",
+    icon: "ticket",
+    label: { fr: "Billetterie", ar: "تذاكر الطيران" },
+    desc: { fr: "Vols au meilleur prix, toutes compagnies.", ar: "تذاكر بأفضل الأسعار، جميع الشركات." },
+  },
+  {
+    id: "transport",
+    icon: "car",
+    label: { fr: "Transport", ar: "النقل" },
+    desc: { fr: "Transferts et location de voiture.", ar: "نقل وكراء السيارات." },
+  },
+  {
+    id: "hotel",
+    icon: "bed",
+    label: { fr: "Hôtellerie", ar: "الفنادق" },
+    desc: { fr: "Hébergements sélectionnés partout dans le monde.", ar: "إقامات مختارة في كل أنحاء العالم." },
+  },
+  {
+    id: "autres",
+    icon: "sparkles",
+    label: { fr: "Autres services", ar: "خدمات أخرى" },
+    desc: { fr: "Assurances, visas et services sur demande.", ar: "تأمينات، تأشيرات وخدمات حسب الطلب." },
+  },
+];
+
 export const getTour = (slug: string) => tours.find((x) => x.slug === slug);
 export const getDestination = (slug: string) =>
   destinations.find((x) => x.slug === slug);

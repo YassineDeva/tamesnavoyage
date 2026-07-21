@@ -6,10 +6,10 @@
 export const navLinks = [
   { key: "home", href: "/" },
   { key: "destinations", href: "/destinations" },
+  { key: "services", href: "/services" },
   { key: "tours", href: "/tours" },
   { key: "flights", href: "#search" },
   { key: "hotels", href: "#search" },
-  { key: "blog", href: "#newsletter" },
   { key: "about", href: "/about" },
 ] as const;
 

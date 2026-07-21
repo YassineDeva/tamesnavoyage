@@ -27,6 +27,9 @@ export default async function AboutPage({ params }: Props) {
 
   const values = ["v1", "v2", "v3"] as const;
   const stats = ["s1", "s2", "s3", "s4"] as const;
+  const mission = ["m1", "m2", "m3"] as const;
+  const vision = ["vi1", "vi2", "vi3", "vi4"] as const;
+  const expertise = ["c1", "c2"] as const;
 
   return (
     <>
@@ -85,6 +88,80 @@ export default async function AboutPage({ params }: Props) {
                   </h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted-500">
                     {t(`values.${v}d`)}
+                  </p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Mission & Vision */}
+      <section className="py-20 sm:py-28">
+        <div className="container-wide grid gap-8 lg:grid-cols-2 lg:gap-12">
+          {/* Mission */}
+          <Reveal>
+            <div className="h-full rounded-[2rem] border border-surface-200 bg-surface-50 p-8 sm:p-10">
+              <p className="eyebrow text-azure-500">{t("missionTitle")}</p>
+              <p className="mt-4 text-lg font-medium leading-relaxed text-navy-800">
+                {t("missionLede")}
+              </p>
+              <ul className="mt-7 space-y-4">
+                {mission.map((m, i) => (
+                  <li key={m} className="flex gap-4">
+                    <span className="text-xl font-bold text-amber-500">0{i + 1}</span>
+                    <p className="text-sm leading-relaxed text-muted-500">
+                      {t(`mission.${m}`)}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+
+          {/* Vision */}
+          <Reveal index={1}>
+            <div className="relative h-full overflow-hidden rounded-[2rem] bg-navy-900 p-8 text-white sm:p-10">
+              <div className="dotted-field pointer-events-none absolute inset-0 opacity-[0.08]" aria-hidden />
+              <div className="relative">
+                <p className="eyebrow text-amber-400">{t("visionTitle")}</p>
+                <p className="mt-4 text-lg font-medium leading-relaxed text-white">
+                  {t("visionLede")}
+                </p>
+                <ul className="mt-7 grid gap-3">
+                  {vision.map((v) => (
+                    <li key={v} className="flex items-start gap-3">
+                      <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-olive-500" />
+                      <p className="text-sm leading-relaxed text-white/85">
+                        {t(`vision.${v}`)}
+                      </p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Expertise */}
+      <section className="bg-surface-50 py-20 sm:py-28">
+        <div className="container-wide">
+          <Reveal>
+            <p className="eyebrow text-azure-500">{t("expertiseTitle")}</p>
+            <h2 className="mt-4 max-w-2xl text-h2 font-bold leading-[1.08] text-navy-800">
+              {t("expertiseLede")}
+            </h2>
+          </Reveal>
+          <div className="mt-10 grid gap-5 md:grid-cols-2">
+            {expertise.map((c, i) => (
+              <Reveal key={c} index={i}>
+                <article className="h-full rounded-[1.75rem] border border-surface-200 bg-white p-8">
+                  <h3 className="text-xl font-semibold text-navy-800">
+                    {t(`expertise.${c}t`)}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-500">
+                    {t(`expertise.${c}d`)}
                   </p>
                 </article>
               </Reveal>

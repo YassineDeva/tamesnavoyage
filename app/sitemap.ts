@@ -3,7 +3,7 @@ import { locales } from "@/i18n/routing";
 import { tours } from "@/lib/data";
 import { SITE_URL } from "@/lib/seo";
 
-const routes = ["", "/destinations", "/tours", "/about", "/contact", "/testimonials"];
+const routes = ["", "/destinations", "/services", "/tours", "/about", "/contact", "/testimonials"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
