@@ -3,7 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { ArrowRight } from "lucide-react";
 import * as React from "react";
 
-type Variant = "primary" | "ghost" | "outline" | "gold";
+type Variant = "primary" | "ghost" | "outline" | "gold" | "white";
 type Size = "sm" | "md" | "lg";
 
 const base =
@@ -11,12 +11,14 @@ const base =
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-terracotta-500 text-sand-50 hover:bg-terracotta-600 shadow-[0_10px_30px_-10px_rgba(163,63,35,0.6)] hover:shadow-[0_16px_40px_-12px_rgba(163,63,35,0.7)] hover:-translate-y-0.5",
+    "bg-azure-500 text-white hover:bg-azure-600 shadow-[0_14px_34px_-12px_rgba(45,136,197,0.6)] hover:shadow-[0_18px_42px_-12px_rgba(45,136,197,0.7)] hover:-translate-y-0.5",
   gold:
-    "bg-gold-400 text-ink-900 hover:bg-gold-300 shadow-[0_10px_30px_-10px_rgba(193,145,58,0.55)] hover:-translate-y-0.5",
+    "bg-amber-500 text-ink-900 hover:bg-amber-400 shadow-[0_14px_34px_-12px_rgba(244,171,27,0.55)] hover:-translate-y-0.5",
+  white:
+    "bg-white text-navy-700 hover:bg-surface-100 shadow-[0_14px_34px_-14px_rgba(5,63,92,0.4)] hover:-translate-y-0.5",
   outline:
-    "border border-ink-900/20 text-ink-900 hover:border-terracotta-500 hover:text-terracotta-600 hover:bg-terracotta-50",
-  ghost: "text-ink-900 hover:text-terracotta-600",
+    "border border-navy-900/15 text-navy-700 hover:border-azure-500 hover:text-azure-600 hover:bg-azure-50",
+  ghost: "text-navy-700 hover:text-azure-600",
 };
 
 const sizes: Record<Size, string> = {
@@ -65,8 +67,11 @@ export function ButtonLink({
   );
 }
 
-function Arrow() {
+/** Circular arrow badge like the reference CTAs ("Explore Now →"). */
+export function Arrow() {
   return (
-    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
+    <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/20 transition-transform duration-300 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5">
+      <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" />
+    </span>
   );
 }

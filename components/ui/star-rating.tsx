@@ -18,8 +18,8 @@ export function StarRating({
           style={{ width: size, height: size }}
           className={cn(
             i < Math.round(value)
-              ? "fill-gold-400 text-gold-400"
-              : "fill-transparent text-ink-900/20",
+              ? "fill-amber-500 text-amber-500"
+              : "fill-transparent text-navy-900/15",
           )}
         />
       ))}

@@ -4,14 +4,14 @@ import Image from "next/image";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
-/** Deterministic warm gradient from a seed string (stable across renders). */
+/** Deterministic cool brand gradient from a seed string (stable across renders). */
 function seededWarm(seed: string) {
   let h = 0;
   for (let i = 0; i < seed.length; i++) h = (h * 31 + seed.charCodeAt(i)) >>> 0;
-  const base = 12 + (h % 34); // 12–46deg → terracotta/amber/olive band
-  const from = `hsl(${base} 62% 46%)`;
-  const mid = `hsl(${(base + 14) % 360} 48% 32%)`;
-  const to = `hsl(${(base + 200) % 360} 30% 18%)`;
+  const base = 198 + (h % 22); // 198–220deg → azure / navy band
+  const from = `hsl(${base} 55% 44%)`;
+  const mid = `hsl(${(base + 8) % 360} 58% 28%)`;
+  const to = `hsl(${(base + 14) % 360} 52% 16%)`;
   const angle = 120 + (h % 90);
   return `linear-gradient(${angle}deg, ${from}, ${mid} 55%, ${to})`;
 }

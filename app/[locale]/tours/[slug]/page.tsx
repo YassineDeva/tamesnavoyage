@@ -4,7 +4,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Clock, CalendarRange, Gauge, Star, Check, MapPin } from "lucide-react";
 import { buildMetadata, JsonLd, SITE_URL, BRAND } from "@/lib/seo";
 import { Media } from "@/components/ui/media";
-import { Reveal, RevealWords } from "@/components/motion/reveal";
+import { Reveal } from "@/components/motion/reveal";
 import { StarRating } from "@/components/ui/star-rating";
 import { BookingForm } from "@/components/ui/booking-form";
 import { TourCard } from "@/components/ui/tour-card";
@@ -93,8 +93,8 @@ export default async function TourDetailPage({ params }: Props) {
             <MapPin className="h-4 w-4" />
             {tr(tour.region, locale)}
           </div>
-          <h1 className="font-display mt-3 max-w-3xl text-display font-medium leading-[1.02] text-sand-50">
-            <RevealWords text={tr(tour.title, locale)} />
+          <h1 className="mt-3 max-w-3xl text-display font-bold leading-[1.05] text-white">
+            {tr(tour.title, locale)}
           </h1>
           <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2 text-sand-100/85">
             <span className="inline-flex items-center gap-2 text-sm">
@@ -119,7 +119,7 @@ export default async function TourDetailPage({ params }: Props) {
           <div className="min-w-0">
             {/* Overview */}
             <Reveal>
-              <h2 className="font-display text-h3 font-medium text-ink-900">{t("overview")}</h2>
+              <h2 className="text-h3 font-medium text-ink-900">{t("overview")}</h2>
               <p className="mt-4 text-lg leading-relaxed text-muted-500">
                 {tr(tour.summary, locale)}
               </p>
@@ -127,7 +127,7 @@ export default async function TourDetailPage({ params }: Props) {
 
             {/* Highlights */}
             <div className="mt-12">
-              <h2 className="font-display text-h3 font-medium text-ink-900">{t("highlights")}</h2>
+              <h2 className="text-h3 font-medium text-ink-900">{t("highlights")}</h2>
               <ul className="mt-5 grid gap-3 sm:grid-cols-2">
                 {tour.highlights.map((h, i) => (
                   <Reveal key={i} index={i} as="li">
@@ -144,7 +144,7 @@ export default async function TourDetailPage({ params }: Props) {
 
             {/* Itinerary timeline */}
             <div className="mt-12">
-              <h2 className="font-display text-h3 font-medium text-ink-900">{t("itinerary")}</h2>
+              <h2 className="text-h3 font-medium text-ink-900">{t("itinerary")}</h2>
               <ol className="mt-6 space-y-6 border-s border-sand-300 ps-6 rtl:border-s-0 rtl:border-e rtl:ps-0 rtl:pe-6">
                 {tour.itinerary.map((step) => (
                   <Reveal key={step.day} index={step.day % 4} as="li" className="relative">
@@ -152,7 +152,7 @@ export default async function TourDetailPage({ params }: Props) {
                     <span className="text-xs font-semibold uppercase tracking-wider text-terracotta-500">
                       {t("day")} {step.day}
                     </span>
-                    <h3 className="font-display mt-1 text-lg font-medium text-ink-900">
+                    <h3 className="mt-1 text-lg font-medium text-ink-900">
                       {tr(step.title, locale)}
                     </h3>
                     <p className="mt-1 text-sm leading-relaxed text-muted-500">
@@ -165,7 +165,7 @@ export default async function TourDetailPage({ params }: Props) {
 
             {/* Included */}
             <div className="mt-12">
-              <h2 className="font-display text-h3 font-medium text-ink-900">{t("included")}</h2>
+              <h2 className="text-h3 font-medium text-ink-900">{t("included")}</h2>
               <ul className="mt-5 grid gap-3 sm:grid-cols-2">
                 {(["i1", "i2", "i3", "i4"] as const).map((k) => (
                   <li key={k} className="flex items-center gap-3 text-sm text-ink-800">
@@ -185,7 +185,7 @@ export default async function TourDetailPage({ params }: Props) {
                   <span className="text-xs uppercase tracking-wider text-muted-500">
                     {tc("from")}
                   </span>
-                  <p className="font-display text-2xl font-semibold text-clay-600">
+                  <p className="text-2xl font-semibold text-clay-600">
                     {formatPrice(tour.priceMad, locale)}
                   </p>
                   <span className="text-xs text-muted-500">{tc("perPerson")}</span>
@@ -205,7 +205,7 @@ export default async function TourDetailPage({ params }: Props) {
                 </Row>
               </dl>
 
-              <h3 className="font-display mt-5 text-lg font-medium text-ink-900">
+              <h3 className="mt-5 text-lg font-medium text-ink-900">
                 {t("bookTitle")}
               </h3>
               <p className="mt-1 text-sm text-muted-500">{t("bookSubtitle")}</p>
@@ -220,7 +220,7 @@ export default async function TourDetailPage({ params }: Props) {
       {/* Related */}
       <section className="bg-dune py-20 sm:py-24">
         <div className="container-wide">
-          <h2 className="font-display text-h2 font-medium text-ink-900">{t("relatedTitle")}</h2>
+          <h2 className="text-h2 font-medium text-ink-900">{t("relatedTitle")}</h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((r, i) => (
               <Reveal key={r.id} index={i}>

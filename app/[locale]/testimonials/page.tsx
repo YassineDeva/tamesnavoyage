@@ -67,7 +67,7 @@ export default async function TestimonialsPage({ params }: Props) {
           {stats.map((s, i) => (
             <Reveal key={s.label} index={i}>
               <div className="text-center">
-                <p className="font-display text-4xl font-semibold text-clay-600 sm:text-5xl">
+                <p className="text-4xl font-bold text-navy-700 sm:text-5xl">
                   {s.value}
                 </p>
                 <p className="mt-2 text-sm text-muted-500">{s.label}</p>

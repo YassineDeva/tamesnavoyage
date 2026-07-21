@@ -1,77 +1,135 @@
 @import "tailwindcss";
 
 /* ==========================================================================
-   TAMESNA VOYAGE — House Design System
-   Warm earth + terracotta · Moroccan zellige geometry · editorial serif
+   TAMESNA VOYAGES — Brand Design System
+   Charte graphique: bleu marine / azur / vert eau / vert olive / jaune ambré
+   Display: BoucherieCursive-Bold (script) · Text: Catesque
    ========================================================================== */
 
 @theme {
-  /* ---- Sand / cream (surfaces) ---- */
-  --color-sand-50: #fbf7f0;
-  --color-sand-100: #f6efe2;
-  --color-sand-200: #efe3ce;
-  --color-sand-300: #e4d2b3;
-  --color-sand-400: #d3b98d;
-  --color-sand-500: #c2a06b;
+  /* ---- Bleu marine profond (deep navy — primary dark) ---- */
+  --color-navy-50: #eaf2f6;
+  --color-navy-100: #cbdde7;
+  --color-navy-200: #9cbccd;
+  --color-navy-300: #6695ac;
+  --color-navy-400: #37708c;
+  --color-navy-500: #135170;
+  --color-navy-600: #053f5c;
+  --color-navy-700: #04303f;
+  --color-navy-800: #03242f;
+  --color-navy-900: #021a22;
 
-  /* ---- Terracotta (primary) ---- */
-  --color-terracotta-50: #fbf0ea;
-  --color-terracotta-100: #f4d9cb;
-  --color-terracotta-200: #e9b39c;
-  --color-terracotta-300: #dd8b6c;
-  --color-terracotta-400: #d0694a;
-  --color-terracotta-500: #c1502e;
-  --color-terracotta-600: #a53f23;
-  --color-terracotta-700: #83321d;
-  --color-terracotta-800: #5f2617;
+  /* ---- Bleu azur (primary blue — CTAs / links) ---- */
+  --color-azure-50: #ecf5fb;
+  --color-azure-100: #d0e7f5;
+  --color-azure-200: #a6d0ec;
+  --color-azure-300: #72b4e0;
+  --color-azure-400: #4a9cd4;
+  --color-azure-500: #2d88c5;
+  --color-azure-600: #2470a6;
+  --color-azure-700: #1f5c88;
+  --color-azure-800: #1c4d70;
+  --color-azure-900: #19405d;
 
-  /* ---- Clay / brick (deep primary) ---- */
-  --color-clay-500: #8b3a1e;
-  --color-clay-600: #6f2e18;
-  --color-clay-700: #522213;
+  /* ---- Vert eau (teal secondary) ---- */
+  --color-aqua-300: #8fc6d8;
+  --color-aqua-400: #63b0c9;
+  --color-aqua-500: #429ebd;
+  --color-aqua-600: #367f9a;
 
-  /* ---- Olive (secondary) ---- */
-  --color-olive-300: #a8ae8f;
-  --color-olive-400: #7f875f;
-  --color-olive-500: #5a6650;
-  --color-olive-600: #454f3d;
-  --color-olive-700: #333b2d;
+  /* ---- Bleu clair (sky light accent) ---- */
+  --color-sky-200: #cdf3fa;
+  --color-sky-300: #9fe7f5;
+  --color-sky-400: #6fd6ec;
 
-  /* ---- Saffron / brass gold (accent) ---- */
-  --color-gold-300: #e3c576;
-  --color-gold-400: #d3ac4f;
-  --color-gold-500: #c1913a;
-  --color-gold-600: #9e7328;
+  /* ---- Vert olive clair (green accent) ---- */
+  --color-olive-300: #d3e6a0;
+  --color-olive-400: #c4dd84;
+  --color-olive-500: #b8d670;
+  --color-olive-600: #9cbb4f;
+  --color-olive-700: #7c9739;
 
-  /* ---- Ink (warm near-black) & neutrals ---- */
-  --color-ink-900: #241a12;
-  --color-ink-800: #2f2419;
-  --color-ink-700: #453626;
-  --color-muted-500: #8a7a67;
-  --color-muted-400: #a8998612;
+  /* ---- Jaune ambré (amber accent) ---- */
+  --color-amber-50: #fef6e7;
+  --color-amber-100: #fde9c0;
+  --color-amber-200: #fbd685;
+  --color-amber-300: #f9c451;
+  --color-amber-400: #f7b52f;
+  --color-amber-500: #f4ab1b;
+  --color-amber-600: #d98f0a;
+  --color-amber-700: #b4720b;
+  --color-amber-800: #8f5a0f;
+  --color-amber-900: #6f4610;
+
+  /* ---- Ink (headings — deep navy near-black) & neutral text ---- */
+  --color-ink-900: #0a2231;
+  --color-ink-800: #0f2c3d;
+  --color-ink-700: #24455a;
+  --color-muted-600: #486173;
+  --color-muted-500: #5f7889;
+  --color-muted-400: #8aa0ad;
+
+  /* ---- Surfaces (light, cool blue-white) ---- */
+  --color-surface-0: #ffffff;
+  --color-surface-50: #f6fafd;
+  --color-surface-100: #eef5fa;
+  --color-surface-200: #e0ecf4;
+  --color-surface-300: #cddfeb;
 
   /* ---- Semantic aliases ---- */
-  --color-background: var(--color-sand-50);
+  --color-background: #ffffff;
   --color-foreground: var(--color-ink-900);
-  --color-primary: var(--color-terracotta-500);
-  --color-accent: var(--color-gold-400);
+  --color-primary: var(--color-azure-500);
+  --color-primary-600: var(--color-azure-600);
+  --color-accent: var(--color-amber-500);
+
+  /* ==========================================================================
+     Legacy token bridge — the earlier "terracotta" skin's names remapped onto
+     brand hues, so pre-existing pages/components stay on-brand & keep building.
+     ========================================================================== */
+  --color-sand-50: var(--color-surface-50);
+  --color-sand-100: var(--color-surface-100);
+  --color-sand-200: var(--color-surface-200);
+  --color-sand-300: var(--color-surface-300);
+  --color-sand-400: #a9c4d6;
+  --color-sand-500: #7ea6c0;
+  --color-terracotta-50: var(--color-azure-50);
+  --color-terracotta-100: var(--color-azure-100);
+  --color-terracotta-200: var(--color-azure-200);
+  --color-terracotta-300: var(--color-azure-300);
+  --color-terracotta-400: var(--color-azure-400);
+  --color-terracotta-500: var(--color-azure-500);
+  --color-terracotta-600: var(--color-azure-600);
+  --color-terracotta-700: var(--color-azure-700);
+  --color-terracotta-800: var(--color-azure-800);
+  --color-clay-500: var(--color-navy-500);
+  --color-clay-600: var(--color-navy-600);
+  --color-clay-700: var(--color-navy-700);
+  --color-gold-300: var(--color-amber-300);
+  --color-gold-400: var(--color-amber-500);
+  --color-gold-500: var(--color-amber-600);
+  --color-gold-600: var(--color-amber-700);
 
   /* ---- Typography ---- */
-  --font-display: var(--font-display), "Times New Roman", serif;
-  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-arabic-display: var(--font-arabic-display), serif;
+  --font-display: var(--font-display), "Brush Script MT", "Segoe Script", cursive;
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-arabic-display: var(--font-arabic-display), "Amiri", serif;
   --font-arabic: var(--font-arabic), ui-sans-serif, sans-serif;
 
   /* ---- Fluid type scale (clamp) ---- */
-  --text-hero: clamp(2.75rem, 1.2rem + 6.4vw, 7rem);
-  --text-display: clamp(2.25rem, 1.3rem + 4vw, 5rem);
-  --text-h2: clamp(1.9rem, 1.2rem + 2.6vw, 3.4rem);
-  --text-h3: clamp(1.35rem, 1.05rem + 1.2vw, 2rem);
+  --text-hero: clamp(2.6rem, 1.2rem + 5.6vw, 5.5rem);
+  --text-display: clamp(2rem, 1.2rem + 3.4vw, 4rem);
+  --text-h2: clamp(1.8rem, 1.2rem + 2.2vw, 3rem);
+  --text-h3: clamp(1.3rem, 1.05rem + 1vw, 1.85rem);
 
   /* ---- Radii, shadows, easing ---- */
   --radius-xl2: 1.75rem;
-  --shadow-soft: 0 1px 2px rgba(36, 26, 18, 0.04), 0 12px 40px -12px rgba(96, 38, 23, 0.18);
-  --shadow-lift: 0 30px 70px -30px rgba(96, 38, 23, 0.4);
+  --radius-xl3: 2.25rem;
+  --shadow-soft: 0 1px 2px rgba(5, 63, 92, 0.04), 0 14px 40px -18px rgba(5, 63, 92, 0.22);
+  --shadow-card: 0 18px 50px -24px rgba(5, 63, 92, 0.35);
+  --shadow-lift: 0 32px 70px -30px rgba(5, 63, 92, 0.45);
+  --shadow-blue: 0 14px 34px -12px rgba(45, 136, 197, 0.55);
+  --shadow-amber: 0 14px 34px -12px rgba(244, 171, 27, 0.5);
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out-quint: cubic-bezier(0.83, 0, 0.17, 1);
 }
@@ -81,19 +139,17 @@
    ========================================================================== */
 @layer base {
   * {
-    border-color: color-mix(in oklab, var(--color-sand-300) 60%, transparent);
+    border-color: color-mix(in oklab, var(--color-surface-300) 70%, transparent);
   }
 
   html {
     -webkit-text-size-adjust: 100%;
-    scroll-behavior: smooth;
   }
 
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
-    font-feature-settings: "cv11", "ss01";
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }
@@ -113,21 +169,24 @@
   }
 
   ::selection {
-    background-color: var(--color-terracotta-500);
-    color: var(--color-sand-50);
+    background-color: var(--color-azure-500);
+    color: #fff;
   }
 
   /* Custom themed scrollbar */
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 11px;
   }
   ::-webkit-scrollbar-track {
-    background: var(--color-sand-100);
+    background: var(--color-surface-100);
   }
   ::-webkit-scrollbar-thumb {
-    background: var(--color-terracotta-300);
+    background: var(--color-azure-300);
     border-radius: 999px;
-    border: 2px solid var(--color-sand-100);
+    border: 2px solid var(--color-surface-100);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-azure-400);
   }
 }
 
@@ -135,20 +194,19 @@
    Utilities & motifs
    ========================================================================== */
 @layer utilities {
-  /* Editorial heading defaults */
   .text-hero {
     font-size: var(--text-hero);
-    line-height: 0.95;
+    line-height: 1;
     letter-spacing: -0.02em;
   }
   .text-display {
     font-size: var(--text-display);
-    line-height: 1;
+    line-height: 1.02;
     letter-spacing: -0.015em;
   }
   .text-h2 {
     font-size: var(--text-h2);
-    line-height: 1.05;
+    line-height: 1.06;
     letter-spacing: -0.01em;
   }
   .text-h3 {
@@ -158,65 +216,75 @@
 
   .eyebrow {
     text-transform: uppercase;
-    letter-spacing: 0.28em;
+    letter-spacing: 0.22em;
     font-size: 0.72rem;
     font-weight: 600;
   }
   [dir="rtl"] .eyebrow {
-    letter-spacing: 0.12em;
+    letter-spacing: 0.1em;
   }
 
-  /* Warm gradient washes */
-  .bg-sunset {
-    background-image: linear-gradient(
-      135deg,
-      var(--color-terracotta-500) 0%,
-      var(--color-clay-600) 55%,
-      var(--color-ink-900) 100%
-    );
+  /* Brand gradient washes */
+  .bg-sky-wash {
+    background-image: linear-gradient(180deg, var(--color-sky-200) 0%, #eef8fd 40%, #ffffff 100%);
+  }
+  .bg-hero-sky {
+    background-image: linear-gradient(160deg, #dff3fb 0%, #eef7fd 45%, #ffffff 100%);
   }
   .bg-dune {
-    background-image: linear-gradient(
-      180deg,
-      var(--color-sand-50) 0%,
-      var(--color-sand-100) 100%
-    );
+    background-image: linear-gradient(180deg, var(--color-surface-50) 0%, var(--color-surface-100) 100%);
   }
-  .text-gradient-gold {
-    background: linear-gradient(
-      100deg,
-      var(--color-gold-500),
-      var(--color-gold-300) 45%,
-      var(--color-terracotta-300)
-    );
+  .bg-sunset,
+  .bg-deep {
+    background-image: linear-gradient(135deg, var(--color-navy-600) 0%, var(--color-azure-700) 60%, var(--color-navy-800) 100%);
+  }
+  .bg-azure {
+    background-image: linear-gradient(120deg, var(--color-azure-500) 0%, var(--color-azure-600) 100%);
+  }
+  .text-gradient-gold,
+  .text-gradient-amber {
+    background: linear-gradient(100deg, var(--color-amber-500), var(--color-amber-300) 55%, var(--color-amber-400));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
+  .text-script {
+    font-family: var(--font-display);
+    font-weight: 700;
+  }
+  [dir="rtl"] .text-script {
+    font-family: var(--font-arabic-display);
+  }
 
-  /* Grain overlay for photographic warmth */
+  /* Subtle dotted map/particle field */
+  .dotted-field {
+    background-image: radial-gradient(var(--color-azure-200) 1.1px, transparent 1.2px);
+    background-size: 22px 22px;
+  }
+
+  /* Grain overlay for photographic depth */
   .grain::after {
     content: "";
     position: absolute;
     inset: 0;
     pointer-events: none;
-    opacity: 0.05;
+    opacity: 0.04;
     mix-blend-mode: multiply;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
-  /* Zellige eight-point-star tile pattern */
+  /* Legacy zellige tile → soft brand dot field (keeps old refs alive) */
   .zellige {
-    background-color: var(--color-sand-100);
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23c1502e' stroke-opacity='0.14' stroke-width='1'%3E%3Cpath d='M30 4l7 7 10-2-2 10 7 7-7 7 2 10-10-2-7 7-7-7-10 2 2-10-7-7 7-7-2-10 10 2z'/%3E%3Crect x='23' y='23' width='14' height='14' transform='rotate(45 30 30)'/%3E%3C/g%3E%3C/svg%3E");
+    background-color: var(--color-surface-100);
+    background-image: radial-gradient(var(--color-azure-200) 1px, transparent 1.1px);
+    background-size: 20px 20px;
   }
 
-  /* Thin decorative divider with a diamond */
   .rule-diamond {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    color: var(--color-gold-500);
+    color: var(--color-amber-500);
   }
   .rule-diamond::before,
   .rule-diamond::after {
@@ -229,9 +297,14 @@
 
   .container-wide {
     width: 100%;
-    max-width: 84rem;
+    max-width: 80rem;
     margin-inline: auto;
-    padding-inline: 1.5rem;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 640px) {
+    .container-wide {
+      padding-inline: 1.75rem;
+    }
   }
   @media (min-width: 1024px) {
     .container-wide {
@@ -245,9 +318,9 @@
   }
 
   .focus-ring:focus-visible {
-    outline: 2px solid var(--color-terracotta-500);
+    outline: 2px solid var(--color-azure-500);
     outline-offset: 3px;
-    border-radius: 4px;
+    border-radius: 6px;
   }
 }
 
@@ -261,6 +334,16 @@
 }
 [dir="rtl"] .marquee-track {
   animation-direction: reverse;
+}
+
+@keyframes float-plane {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(6px, -8px) rotate(-3deg);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

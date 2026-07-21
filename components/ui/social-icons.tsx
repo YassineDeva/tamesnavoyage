@@ -25,6 +25,23 @@ export function FacebookIcon({ className }: P) {
   );
 }
 
+export function XIcon({ className }: P) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden>
+      <path d="M17.5 3h3l-6.6 7.55L22 21h-5.94l-4.3-5.62L6.8 21H3.78l7.06-8.07L2.3 3h6.09l3.9 5.16L17.5 3zm-1.05 16.15h1.66L7.62 4.77H5.83l10.62 14.38z" />
+    </svg>
+  );
+}
+
+export function YoutubeIcon({ className }: P) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden>
+      <rect x="2.5" y="6" width="19" height="12" rx="4" stroke="currentColor" strokeWidth="1.7" />
+      <path d="M11 9.5v5l4-2.5-4-2.5z" fill="currentColor" />
+    </svg>
+  );
+}
+
 export function WhatsappIcon({ className }: P) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden>

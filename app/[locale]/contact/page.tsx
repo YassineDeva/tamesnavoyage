@@ -85,7 +85,7 @@ export default async function ContactPage({ params }: Props) {
             {/* Map placeholder */}
             <div className="zellige mt-8 flex h-56 items-center justify-center rounded-[1.75rem] border border-sand-200">
               <span className="rounded-full bg-sand-50/90 px-4 py-2 text-sm font-medium text-ink-800 backdrop-blur">
-                Marrakech · Médina
+                Tamesna · Témara
               </span>
             </div>
           </div>

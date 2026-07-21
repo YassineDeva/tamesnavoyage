@@ -1,16 +1,19 @@
 {
   "meta": {
-    "brand": "Tamesna Voyage",
-    "tagline": "L'art de voyager au Maroc",
+    "brand": "Tamesna Voyages",
+    "tagline": "Tourisme & Events — le monde à portée de main",
     "home": {
-      "title": "Tamesna Voyage — Voyages d'exception au Maroc",
-      "description": "Agence de voyage marocaine sur-mesure. Circuits privés, riads d'exception et expériences authentiques du désert à l'Atlantique. Créez le voyage dont vous rêvez."
+      "title": "Tamesna Voyages — Circuits, hôtels & vols pour un voyage d'exception",
+      "description": "Agence de voyages & d'événementiel. Trouvez les meilleurs circuits, hôtels et vols pour explorer le monde et vivre des expériences inoubliables."
     }
   },
   "nav": {
     "home": "Accueil",
     "destinations": "Destinations",
     "tours": "Circuits",
+    "flights": "Vols",
+    "hotels": "Hôtels",
+    "blog": "Blog",
     "about": "À propos",
     "testimonials": "Avis",
     "contact": "Contact",
@@ -121,13 +124,81 @@
       "consent": "En vous inscrivant, vous acceptez notre politique de confidentialité."
     }
   },
+  "landing": {
+    "hero": {
+      "badge": "Explorer · Rêver · Découvrir",
+      "titleLead": "Découvrez des lieux",
+      "titleAccent": "d'exception",
+      "subtitle": "Trouvez les meilleurs circuits, hôtels et vols : tout ce qu'il vous faut pour le voyage parfait.",
+      "cta": "Explorer",
+      "imageAlt": "Village aux dômes bleus surplombant la mer Égée à Santorin"
+    },
+    "search": {
+      "tabs": { "flights": "Vols", "hotels": "Hôtels", "tours": "Circuits", "packages": "Séjours" },
+      "from": "Départ",
+      "fromValue": "Casablanca (CMN)",
+      "to": "Destination",
+      "toPlaceholder": "Où allez-vous ?",
+      "depart": "Aller",
+      "departValue": "20 mai 2026",
+      "return": "Retour",
+      "returnValue": "27 mai 2026",
+      "travelers": "Voyageurs",
+      "travelersValue": "2 adultes, 1 enfant",
+      "submit": "Rechercher"
+    },
+    "trust": {
+      "items": {
+        "bestPrice": { "title": "Meilleur prix garanti", "desc": "Nous vous assurons toujours les meilleures offres." },
+        "support": { "title": "Assistance 24/7", "desc": "Nous sommes là pour vous aider à tout moment, où que vous soyez." },
+        "secure": { "title": "Réservations sécurisées", "desc": "Vos données et paiements sont protégés à 100 %." },
+        "handpicked": { "title": "Expériences triées sur le volet", "desc": "Circuits et hôtels sélectionnés pour des voyages inoubliables." }
+      }
+    },
+    "destinations": {
+      "title": "Destinations populaires",
+      "viewAll": "Voir toutes les destinations",
+      "fromLabel": "Dès",
+      "tags": { "bestseller": "Best-seller", "popular": "Populaire", "trending": "Tendance" },
+      "items": {
+        "thailand": { "name": "Thaïlande", "place": "Phuket" },
+        "france": { "name": "France", "place": "Paris" },
+        "bali": { "name": "Bali, Indonésie", "place": "Ubud" },
+        "dubai": { "name": "Dubaï, EAU", "place": "Dubaï" }
+      }
+    },
+    "why": {
+      "titleLead": "Pourquoi choisir",
+      "titleAccent": "Tamesna Voyages ?",
+      "items": {
+        "choices": { "title": "Un choix immense", "desc": "Des milliers de vols, d'hôtels et de circuits partout dans le monde." },
+        "trusted": { "title": "La confiance des voyageurs", "desc": "Des millions de voyageurs heureux à travers le monde." },
+        "flexible": { "title": "Réservation simple et flexible", "desc": "Réservez en toute simplicité et ajustez vos plans si besoin." },
+        "deals": { "title": "Offres exclusives", "desc": "Accédez à des réductions et des offres spéciales." }
+      },
+      "card": {
+        "kicker": "C'est parti !",
+        "title": "Votre prochaine aventure vous attend",
+        "text": "Découvrez des lieux à couper le souffle et créez des souvenirs inoubliables.",
+        "cta": "Planifier mon voyage",
+        "imageAlt": "Voyageuse assise sur une plage tropicale au coucher du soleil"
+      }
+    },
+    "newsletter": {
+      "title": "Abonnez-vous à notre newsletter",
+      "subtitle": "Recevez nos meilleures offres et inspirations voyage directement dans votre boîte mail.",
+      "placeholder": "Votre adresse e-mail",
+      "button": "S'inscrire",
+      "done": "Inscrit !"
+    }
+  },
   "footer": {
-    "tagline": "Créateur de voyages d'exception au Maroc depuis 2013.",
+    "tagline": "Votre agence de voyages & d'événementiel — le monde à portée de main.",
     "explore": "Explorer",
     "company": "Agence",
     "support": "Assistance",
     "contact": "Contact",
-    "address": "12 Derb Sidi Bouloukat, Médina, Marrakech 40000, Maroc",
+    "address": "Av. Yaâkoub El Mansour, Imm. A, Magasin N°1, Tamesna, Témara",
     "hours": "Lun – Sam · 9h – 19h",
     "rights": "Tous droits réservés.",
     "legal": "Mentions légales",

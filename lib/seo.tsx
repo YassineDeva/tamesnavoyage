@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import type { Locale } from "@/i18n/routing";
 
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://tamesnavoyage.com";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.tamesnavoyages.ma";
 
-export const BRAND = "Tamesna Voyage";
+export const BRAND = "Tamesna Voyages";
 
 /** Build per-page metadata with hreflang alternates and OpenGraph. */
 export function buildMetadata({
@@ -12,7 +12,7 @@ export function buildMetadata({
   path = "",
   title,
   description,
-  image = "/media/og/default.jpg",
+  image = "/media/hero-santorini.webp",
 }: {
   locale: Locale;
   path?: string;
@@ -58,25 +58,25 @@ export function organizationJsonLd(locale: Locale) {
     "@type": "TravelAgency",
     name: BRAND,
     url: `${SITE_URL}/${locale}`,
-    image: `${SITE_URL}/media/og/default.jpg`,
+    image: `${SITE_URL}/media/hero-santorini.webp`,
     description:
       locale === "ar"
-        ? "وكالة أسفار مغربية مخصّصة لرحلات استثنائية."
-        : "Agence de voyage marocaine sur-mesure pour des voyages d'exception.",
+        ? "وكالة أسفار وتنظيم فعاليات — جولات وفنادق ورحلات طيران لاستكشاف العالم."
+        : "Agence de voyages & d'événementiel — circuits, hôtels et vols pour explorer le monde.",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "12 Derb Sidi Bouloukat, Médina",
-      addressLocality: "Marrakech",
-      postalCode: "40000",
+      streetAddress: "Av. Yaâkoub El Mansour, Imm. A, Magasin N°1",
+      addressLocality: "Tamesna, Témara",
+      postalCode: "12000",
       addressCountry: "MA",
     },
-    geo: { "@type": "GeoCoordinates", latitude: 31.6295, longitude: -7.9811 },
-    telephone: "+212 5 24 00 00 00",
+    geo: { "@type": "GeoCoordinates", latitude: 33.8667, longitude: -6.9167 },
+    telephone: "+212 661 96 12 48",
     priceRange: "$$$",
-    areaServed: "Morocco",
+    areaServed: "Worldwide",
     sameAs: [
-      "https://www.instagram.com/tamesnavoyage",
-      "https://www.facebook.com/tamesnavoyage",
+      "https://www.instagram.com/tamesna.voyages",
+      "https://www.facebook.com/tamesna.voyages",
     ],
     aggregateRating: {
       "@type": "AggregateRating",

@@ -1,13 +1,11 @@
 import { setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
-import { Hero } from "@/components/sections/hero";
-import { SearchWidget } from "@/components/sections/search-widget";
-import { DestinationsShowcase } from "@/components/sections/destinations-showcase";
-import { WhyChoose } from "@/components/sections/why-choose";
-import { PlanTrip } from "@/components/sections/plan-trip";
-import { Experiences } from "@/components/sections/experiences";
-import { TestimonialsSection } from "@/components/sections/testimonials";
-import { CtaBand } from "@/components/sections/cta-band";
+import { Hero } from "@/components/landing/hero";
+import { SearchWidget } from "@/components/landing/search-widget";
+import { TrustBar } from "@/components/landing/trust-bar";
+import { PopularDestinations } from "@/components/landing/popular-destinations";
+import { WhyChoose } from "@/components/landing/why-choose";
+import { Newsletter } from "@/components/landing/newsletter";
 
 export default async function HomePage({
   params,
@@ -21,14 +19,10 @@ export default async function HomePage({
     <>
       <Hero />
       <SearchWidget />
-      <DestinationsShowcase />
+      <TrustBar />
+      <PopularDestinations />
       <WhyChoose />
-      <PlanTrip />
-      <Experiences />
-      <TestimonialsSection />
-      <div className="py-24 sm:py-28">
-        <CtaBand />
-      </div>
+      <Newsletter />
     </>
   );
 }

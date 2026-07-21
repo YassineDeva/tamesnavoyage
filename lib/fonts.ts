@@ -1,21 +1,31 @@
-import { Fraunces, Manrope, Amiri, Cairo } from "next/font/google";
+import localFont from "next/font/local";
+import { Amiri, Cairo } from "next/font/google";
 
-/** Editorial display serif for FR headlines (variable optical sizing). */
-export const fraunces = Fraunces({
-  subsets: ["latin"],
+/**
+ * Brand display face — BoucherieCursive-Bold (script) from the Tamesna Voyages
+ * charte graphique. Used for headline accents & the wordmark.
+ */
+export const boucherie = localFont({
+  src: "../app/fonts/BoucherieCursive-Bold.ttf",
   variable: "--font-display",
   display: "swap",
-  axes: ["opsz", "SOFT", "WONK"],
+  weight: "700",
+  style: "normal",
 });
 
-/** Clean humanist sans for FR body / UI. */
-export const manrope = Manrope({
-  subsets: ["latin"],
+/**
+ * Brand text face — Catesque (humanist sans) from the charte graphique.
+ * Used for body copy, UI and letterspaced overlines.
+ */
+export const catesque = localFont({
+  src: "../app/fonts/Catesque-Medium.ttf",
   variable: "--font-sans",
   display: "swap",
+  weight: "500",
+  style: "normal",
 });
 
-/** Classical Naskh for AR display headlines. */
+/** Classical Naskh for AR display headlines (BoucherieCursive is Latin-only). */
 export const amiri = Amiri({
   subsets: ["arabic"],
   weight: ["400", "700"],
@@ -30,4 +40,4 @@ export const cairo = Cairo({
   display: "swap",
 });
 
-export const fontVariables = `${fraunces.variable} ${manrope.variable} ${amiri.variable} ${cairo.variable}`;
+export const fontVariables = `${boucherie.variable} ${catesque.variable} ${amiri.variable} ${cairo.variable}`;

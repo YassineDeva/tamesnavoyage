@@ -3,7 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { buildMetadata } from "@/lib/seo";
 import { PageHeader } from "@/components/sections/page-header";
 import { Media } from "@/components/ui/media";
-import { Reveal, RevealWords } from "@/components/motion/reveal";
+import { Reveal } from "@/components/motion/reveal";
 import { CtaBand } from "@/components/sections/cta-band";
 import type { Locale } from "@/i18n/routing";
 
@@ -54,8 +54,8 @@ export default async function AboutPage({ params }: Props) {
           </Reveal>
           <div>
             <p className="eyebrow text-terracotta-500">{t("storyTitle")}</p>
-            <h2 className="font-display mt-4 text-h2 font-medium leading-[1.05] text-ink-900">
-              <RevealWords text={t("title")} />
+            <h2 className="mt-4 text-h2 font-bold leading-[1.05] text-navy-800">
+              {t("title")}
             </h2>
             <div className="mt-6 space-y-5 text-base leading-relaxed text-muted-500 sm:text-lg">
               <Reveal index={1}>
@@ -77,10 +77,10 @@ export default async function AboutPage({ params }: Props) {
             {values.map((v, i) => (
               <Reveal key={v} index={i}>
                 <article className="h-full rounded-[1.75rem] border border-sand-200 bg-sand-50 p-8">
-                  <span className="font-display text-4xl text-terracotta-300">
+                  <span className="text-4xl text-terracotta-300">
                     0{i + 1}
                   </span>
-                  <h3 className="font-display mt-4 text-xl font-medium text-ink-900">
+                  <h3 className="mt-4 text-xl font-medium text-ink-900">
                     {t(`values.${v}t`)}
                   </h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted-500">
@@ -100,7 +100,7 @@ export default async function AboutPage({ params }: Props) {
             {stats.map((s, i) => (
               <Reveal key={s} index={i}>
                 <div>
-                  <p className="font-display text-4xl font-semibold text-gold-400 sm:text-5xl">
+                  <p className="text-4xl font-semibold text-gold-400 sm:text-5xl">
                     {t(`stats.${s}`)}
                   </p>
                   <p className="mt-2 text-sm text-sand-100/70">{t(`stats.${s}l`)}</p>
