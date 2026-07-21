@@ -1,13 +1,19 @@
 import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { featuredDestinations } from "@/lib/site";
+import { getDestination, type Destination } from "@/lib/data";
 import { Reveal } from "@/components/motion/reveal";
-import { PlaceCard } from "./place-card";
+import { DestinationCard } from "@/components/ui/destination-card";
 
-/** "Popular Destinations" — heading + View All + four photo cards. */
+/** Curated mix of Moroccan roots + international reach. */
+const FEATURED = ["marrakech", "bali", "maldives", "turquie"];
+
+/** "Popular Destinations" — heading + View All + four real destination cards. */
 export function PopularDestinations() {
   const t = useTranslations("landing.destinations");
+  const featured = FEATURED.map((slug) => getDestination(slug)).filter(
+    (d): d is Destination => Boolean(d),
+  );
 
   return (
     <section id="destinations" className="bg-white py-16 sm:py-20">
@@ -31,16 +37,12 @@ export function PopularDestinations() {
         </div>
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {featuredDestinations.map((d, i) => (
+          {featured.map((d, i) => (
             <Reveal key={d.id} index={i}>
-              <PlaceCard
-                image={d.image}
-                name={t(`items.${d.id}.name`)}
-                place={t(`items.${d.id}.place`)}
-                price={d.price}
-                currency={d.currency}
-                tag={t(`tags.${d.tag}`)}
-                fromLabel={t("fromLabel")}
+              <DestinationCard
+                destination={d}
+                className="aspect-[3/4]"
+                priority={i < 2}
               />
             </Reveal>
           ))}
