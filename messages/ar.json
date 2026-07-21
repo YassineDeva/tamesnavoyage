@@ -141,17 +141,20 @@
       "imageAlt": "قرية بقباب زرقاء تطل على بحر إيجه في سانتوريني"
     },
     "search": {
-      "tabs": { "flights": "طيران", "hotels": "فنادق", "tours": "جولات", "packages": "عروض" },
-      "from": "من",
-      "fromValue": "الدار البيضاء (CMN)",
-      "to": "إلى",
-      "toPlaceholder": "إلى أين؟",
-      "depart": "الذهاب",
-      "departValue": "20 ماي 2026",
-      "return": "العودة",
-      "returnValue": "27 ماي 2026",
+      "title": "من أين تبدأ رحلتك؟",
+      "destination": "الوجهة",
+      "destinationAny": "كل الوجهات",
+      "morocco": "المغرب",
+      "international": "دولي",
+      "tripType": "نوع الرحلة",
+      "tripTypeAny": "كل الأنواع",
       "travelers": "المسافرون",
-      "travelersValue": "بالغان، طفل",
+      "travelersOptions": {
+        "t1": "مسافر واحد",
+        "t2": "مسافران",
+        "t3": "3 – 4 مسافرين",
+        "t4": "5 مسافرين فأكثر"
+      },
       "submit": "بحث"
     },
     "trust": {

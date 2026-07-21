@@ -141,17 +141,20 @@
       "imageAlt": "Village aux dômes bleus surplombant la mer Égée à Santorin"
     },
     "search": {
-      "tabs": { "flights": "Vols", "hotels": "Hôtels", "tours": "Circuits", "packages": "Séjours" },
-      "from": "Départ",
-      "fromValue": "Casablanca (CMN)",
-      "to": "Destination",
-      "toPlaceholder": "Où allez-vous ?",
-      "depart": "Aller",
-      "departValue": "20 mai 2026",
-      "return": "Retour",
-      "returnValue": "27 mai 2026",
+      "title": "Où commence votre voyage ?",
+      "destination": "Destination",
+      "destinationAny": "Toutes les destinations",
+      "morocco": "Maroc",
+      "international": "International",
+      "tripType": "Type de voyage",
+      "tripTypeAny": "Tous les types",
       "travelers": "Voyageurs",
-      "travelersValue": "2 adultes, 1 enfant",
+      "travelersOptions": {
+        "t1": "1 voyageur",
+        "t2": "2 voyageurs",
+        "t3": "3 – 4 voyageurs",
+        "t4": "5 voyageurs et +"
+      },
       "submit": "Rechercher"
     },
     "trust": {
