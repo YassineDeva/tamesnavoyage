@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { locales } from "@/i18n/routing";
-import { tours } from "@/lib/data";
+import { tours, allDestinations } from "@/lib/data";
 import { SITE_URL } from "@/lib/seo";
 
 const routes = ["", "/destinations", "/services", "/tours", "/about", "/contact", "/testimonials"];
@@ -24,6 +24,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const tour of tours) {
       entries.push({
         url: `${SITE_URL}/${locale}/tours/${tour.slug}`,
+        changeFrequency: "monthly",
+        priority: 0.7,
+      });
+    }
+    for (const dest of allDestinations) {
+      entries.push({
+        url: `${SITE_URL}/${locale}/destinations/${dest.slug}`,
         changeFrequency: "monthly",
         priority: 0.7,
       });

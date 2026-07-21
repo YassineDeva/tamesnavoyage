@@ -20,7 +20,7 @@ export function DestinationCard({
 
   return (
     <Link
-      href="/destinations"
+      href={`/destinations/${destination.slug}`}
       className={cn(
         "group relative block overflow-hidden rounded-[1.6rem] bg-navy-800 focus-ring",
         className,

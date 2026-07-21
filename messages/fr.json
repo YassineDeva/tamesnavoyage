@@ -229,6 +229,22 @@
       "intlTitle": "Le monde avec Tamesna",
       "intlSubtitle": "Nos destinations internationales les plus demandées."
     },
+    "destinationDetail": {
+      "breadcrumb": "Destinations",
+      "backTo": "Toutes les destinations",
+      "overview": "Aperçu",
+      "highlights": "À ne pas manquer",
+      "gallery": "Galerie",
+      "factsTitle": "En bref",
+      "bestTime": "Meilleure période",
+      "idealFor": "Idéal pour",
+      "duration": "Durée conseillée",
+      "language": "Langue",
+      "planTitle": "Prêt à vivre ce voyage ?",
+      "planSubtitle": "Confiez-nous vos dates : un conseiller compose votre itinéraire sur-mesure et vous répond sous 24 h.",
+      "planCta": "Planifier ce voyage",
+      "relatedTitle": "Autres destinations"
+    },
     "services": {
       "metaTitle": "Nos services — Voyages d'affaires, MICE, Hajj & Omra | Tamesna Voyages",
       "metaDesc": "Voyages d'affaires, séminaires et incentives (MICE), Hajj & Omra et séjours sur-mesure. Une prise en charge complète, une assistance 24/7.",

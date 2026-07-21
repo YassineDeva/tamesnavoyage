@@ -648,6 +648,252 @@ export const alaCarteServices: AlaCarteService[] = [
   },
 ];
 
+/* -------------------------------------------------------------------------- */
+/*  Destination detail content (used by /destinations/[slug])                 */
+/* -------------------------------------------------------------------------- */
+export type DestinationDetail = {
+  intro: L;
+  highlights: L[];
+  bestTime: L;
+  idealFor: L;
+  duration: L;
+  language: L;
+};
+
+export const destinationDetails: Record<string, DestinationDetail> = {
+  marrakech: {
+    intro: {
+      fr: "Cité impériale trépidante, Marrakech mêle souks parfumés, palais somptueux et jardins secrets. Sa médina classée à l'UNESCO bat au rythme de la place Jemaa el-Fna, tandis que la palmeraie et l'Atlas veillent à l'horizon.",
+      ar: "مدينة إمبراطورية نابضة، تمزج مراكش بين الأسواق العطرة والقصور الفخمة والحدائق السرّية. مدينتها العتيقة المصنّفة عالميًّا تنبض على إيقاع ساحة جامع الفنا، بينما تحرسها واحة النخيل وجبال الأطلس في الأفق.",
+    },
+    highlights: [
+      { fr: "Place Jemaa el-Fna", ar: "ساحة جامع الفنا" },
+      { fr: "Jardin Majorelle", ar: "حديقة ماجوريل" },
+      { fr: "Palais Bahia", ar: "قصر الباهية" },
+      { fr: "Souks de la médina", ar: "أسواق المدينة العتيقة" },
+    ],
+    bestTime: { fr: "Mars – Mai & Oct – Nov", ar: "مارس–ماي وأكتوبر–نونبر" },
+    idealFor: { fr: "Culture & shopping", ar: "الثقافة والتسوّق" },
+    duration: { fr: "3 – 4 jours", ar: "3 – 4 أيام" },
+    language: { fr: "Arabe, Français", ar: "العربية، الفرنسية" },
+  },
+  sahara: {
+    intro: {
+      fr: "Aux portes du désert, l'Erg Chebbi déroule ses dunes dorées à perte de vue. Balades à dos de dromadaire, nuits en bivouac de luxe et ciels étoilés composent l'une des expériences les plus inoubliables du Maroc.",
+      ar: "على أبواب الصحراء، يمدّ عرق الشبي كثبانه الذهبية إلى ما لا نهاية. جولات على الجِمال، وليالٍ في مخيّمات فاخرة، وسماء مرصّعة بالنجوم تصنع واحدة من أكثر التجارب المغربية تأثيرًا.",
+    },
+    highlights: [
+      { fr: "Dunes de l'Erg Chebbi", ar: "كثبان عرق الشبي" },
+      { fr: "Nuit en bivouac de luxe", ar: "ليلة في مخيّم فاخر" },
+      { fr: "Balade à dos de dromadaire", ar: "جولة على الجِمال" },
+      { fr: "Lever de soleil sur les dunes", ar: "شروق الشمس فوق الكثبان" },
+    ],
+    bestTime: { fr: "Oct – Avr", ar: "أكتوبر – أبريل" },
+    idealFor: { fr: "Aventure & nature", ar: "المغامرة والطبيعة" },
+    duration: { fr: "2 – 3 jours", ar: "2 – 3 أيام" },
+    language: { fr: "Arabe, Amazigh", ar: "العربية، الأمازيغية" },
+  },
+  chefchaouen: {
+    intro: {
+      fr: "Nichée dans les montagnes du Rif, la perle bleue enchante par ses ruelles indigo et sa douceur de vivre. On y flâne sans but, entre échoppes d'artisans, cafés paisibles et panoramas sur les sommets.",
+      ar: "متربّعة في جبال الريف، تسحر اللؤلؤة الزرقاء بأزقّتها النيليّة وهدوء عيشها. تتجوّل فيها بلا وجهة، بين دكاكين الحرفيّين والمقاهي الهادئة والإطلالات على القمم.",
+    },
+    highlights: [
+      { fr: "Ruelles bleues", ar: "الأزقّة الزرقاء" },
+      { fr: "Place Outa el-Hammam", ar: "ساحة وطاء الحمّام" },
+      { fr: "Cascades d'Akchour", ar: "شلّالات أقشور" },
+      { fr: "Panorama sur le Rif", ar: "إطلالة على الريف" },
+    ],
+    bestTime: { fr: "Avr – Juin & Sep – Oct", ar: "أبريل–يونيو وشتنبر–أكتوبر" },
+    idealFor: { fr: "Photo & détente", ar: "التصوير والاسترخاء" },
+    duration: { fr: "1 – 2 jours", ar: "1 – 2 يوم" },
+    language: { fr: "Arabe, Amazigh", ar: "العربية، الأمازيغية" },
+  },
+  fes: {
+    intro: {
+      fr: "Capitale spirituelle et artisanale du Maroc, Fès abrite la plus vieille médina du monde. Un labyrinthe millénaire de tanneries, medersas et ateliers où chaque ruelle raconte mille ans d'histoire.",
+      ar: "العاصمة الروحية والحرفية للمغرب، تحتضن فاس أقدم مدينة عتيقة في العالم. متاهة عمرها قرون من المدابغ والمدارس والورش، حيث يحكي كل زقاق ألف عام من التاريخ.",
+    },
+    highlights: [
+      { fr: "Médina de Fès el-Bali", ar: "مدينة فاس البالي" },
+      { fr: "Tanneries Chouara", ar: "مدابغ الشوارة" },
+      { fr: "Médersa Bou Inania", ar: "مدرسة بوعنانية" },
+      { fr: "Bab Bou Jeloud", ar: "باب بوجلود" },
+    ],
+    bestTime: { fr: "Mars – Mai & Oct – Nov", ar: "مارس–ماي وأكتوبر–نونبر" },
+    idealFor: { fr: "Histoire & artisanat", ar: "التاريخ والحرف" },
+    duration: { fr: "2 – 3 jours", ar: "2 – 3 أيام" },
+    language: { fr: "Arabe, Français", ar: "العربية، الفرنسية" },
+  },
+  essaouira: {
+    intro: {
+      fr: "Face à l'Atlantique, Essaouira séduit par ses remparts battus par les vents, son port bleu animé et sa médina bohème. Un havre de musique gnaoua, de fruits de mer et de sports de glisse.",
+      ar: "في مواجهة الأطلسي، تأسر الصويرة بأسوارها التي تعصف بها الرياح، ومينائها الأزرق النابض، ومدينتها البوهيمية. ملاذ لموسيقى كناوة والمأكولات البحرية ورياضات التزلّج على الماء.",
+    },
+    highlights: [
+      { fr: "Remparts & Skala", ar: "الأسوار والسقالة" },
+      { fr: "Port de pêche", ar: "ميناء الصيد" },
+      { fr: "Plage & kitesurf", ar: "الشاطئ والكايت سيرف" },
+      { fr: "Médina bohème", ar: "المدينة البوهيمية" },
+    ],
+    bestTime: { fr: "Avr – Nov", ar: "أبريل – نونبر" },
+    idealFor: { fr: "Océan & musique", ar: "المحيط والموسيقى" },
+    duration: { fr: "2 – 3 jours", ar: "2 – 3 أيام" },
+    language: { fr: "Arabe, Français", ar: "العربية، الفرنسية" },
+  },
+  atlas: {
+    intro: {
+      fr: "Toit du Maroc, le Haut Atlas déroule vallées émeraude, villages berbères perchés et sommets enneigés. Terre de trekking et d'hospitalité, dominée par le Toubkal, plus haut pic d'Afrique du Nord.",
+      ar: "سقف المغرب، يمدّ الأطلس الكبير وديانه الزمرّدية وقراه الأمازيغية المعلّقة وقممه المكسوّة بالثلج. أرض للجبال والضيافة، يتوّجها توبقال، أعلى قمّة في شمال إفريقيا.",
+    },
+    highlights: [
+      { fr: "Vallée de l'Ourika", ar: "وادي أوريكا" },
+      { fr: "Villages berbères", ar: "القرى الأمازيغية" },
+      { fr: "Ascension du Toubkal", ar: "تسلّق توبقال" },
+      { fr: "Cols panoramiques", ar: "الممرّات البانورامية" },
+    ],
+    bestTime: { fr: "Avr – Oct", ar: "أبريل – أكتوبر" },
+    idealFor: { fr: "Trek & nature", ar: "المشي الجبلي والطبيعة" },
+    duration: { fr: "2 – 4 jours", ar: "2 – 4 أيام" },
+    language: { fr: "Amazigh, Arabe", ar: "الأمازيغية، العربية" },
+  },
+  turkey: {
+    intro: {
+      fr: "À cheval entre l'Europe et l'Asie, la Turquie fascine par la richesse d'Istanbul, les paysages lunaires de Cappadoce et ses côtes turquoise. Un carrefour de civilisations où mosquées, bazars et montgolfières composent des souvenirs impérissables.",
+      ar: "ممتدّة بين أوروبا وآسيا، تبهر تركيا بثراء إسطنبول ومناظر كابادوكيا القمرية وسواحلها الفيروزية. ملتقى حضارات تصنع فيه المساجد والأسواق والمناطيد ذكريات لا تُنسى.",
+    },
+    highlights: [
+      { fr: "Sainte-Sophie & Mosquée Bleue", ar: "آيا صوفيا والمسجد الأزرق" },
+      { fr: "Grand Bazar d'Istanbul", ar: "البازار الكبير بإسطنبول" },
+      { fr: "Montgolfières de Cappadoce", ar: "مناطيد كابادوكيا" },
+      { fr: "Croisière sur le Bosphore", ar: "رحلة بحرية في البوسفور" },
+    ],
+    bestTime: { fr: "Avr – Juin & Sep – Oct", ar: "أبريل–يونيو وشتنبر–أكتوبر" },
+    idealFor: { fr: "Culture & panoramas", ar: "الثقافة والمناظر" },
+    duration: { fr: "5 – 7 jours", ar: "5 – 7 أيام" },
+    language: { fr: "Turc", ar: "التركية" },
+  },
+  bali: {
+    intro: {
+      fr: "Île des dieux, Bali envoûte par ses rizières en terrasses, ses temples suspendus et ses plages de rêve. Entre spiritualité, bien-être et couchers de soleil sur l'océan, c'est une invitation à la sérénité.",
+      ar: "جزيرة الآلهة، تسحر بالي بحقول أرزّها المدرّجة ومعابدها المعلّقة وشواطئها الساحرة. بين الروحانية والاستجمام وغروب الشمس على المحيط، إنها دعوة إلى الصفاء.",
+    },
+    highlights: [
+      { fr: "Rizières de Tegallalang", ar: "حقول أرزّ تيغالالانغ" },
+      { fr: "Temple d'Uluwatu", ar: "معبد أولواتو" },
+      { fr: "Ubud & ses artisans", ar: "أوبود وحرفيّوها" },
+      { fr: "Plages de Seminyak", ar: "شواطئ سيمينياك" },
+    ],
+    bestTime: { fr: "Avr – Oct", ar: "أبريل – أكتوبر" },
+    idealFor: { fr: "Nature & bien-être", ar: "الطبيعة والاستجمام" },
+    duration: { fr: "7 – 10 jours", ar: "7 – 10 أيام" },
+    language: { fr: "Indonésien", ar: "الإندونيسية" },
+  },
+  zanzibar: {
+    intro: {
+      fr: "Archipel aux mille épices, Zanzibar marie plages de sable blanc, eaux turquoise et ruelles chargées d'histoire de Stone Town. Un paradis balnéaire au cœur de l'océan Indien.",
+      ar: "أرخبيل التوابل، تجمع زنجبار بين شواطئ الرمال البيضاء والمياه الفيروزية وأزقّة ستون تاون المفعمة بالتاريخ. جنّة شاطئية في قلب المحيط الهندي.",
+    },
+    highlights: [
+      { fr: "Stone Town", ar: "ستون تاون" },
+      { fr: "Plages de Nungwi", ar: "شواطئ نونغوي" },
+      { fr: "Île aux épices", ar: "جزيرة التوابل" },
+      { fr: "Bancs de sable turquoise", ar: "الضفاف الرملية الفيروزية" },
+    ],
+    bestTime: { fr: "Juin – Oct", ar: "يونيو – أكتوبر" },
+    idealFor: { fr: "Plage & détente", ar: "الشاطئ والاسترخاء" },
+    duration: { fr: "5 – 7 jours", ar: "5 – 7 أيام" },
+    language: { fr: "Swahili", ar: "السواحيلية" },
+  },
+  saudi: {
+    intro: {
+      fr: "Terre sainte de l'islam, l'Arabie Saoudite accueille chaque année des millions de fidèles à La Mecque et Médine. Tamesna Voyages organise votre Hajj et votre Omra dans le respect des rites, avec un accompagnement attentif à chaque étape.",
+      ar: "الأرض المقدّسة للإسلام، تستقبل المملكة العربية السعودية كل عام ملايين المؤمنين في مكة المكرمة والمدينة المنوّرة. تنظّم تامسنا فوياج حجّك وعمرتك وفق المناسك، مع مرافقة دقيقة في كل خطوة.",
+    },
+    highlights: [
+      { fr: "La Kaaba & Masjid al-Haram", ar: "الكعبة والمسجد الحرام" },
+      { fr: "Mosquée du Prophète (Médine)", ar: "المسجد النبوي (المدينة)" },
+      { fr: "Accompagnement du pèlerinage", ar: "مرافقة المناسك" },
+      { fr: "Formules tous budgets", ar: "صيغ لكل الميزانيات" },
+    ],
+    bestTime: { fr: "Selon le calendrier du Hajj & de la Omra", ar: "حسب موسم الحج والعمرة" },
+    idealFor: { fr: "Hajj & Omra", ar: "الحج والعمرة" },
+    duration: { fr: "10 – 15 jours", ar: "10 – 15 يومًا" },
+    language: { fr: "Arabe", ar: "العربية" },
+  },
+  maldives: {
+    intro: {
+      fr: "Écrin de l'océan Indien, les Maldives déploient lagons cristallins, villas sur pilotis et récifs coralliens foisonnants. La destination absolue pour une lune de miel ou une parenthèse de luxe absolu.",
+      ar: "جوهرة المحيط الهندي، تنشر المالديف بحيراتها الصافية وفيلاتها فوق الماء وشعابها المرجانية الغنيّة. الوجهة المثالية لشهر عسل أو استراحة فخامة مطلقة.",
+    },
+    highlights: [
+      { fr: "Villas sur pilotis", ar: "فيلات فوق الماء" },
+      { fr: "Plongée & snorkeling", ar: "الغوص والغطس" },
+      { fr: "Récifs coralliens", ar: "الشعاب المرجانية" },
+      { fr: "Couchers de soleil en mer", ar: "غروب الشمس في البحر" },
+    ],
+    bestTime: { fr: "Nov – Avr", ar: "نونبر – أبريل" },
+    idealFor: { fr: "Lune de miel & luxe", ar: "شهر العسل والفخامة" },
+    duration: { fr: "5 – 7 jours", ar: "5 – 7 أيام" },
+    language: { fr: "Dhivehi, Anglais", ar: "الديفيهية، الإنجليزية" },
+  },
+  japan: {
+    intro: {
+      fr: "Entre tradition et ultra-modernité, le Japon fascine : temples de Kyoto, effervescence de Tokyo, mont Fuji et cerisiers en fleurs. Un voyage sensoriel où chaque détail est porté à la perfection.",
+      ar: "بين التقليد والحداثة الفائقة، تبهر اليابان: معابد كيوتو، صخب طوكيو، جبل فوجي وأزهار الكرز. رحلة حسّية يُتقَن فيها كل تفصيل إلى حدّ الكمال.",
+    },
+    highlights: [
+      { fr: "Temples de Kyoto", ar: "معابد كيوتو" },
+      { fr: "Tokyo & Shibuya", ar: "طوكيو وشيبويا" },
+      { fr: "Mont Fuji", ar: "جبل فوجي" },
+      { fr: "Cerisiers en fleurs", ar: "أزهار الكرز" },
+    ],
+    bestTime: { fr: "Mars – Mai & Oct – Nov", ar: "مارس–ماي وأكتوبر–نونبر" },
+    idealFor: { fr: "Culture & modernité", ar: "الثقافة والحداثة" },
+    duration: { fr: "8 – 12 jours", ar: "8 – 12 يومًا" },
+    language: { fr: "Japonais", ar: "اليابانية" },
+  },
+  safari: {
+    intro: {
+      fr: "Au cœur des savanes d'Afrique de l'Est, le safari offre des rencontres inoubliables avec la grande faune. Big Five, grande migration et nuits en lodge sous les étoiles : l'aventure à l'état pur.",
+      ar: "في قلب سافانا شرق إفريقيا، يقدّم السفاري لقاءات لا تُنسى مع الحياة البرّية. الحيوانات الخمسة الكبرى، الهجرة الكبرى وليالٍ في نُزُل تحت النجوم: المغامرة في أنقى صورها.",
+    },
+    highlights: [
+      { fr: "Les Big Five", ar: "الحيوانات الخمسة الكبرى" },
+      { fr: "La grande migration", ar: "الهجرة الكبرى" },
+      { fr: "Nuit en lodge", ar: "ليلة في نُزل" },
+      { fr: "Montgolfière au lever du jour", ar: "منطاد عند الفجر" },
+    ],
+    bestTime: { fr: "Juin – Oct", ar: "يونيو – أكتوبر" },
+    idealFor: { fr: "Faune & aventure", ar: "الحياة البرّية والمغامرة" },
+    duration: { fr: "6 – 8 jours", ar: "6 – 8 أيام" },
+    language: { fr: "Swahili, Anglais", ar: "السواحيلية، الإنجليزية" },
+  },
+  europe: {
+    intro: {
+      fr: "De Paris à Rome en passant par Barcelone, l'Europe conjugue patrimoine, art de vivre et escapades citadines. Des capitales chargées d'histoire aux terrasses ensoleillées, chaque ville est une nouvelle promesse.",
+      ar: "من باريس إلى روما مرورًا ببرشلونة، تجمع أوروبا بين التراث وفنّ العيش وعطل المدن. من العواصم المفعمة بالتاريخ إلى الشرفات المشمسة، كل مدينة وعد جديد.",
+    },
+    highlights: [
+      { fr: "Paris & la Seine", ar: "باريس ونهر السين" },
+      { fr: "Rome antique", ar: "روما القديمة" },
+      { fr: "Barcelone", ar: "برشلونة" },
+      { fr: "Escapades citadines", ar: "عطل المدن" },
+    ],
+    bestTime: { fr: "Avr – Juin & Sep – Oct", ar: "أبريل–يونيو وشتنبر–أكتوبر" },
+    idealFor: { fr: "City-breaks & culture", ar: "عطل المدن والثقافة" },
+    duration: { fr: "5 – 8 jours", ar: "5 – 8 أيام" },
+    language: { fr: "Multiple", ar: "متعدّدة" },
+  },
+};
+
+/** All destinations (Morocco + international) for lookups and static params. */
+export const allDestinations: Destination[] = [
+  ...destinations,
+  ...internationalDestinations,
+];
+
 export const getTour = (slug: string) => tours.find((x) => x.slug === slug);
 export const getDestination = (slug: string) =>
-  destinations.find((x) => x.slug === slug);
+  allDestinations.find((x) => x.slug === slug);
+export const getDestinationDetail = (id: string) => destinationDetails[id];
