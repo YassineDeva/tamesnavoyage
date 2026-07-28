@@ -35,7 +35,11 @@
     "bookNow": "Réserver",
     "explore": "Explorer",
     "learnMore": "En savoir plus",
-    "backTo": "Retour à"
+    "backTo": "Retour à",
+    "flightNotIncluded": "Vol non inclus",
+    "notIncluded": "Non inclus",
+    "yesIncluded": "Inclus",
+    "departures": "dates de départ"
   },
   "home": {
     "hero": {
@@ -159,32 +163,72 @@
     },
     "trust": {
       "items": {
-        "bestPrice": { "title": "Meilleur prix garanti", "desc": "Nous vous assurons toujours les meilleures offres." },
-        "support": { "title": "Assistance 24/7", "desc": "Nous sommes là pour vous aider à tout moment, où que vous soyez." },
-        "secure": { "title": "Réservations sécurisées", "desc": "Vos données et paiements sont protégés à 100 %." },
-        "handpicked": { "title": "Expériences triées sur le volet", "desc": "Circuits et hôtels sélectionnés pour des voyages inoubliables." }
+        "bestPrice": {
+          "title": "Meilleur prix garanti",
+          "desc": "Nous vous assurons toujours les meilleures offres."
+        },
+        "support": {
+          "title": "Assistance 24/7",
+          "desc": "Nous sommes là pour vous aider à tout moment, où que vous soyez."
+        },
+        "secure": {
+          "title": "Réservations sécurisées",
+          "desc": "Vos données et paiements sont protégés à 100 %."
+        },
+        "handpicked": {
+          "title": "Expériences triées sur le volet",
+          "desc": "Circuits et hôtels sélectionnés pour des voyages inoubliables."
+        }
       }
     },
     "destinations": {
       "title": "Destinations populaires",
       "viewAll": "Voir toutes les destinations",
       "fromLabel": "Dès",
-      "tags": { "bestseller": "Best-seller", "popular": "Populaire", "trending": "Tendance" },
+      "tags": {
+        "bestseller": "Best-seller",
+        "popular": "Populaire",
+        "trending": "Tendance"
+      },
       "items": {
-        "thailand": { "name": "Thaïlande", "place": "Phuket" },
-        "france": { "name": "France", "place": "Paris" },
-        "bali": { "name": "Bali, Indonésie", "place": "Ubud" },
-        "dubai": { "name": "Dubaï, EAU", "place": "Dubaï" }
+        "thailand": {
+          "name": "Thaïlande",
+          "place": "Phuket"
+        },
+        "france": {
+          "name": "France",
+          "place": "Paris"
+        },
+        "bali": {
+          "name": "Bali, Indonésie",
+          "place": "Ubud"
+        },
+        "dubai": {
+          "name": "Dubaï, EAU",
+          "place": "Dubaï"
+        }
       }
     },
     "why": {
       "titleLead": "Pourquoi choisir",
       "titleAccent": "Tamesna Voyages ?",
       "items": {
-        "choices": { "title": "Un choix immense", "desc": "Des milliers de vols, d'hôtels et de circuits partout dans le monde." },
-        "trusted": { "title": "La confiance des voyageurs", "desc": "Des millions de voyageurs heureux à travers le monde." },
-        "flexible": { "title": "Réservation simple et flexible", "desc": "Réservez en toute simplicité et ajustez vos plans si besoin." },
-        "deals": { "title": "Offres exclusives", "desc": "Accédez à des réductions et des offres spéciales." }
+        "choices": {
+          "title": "Un choix immense",
+          "desc": "Des milliers de vols, d'hôtels et de circuits partout dans le monde."
+        },
+        "trusted": {
+          "title": "La confiance des voyageurs",
+          "desc": "Des millions de voyageurs heureux à travers le monde."
+        },
+        "flexible": {
+          "title": "Réservation simple et flexible",
+          "desc": "Réservez en toute simplicité et ajustez vos plans si besoin."
+        },
+        "deals": {
+          "title": "Offres exclusives",
+          "desc": "Accédez à des réductions et des offres spéciales."
+        }
       },
       "card": {
         "kicker": "C'est parti !",
@@ -279,15 +323,19 @@
       "cta": "En savoir plus"
     },
     "tours": {
-      "metaTitle": "Circuits & voyages au Maroc — Tamesna Voyage",
-      "metaDesc": "Circuits privés sur-mesure : Grand Sud, villes impériales, Atlas, côte atlantique. Des voyages d'exception guidés par des experts locaux.",
+      "metaTitle": "Circuits & voyages organisés — Tamesna Voyage",
+      "metaDesc": "Circuits et séjours organisés au départ de Casablanca : Turquie, Égypte, Balkans, Italie, Chine, Royaume-Uni et Maroc. Dates, hôtels et tarifs 2026.",
       "eyebrow": "Nos circuits",
-      "title": "Des itinéraires taillés à la main",
-      "subtitle": "Chaque circuit est privatisable et modulable. Voyagez à votre rythme.",
+      "title": "Nos voyages organisés",
+      "subtitle": "Circuits guidés et séjours balnéaires, au départ de Casablanca. Dates, hôtels et tarifs détaillés pour chaque programme.",
       "breadcrumb": "Circuits",
       "resultsLabel": "circuits",
       "all": "Tous",
-      "sortLabel": "Trier"
+      "sortLabel": "Trier",
+      "kindLabel": "Type",
+      "kindCircuit": "Circuits",
+      "kindSejour": "Séjours",
+      "empty": "Aucun voyage ne correspond à ces filtres."
     },
     "tourDetail": {
       "overview": "Aperçu",
@@ -309,7 +357,31 @@
         "i3": "Transport privatisé et transferts",
         "i4": "Petits-déjeuners et dîners typiques"
       },
-      "breadcrumb": "Circuits"
+      "breadcrumb": "Circuits",
+      "hotels": "Hôtels prévus ou similaires",
+      "departures": "Dates de départ",
+      "pricing": "Tarifs par personne",
+      "pricingNote": "Prix par personne en dirhams, sujets à variation du taux de change dans le mois précédant le départ.",
+      "notIncluded": "Ce qui n'est pas inclus",
+      "options": "Excursions en option",
+      "onRequest": "Sur demande",
+      "flights": "Itinéraire de vol",
+      "flight": "Vol",
+      "departureCity": "Départ de",
+      "visa": "Visa & formalités",
+      "flightNotice": "Le vol n'est pas inclus dans ce prix. Nous pouvons le réserver pour vous — demandez un devis complet.",
+      "terms": "Conditions de réservation",
+      "payment": "Modalités de paiement",
+      "paymentList": {
+        "p1": "50 % à la confirmation de la réservation",
+        "p2": "Le solde au plus tard 30 jours avant le départ"
+      },
+      "cancellation": "Conditions d'annulation",
+      "cancellationList": {
+        "c1": "De 30 à 15 jours avant le départ : 50 % de frais",
+        "c2": "De 14 à 8 jours avant le départ : 70 % de frais",
+        "c3": "À moins de 7 jours du départ ou no-show : 100 % de frais"
+      }
     },
     "about": {
       "metaTitle": "À propos — Tamesna Voyage, créateur de voyages au Maroc",
@@ -411,11 +483,35 @@
     "required": "Champ requis"
   },
   "destinationsData": {
-    "marrakech": { "name": "Marrakech", "region": "La ville rouge", "blurb": "Souks, palais et jardins secrets au pied de l'Atlas." },
-    "sahara": { "name": "Sahara – Merzouga", "region": "Les dunes d'or", "blurb": "Nuit sous les étoiles au cœur de l'Erg Chebbi." },
-    "chefchaouen": { "name": "Chefchaouen", "region": "La perle bleue", "blurb": "Ruelles indigo et douceur de vivre du Rif." },
-    "fes": { "name": "Fès", "region": "La cité impériale", "blurb": "Mille ans d'artisanat dans la plus vieille médina du monde." },
-    "essaouira": { "name": "Essaouira", "region": "L'alizé atlantique", "blurb": "Remparts, embruns et musique gnaoua." },
-    "atlas": { "name": "Haut Atlas", "region": "Les cimes berbères", "blurb": "Villages perchés et vallées émeraude." }
+    "marrakech": {
+      "name": "Marrakech",
+      "region": "La ville rouge",
+      "blurb": "Souks, palais et jardins secrets au pied de l'Atlas."
+    },
+    "sahara": {
+      "name": "Sahara – Merzouga",
+      "region": "Les dunes d'or",
+      "blurb": "Nuit sous les étoiles au cœur de l'Erg Chebbi."
+    },
+    "chefchaouen": {
+      "name": "Chefchaouen",
+      "region": "La perle bleue",
+      "blurb": "Ruelles indigo et douceur de vivre du Rif."
+    },
+    "fes": {
+      "name": "Fès",
+      "region": "La cité impériale",
+      "blurb": "Mille ans d'artisanat dans la plus vieille médina du monde."
+    },
+    "essaouira": {
+      "name": "Essaouira",
+      "region": "L'alizé atlantique",
+      "blurb": "Remparts, embruns et musique gnaoua."
+    },
+    "atlas": {
+      "name": "Haut Atlas",
+      "region": "Les cimes berbères",
+      "blurb": "Villages perchés et vallées émeraude."
+    }
   }
 }

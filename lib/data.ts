@@ -1,4 +1,5 @@
 import type { Locale } from "@/i18n/routing";
+import { voyages2026 } from "./voyages-2026";
 
 /** A bilingual string. */
 export type L = { fr: string; ar: string };
@@ -15,6 +16,14 @@ export type Destination = {
   span?: "tall" | "wide" | "normal";
 };
 
+/** Guided multi-city touring vs. resort/city stay with free days. */
+export type TourKind = "circuit" | "sejour";
+
+export type PriceRow = { label: L; mad: number };
+export type HotelRow = { city: L; name: string; nights: number };
+export type FlightRow = { route: L; time: string };
+export type OptionRow = { label: L; mad: number };
+
 export type Tour = {
   id: string;
   slug: string;
@@ -23,13 +32,33 @@ export type Tour = {
   region: L;
   days: number;
   priceMad: number;
-  rating: number;
-  reviews: number;
+  /** Only set where real traveller reviews exist — never invented. */
+  rating?: number;
+  reviews?: number;
   image: string;
   level: L;
   best: L;
   highlights: L[];
   itinerary: { day: number; title: L; detail: L }[];
+
+  /* --- Catalogue products (brochure-backed) ------------------------------ */
+  /** Filter bucket on /tours. Falls back to `region` when absent. */
+  zone?: L;
+  kind?: TourKind;
+  nights?: number;
+  /** `false` renders an explicit “flight not included” warning. */
+  flightIncluded?: boolean;
+  airline?: string;
+  departureCity?: L;
+  /** Fixed departure windows, e.g. "25/07 → 01/08/2026". */
+  departures?: L[];
+  hotels?: HotelRow[];
+  pricing?: PriceRow[];
+  included?: L[];
+  notIncluded?: L[];
+  options?: OptionRow[];
+  flights?: FlightRow[];
+  visa?: L;
 };
 
 export type Experience = {
@@ -131,167 +160,11 @@ export const destinations: Destination[] = [
 /* -------------------------------------------------------------------------- */
 /*  Tours / Circuits                                                          */
 /* -------------------------------------------------------------------------- */
-export const tours: Tour[] = [
-  {
-    id: "grand-sud",
-    slug: "grand-sud-marocain",
-    title: { fr: "Grand Sud marocain", ar: "الجنوب المغربي الكبير" },
-    summary: {
-      fr: "De Marrakech aux dunes de Merzouga par les kasbahs et l'Atlas.",
-      ar: "من مراكش إلى كثبان مرزوكة عبر القصبات والأطلس.",
-    },
-    region: { fr: "Atlas & Sahara", ar: "الأطلس والصحراء" },
-    days: 7,
-    priceMad: 14900,
-    rating: 4.9,
-    reviews: 128,
-    image: "/media/tours/grand-sud.jpg",
-    level: { fr: "Confort", ar: "مريح" },
-    best: { fr: "Oct – Avr", ar: "أكتوبر – أبريل" },
-    highlights: [
-      { fr: "Nuit en bivouac de luxe à l'Erg Chebbi", ar: "ليلة في مخيّم فاخر بعرق الشبي" },
-      { fr: "Route des mille kasbahs", ar: "طريق ألف قصبة" },
-      { fr: "Aït-Ben-Haddou, classé UNESCO", ar: "آيت بن حدّو، مصنّف يونسكو" },
-    ],
-    itinerary: [
-      { day: 1, title: { fr: "Marrakech", ar: "مراكش" }, detail: { fr: "Accueil et dîner dans un riad de la médina.", ar: "استقبال وعشاء في رياض بالمدينة القديمة." } },
-      { day: 2, title: { fr: "Aït-Ben-Haddou", ar: "آيت بن حدّو" }, detail: { fr: "Col du Tichka et ksar millénaire.", ar: "ممر تيشكا والقصر العتيق." } },
-      { day: 3, title: { fr: "Vallée du Dadès", ar: "وادي دادس" }, detail: { fr: "Gorges spectaculaires et villages berbères.", ar: "مضائق مذهلة وقرى أمازيغية." } },
-      { day: 4, title: { fr: "Merzouga", ar: "مرزوكة" }, detail: { fr: "Dromadaires au coucher du soleil, nuit sous les étoiles.", ar: "جِمال عند الغروب وليلة تحت النجوم." } },
-    ],
-  },
-  {
-    id: "villes-imperiales",
-    slug: "villes-imperiales",
-    title: { fr: "Les villes impériales", ar: "المدن الإمبراطورية" },
-    summary: {
-      fr: "Fès, Meknès, Rabat et Marrakech : mille ans d'histoire.",
-      ar: "فاس ومكناس والرباط ومراكش: ألف عام من التاريخ.",
-    },
-    region: { fr: "Nord & Centre", ar: "الشمال والوسط" },
-    days: 8,
-    priceMad: 16400,
-    rating: 4.8,
-    reviews: 96,
-    image: "/media/tours/villes-imperiales.jpg",
-    level: { fr: "Culture", ar: "ثقافي" },
-    best: { fr: "Mar – Juin", ar: "مارس – يونيو" },
-    highlights: [
-      { fr: "Médina de Fès avec un artisan tanneur", ar: "مدينة فاس مع حرفي دبّاغ" },
-      { fr: "Volubilis, cité romaine", ar: "وليلي، المدينة الرومانية" },
-      { fr: "Ateliers de zellige et de cuir", ar: "ورشات الزليج والجلد" },
-    ],
-    itinerary: [
-      { day: 1, title: { fr: "Rabat", ar: "الرباط" }, detail: { fr: "Tour Hassan et kasbah des Oudayas.", ar: "صومعة حسّان وقصبة الأوداية." } },
-      { day: 2, title: { fr: "Meknès & Volubilis", ar: "مكناس ووليلي" }, detail: { fr: "Bab Mansour et mosaïques romaines.", ar: "باب منصور والفسيفساء الرومانية." } },
-      { day: 3, title: { fr: "Fès", ar: "فاس" }, detail: { fr: "Deux jours dans la médina classée.", ar: "يومان في المدينة العتيقة المصنّفة." } },
-    ],
-  },
-  {
-    id: "atlantique-essaouira",
-    slug: "cote-atlantique",
-    title: { fr: "Échappée atlantique", ar: "هروب أطلسي" },
-    summary: {
-      fr: "Essaouira, plages sauvages et arganeraies vers Agadir.",
-      ar: "الصويرة وشواطئ برّية وغابات الأركان نحو أكادير.",
-    },
-    region: { fr: "Côte Atlantique", ar: "الساحل الأطلسي" },
-    days: 5,
-    priceMad: 9800,
-    rating: 4.7,
-    reviews: 74,
-    image: "/media/tours/atlantique.jpg",
-    level: { fr: "Détente", ar: "استرخاء" },
-    best: { fr: "Avr – Sep", ar: "أبريل – سبتمبر" },
-    highlights: [
-      { fr: "Remparts d'Essaouira au coucher du soleil", ar: "أسوار الصويرة عند الغروب" },
-      { fr: "Coopérative d'huile d'argan", ar: "تعاونية زيت الأركان" },
-      { fr: "Balade à cheval sur la plage", ar: "نزهة على الخيل على الشاطئ" },
-    ],
-    itinerary: [
-      { day: 1, title: { fr: "Essaouira", ar: "الصويرة" }, detail: { fr: "Médina, port et remparts.", ar: "المدينة والميناء والأسوار." } },
-      { day: 2, title: { fr: "Arganeraie", ar: "غابة الأركان" }, detail: { fr: "Rencontre avec une coopérative de femmes.", ar: "لقاء بتعاونية نسائية." } },
-    ],
-  },
-  {
-    id: "trek-toubkal",
-    slug: "trek-toubkal",
-    title: { fr: "Ascension du Toubkal", ar: "تسلّق توبقال" },
-    summary: {
-      fr: "Le toit de l'Afrique du Nord, guides berbères et refuges.",
-      ar: "سقف شمال إفريقيا، مرشدون أمازيغ وملاجئ جبلية.",
-    },
-    region: { fr: "Haut Atlas", ar: "الأطلس الكبير" },
-    days: 4,
-    priceMad: 7600,
-    rating: 4.9,
-    reviews: 61,
-    image: "/media/tours/toubkal.jpg",
-    level: { fr: "Sportif", ar: "رياضي" },
-    best: { fr: "Mai – Oct", ar: "ماي – أكتوبر" },
-    highlights: [
-      { fr: "Sommet à 4 167 m", ar: "قمّة على 4167 م" },
-      { fr: "Villages d'Imlil et d'Aroumd", ar: "قريتا إمليل وأرومد" },
-      { fr: "Nuit en refuge de montagne", ar: "ليلة في ملجأ جبلي" },
-    ],
-    itinerary: [
-      { day: 1, title: { fr: "Imlil", ar: "إمليل" }, detail: { fr: "Marche d'approche vers le refuge.", ar: "مسير نحو الملجأ." } },
-      { day: 2, title: { fr: "Sommet", ar: "القمّة" }, detail: { fr: "Ascension au lever du jour.", ar: "الصعود عند الفجر." } },
-    ],
-  },
-  {
-    id: "chefchaouen-rif",
-    slug: "chefchaouen-rif",
-    title: { fr: "Bleu du Rif", ar: "أزرق الريف" },
-    summary: {
-      fr: "Chefchaouen, cascades d'Akchour et villages de montagne.",
-      ar: "شفشاون وشلالات أقشور وقرى الجبل.",
-    },
-    region: { fr: "Rif", ar: "الريف" },
-    days: 4,
-    priceMad: 8200,
-    rating: 4.8,
-    reviews: 53,
-    image: "/media/tours/chefchaouen.jpg",
-    level: { fr: "Nature", ar: "طبيعة" },
-    best: { fr: "Avr – Nov", ar: "أبريل – نونبر" },
-    highlights: [
-      { fr: "Médina bleue au lever du jour", ar: "المدينة الزرقاء عند الفجر" },
-      { fr: "Randonnée aux cascades d'Akchour", ar: "نزهة إلى شلالات أقشور" },
-      { fr: "Déjeuner chez l'habitant", ar: "غداء عند السكان" },
-    ],
-    itinerary: [
-      { day: 1, title: { fr: "Chefchaouen", ar: "شفشاون" }, detail: { fr: "Flânerie dans la médina indigo.", ar: "تجوّل في المدينة النيليّة." } },
-      { day: 2, title: { fr: "Akchour", ar: "أقشور" }, detail: { fr: "Randonnée au pont de Dieu.", ar: "نزهة إلى جسر الله." } },
-    ],
-  },
-  {
-    id: "luxe-riads",
-    slug: "escapade-riads-luxe",
-    title: { fr: "Riads & bien-être", ar: "رياضات ورفاهية" },
-    summary: {
-      fr: "Marrakech en riads d'exception, hammams et spas.",
-      ar: "مراكش في رياضات فاخرة، حمّامات ومنتجعات.",
-    },
-    region: { fr: "Marrakech", ar: "مراكش" },
-    days: 4,
-    priceMad: 12600,
-    rating: 5.0,
-    reviews: 88,
-    image: "/media/tours/riads-luxe.jpg",
-    level: { fr: "Prestige", ar: "فاخر" },
-    best: { fr: "Toute l'année", ar: "طوال السنة" },
-    highlights: [
-      { fr: "Riad privatisé avec majordome", ar: "رياض خاص مع خادم" },
-      { fr: "Rituel hammam et massage à l'argan", ar: "طقس حمّام وتدليك بالأركان" },
-      { fr: "Dîner gastronomique sur les toits", ar: "عشاء راقٍ على الأسطح" },
-    ],
-    itinerary: [
-      { day: 1, title: { fr: "Arrivée", ar: "الوصول" }, detail: { fr: "Installation et thé à la menthe.", ar: "الاستقرار وشاي بالنعناع." } },
-      { day: 2, title: { fr: "Bien-être", ar: "العافية" }, detail: { fr: "Journée spa et jardins secrets.", ar: "يوم منتجع وحدائق سرّية." } },
-    ],
-  },
-];
+/**
+ * Full catalogue — the 2026 brochure programmes (Turkey, Egypt, Balkans,
+ * China, UK, Italy). Kept in `voyages-2026.ts` so this module stays readable.
+ */
+export const tours: Tour[] = voyages2026;
 
 /* -------------------------------------------------------------------------- */
 /*  Experiences                                                              */

@@ -44,8 +44,8 @@ export default async function ToursPage({ params }: Props) {
         title={t("title")}
         subtitle={t("subtitle")}
         breadcrumb={t("breadcrumb")}
-        image="/media/tours/grand-sud.jpg"
-        imageLabel="Caravan crossing the dunes"
+        image="/media/hero-santorini.webp"
+        imageLabel="Mediterranean coastline at golden hour"
       />
       <ToursExplorer />
       <div className="pb-24 sm:pb-28">
