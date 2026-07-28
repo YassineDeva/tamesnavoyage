@@ -162,6 +162,12 @@
       },
       "submit": "Rechercher"
     },
+    "tours": {
+      "eyebrow": "Nos voyages organisés",
+      "title": "Des départs garantis, tout compris",
+      "subtitle": "Circuits guidés et séjours au départ de Casablanca. Dates fixes, hôtels sélectionnés et tarifs annoncés — le programme complet est téléchargeable.",
+      "viewAll": "Voir les {count} circuits"
+    },
     "trust": {
       "items": {
         "bestPrice": {
