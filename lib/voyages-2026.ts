@@ -29,6 +29,7 @@ export const voyages2026: Tour[] = [
   {
     id: "istanbul-2026",
     slug: "istanbul-ete-2026",
+    pdf: "/voyages/istanbul-ete-2026.pdf",
     zone: TURQUIE,
     kind: "sejour",
     title: { fr: "Istanbul, la ville aux deux continents", ar: "إسطنبول، مدينة القارّتين" },
@@ -116,6 +117,7 @@ export const voyages2026: Tour[] = [
   {
     id: "istanbul-antalya-2026",
     slug: "istanbul-antalya-ete-2026",
+    pdf: "/voyages/istanbul-antalya-ete-2026.pdf",
     zone: TURQUIE,
     kind: "sejour",
     title: { fr: "Istanbul & Antalya", ar: "إسطنبول وأنطاليا" },
@@ -203,6 +205,7 @@ export const voyages2026: Tour[] = [
   {
     id: "istanbul-marmaris-bodrum-2026",
     slug: "istanbul-marmaris-bodrum-ete-2026",
+    pdf: "/voyages/istanbul-marmaris-bodrum-ete-2026.pdf",
     zone: TURQUIE,
     kind: "sejour",
     title: { fr: "Istanbul, Marmaris & Bodrum", ar: "إسطنبول ومرماريس وبودروم" },
@@ -286,6 +289,7 @@ export const voyages2026: Tour[] = [
   {
     id: "turquie-anatolie",
     slug: "turquie-anatolie",
+    pdf: "/voyages/turquie-anatolie.pdf",
     zone: TURQUIE,
     kind: "circuit",
     title: { fr: "Anatolie — la grande traversée", ar: "الأناضول — العبور الكبير" },
@@ -373,6 +377,7 @@ export const voyages2026: Tour[] = [
   {
     id: "egypte-2026",
     slug: "egypte-nil-hurghada",
+    pdf: "/voyages/egypte-nil-hurghada.pdf",
     zone: EGYPTE,
     kind: "circuit",
     title: { fr: "Égypte — du Caire au Nil, puis Hurghada", ar: "مصر — من القاهرة إلى النيل، ثم الغردقة" },
@@ -457,6 +462,7 @@ export const voyages2026: Tour[] = [
   {
     id: "grand-tour-balkans",
     slug: "grand-tour-balkans",
+    pdf: "/voyages/grand-tour-balkans.pdf",
     zone: BALKANS,
     kind: "circuit",
     title: { fr: "Grand Tour des Balkans", ar: "الجولة الكبرى في البلقان" },
@@ -546,6 +552,7 @@ export const voyages2026: Tour[] = [
   {
     id: "chine-2026",
     slug: "chine-grand-tour",
+    pdf: "/voyages/chine-grand-tour.pdf",
     zone: CHINE,
     kind: "circuit",
     title: { fr: "Chine — Pékin, Xi'an, Guilin & Shanghai", ar: "الصين — بكين وشيان وغويلين وشنغهاي" },
@@ -634,6 +641,7 @@ export const voyages2026: Tour[] = [
   {
     id: "angleterre-ecosse",
     slug: "angleterre-ecosse",
+    pdf: "/voyages/angleterre-ecosse.pdf",
     zone: ROYAUME_UNI,
     kind: "circuit",
     title: { fr: "Angleterre & Écosse", ar: "إنجلترا واسكتلندا" },
@@ -710,6 +718,7 @@ export const voyages2026: Tour[] = [
   {
     id: "italie-trio",
     slug: "italie-trio-italien",
+    pdf: "/voyages/italie-trio-italien.pdf",
     zone: ITALIE,
     kind: "circuit",
     title: { fr: "Le Trio Italien — Venise, Florence & Rome", ar: "الثلاثي الإيطالي — البندقية وفلورنسا وروما" },
@@ -779,6 +788,7 @@ export const voyages2026: Tour[] = [
   {
     id: "italie-bella",
     slug: "italie-bella-italia",
+    pdf: "/voyages/italie-bella-italia.pdf",
     zone: ITALIE,
     kind: "circuit",
     title: { fr: "La Bella Italia — Milan, Venise, Florence & Rome", ar: "لا بيلا إيطاليا — ميلانو والبندقية وفلورنسا وروما" },
@@ -853,6 +863,7 @@ export const voyages2026: Tour[] = [
   {
     id: "italie-tresors",
     slug: "italie-tresors-d-italie",
+    pdf: "/voyages/italie-tresors-d-italie.pdf",
     zone: ITALIE,
     kind: "circuit",
     title: { fr: "Trésors d'Italie — Naples, Rome, Florence & Venise", ar: "كنوز إيطاليا — نابولي وروما وفلورنسا والبندقية" },

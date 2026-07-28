@@ -39,7 +39,8 @@
     "flightNotIncluded": "Vol non inclus",
     "notIncluded": "Non inclus",
     "yesIncluded": "Inclus",
-    "departures": "dates de départ"
+    "departures": "dates de départ",
+    "pdfProgram": "Programme PDF"
   },
   "home": {
     "hero": {
@@ -381,7 +382,8 @@
         "c1": "De 30 à 15 jours avant le départ : 50 % de frais",
         "c2": "De 14 à 8 jours avant le départ : 70 % de frais",
         "c3": "À moins de 7 jours du départ ou no-show : 100 % de frais"
-      }
+      },
+      "downloadPdf": "Télécharger le programme (PDF)"
     },
     "about": {
       "metaTitle": "À propos — Tamesna Voyage, créateur de voyages au Maroc",

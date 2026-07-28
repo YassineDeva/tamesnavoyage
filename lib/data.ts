@@ -59,6 +59,8 @@ export type Tour = {
   options?: OptionRow[];
   flights?: FlightRow[];
   visa?: L;
+  /** Public path to the brochure PDF, e.g. "/voyages/turquie-anatolie.pdf". */
+  pdf?: string;
 };
 
 export type Experience = {

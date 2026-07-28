@@ -1,5 +1,12 @@
 import { useLocale, useTranslations } from "next-intl";
-import { Clock, MapPin, ArrowUpRight, PlaneTakeoff, CalendarRange } from "lucide-react";
+import {
+  Clock,
+  MapPin,
+  ArrowUpRight,
+  PlaneTakeoff,
+  CalendarRange,
+  FileDown,
+} from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Media } from "@/components/ui/media";
 import { StarRating } from "@/components/ui/star-rating";
@@ -7,23 +14,35 @@ import { type Tour, t as tr } from "@/lib/data";
 import type { Locale } from "@/i18n/routing";
 import { formatPrice, cn } from "@/lib/utils";
 
-/** Premium circuit card for the listing + related grids. */
+/**
+ * Premium circuit card for the listing + related grids.
+ *
+ * The whole card links to the detail page via a stretched overlay rather than
+ * a wrapping <Link>, so the brochure download can sit inside it without
+ * nesting one interactive element in another.
+ */
 export function TourCard({ tour, className }: { tour: Tour; className?: string }) {
   const locale = useLocale() as Locale;
   const tc = useTranslations("common");
+  const title = tr(tour.title, locale);
 
   return (
-    <Link
-      href={`/tours/${tour.slug}`}
+    <article
       className={cn(
-        "group flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-surface-200 bg-white shadow-[var(--shadow-soft)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-card)] focus-ring",
+        "group relative flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-surface-200 bg-white shadow-[var(--shadow-soft)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-card)]",
         className,
       )}
     >
+      <Link
+        href={`/tours/${tour.slug}`}
+        aria-label={title}
+        className="absolute inset-0 z-10 rounded-[1.75rem] focus-ring"
+      />
+
       <div className="relative aspect-[4/3] overflow-hidden">
         <Media
           src={tour.image}
-          alt={tr(tour.title, locale)}
+          alt={title}
           label={tour.id}
           rounded={false}
           sizes="(max-width: 768px) 100vw, 33vw"
@@ -50,9 +69,7 @@ export function TourCard({ tour, className }: { tour: Tour; className?: string }
           <MapPin className="h-3.5 w-3.5" />
           {tr(tour.region, locale)}
         </div>
-        <h3 className="mt-2 text-xl font-bold text-navy-700">
-          {tr(tour.title, locale)}
-        </h3>
+        <h3 className="mt-2 text-xl font-bold text-navy-700">{title}</h3>
         <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-500">
           {tr(tour.summary, locale)}
         </p>
@@ -88,7 +105,18 @@ export function TourCard({ tour, className }: { tour: Tour; className?: string }
             <ArrowUpRight className="h-4 w-4 rtl:rotate-90" />
           </span>
         </div>
+
+        {tour.pdf && (
+          <a
+            href={tour.pdf}
+            download={`Tamesna-Voyages-${tour.slug}.pdf`}
+            className="relative z-20 mt-4 inline-flex items-center justify-center gap-2 rounded-full border border-azure-200 bg-azure-50 px-4 py-2.5 text-xs font-semibold text-azure-700 transition-colors hover:border-azure-400 hover:bg-azure-100 focus-ring"
+          >
+            <FileDown className="h-4 w-4 shrink-0" />
+            {tc("pdfProgram")}
+          </a>
+        )}
       </div>
-    </Link>
+    </article>
   );
 }

@@ -13,6 +13,7 @@ import {
   PlaneTakeoff,
   Ticket,
   FileText,
+  FileDown,
   Moon,
 } from "lucide-react";
 import { buildMetadata, JsonLd, SITE_URL, BRAND } from "@/lib/seo";
@@ -437,6 +438,17 @@ export default async function TourDetailPage({ params }: Props) {
                   </Row>
                 )}
               </dl>
+
+              {tour.pdf && (
+                <a
+                  href={tour.pdf}
+                  download={`Tamesna-Voyages-${tour.slug}.pdf`}
+                  className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full border border-azure-200 bg-azure-50 px-5 py-3 text-sm font-semibold text-azure-700 transition-colors hover:border-azure-400 hover:bg-azure-100 focus-ring"
+                >
+                  <FileDown className="h-4 w-4 shrink-0" />
+                  {t("downloadPdf")}
+                </a>
+              )}
 
               <h3 className="mt-5 text-lg font-medium text-ink-900">
                 {t("bookTitle")}
