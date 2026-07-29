@@ -16,21 +16,25 @@ import type { L } from "./data";
 export type DayImage = { src: string; alt: L };
 
 const bank = {
+  "adrasan-bay": {
+    src: "https://images.unsplash.com/photo-1660125383647-71bd7986faa0?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Baie d’Adrasan", ar: "خليج أدراسان" },
+  },
   "adriatic-road": {
     src: "https://images.unsplash.com/photo-1780587427463-2468043226b7?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Route côtière de l'Adriatique", ar: "الطريق الساحلي على الأدرياتيكي" },
+  },
+  "aegean-beach": {
+    src: "https://images.unsplash.com/photo-1569660073216-1a6762baad6a?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Plage de la côte égéenne", ar: "شاطئ على ساحل إيجة" },
   },
   "aegean-cove": {
     src: "https://images.unsplash.com/photo-1600194795031-e8c60926db4f?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Crique aux eaux claires", ar: "خليج صغير بمياه صافية" },
   },
-  "airplane-wing": {
-    src: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1400&q=70",
-    alt: { fr: "En vol vers la destination", ar: "في الجوّ نحو الوجهة" },
-  },
-  "airport-terminal": {
-    src: "https://images.unsplash.com/photo-1553619948-505cc1cdc320?auto=format&fit=crop&w=1400&q=70",
-    alt: { fr: "Départ à l'aéroport", ar: "المغادرة من المطار" },
+  "al-azhar-mosque": {
+    src: "https://images.unsplash.com/photo-1680319287237-6a36b44ceba3?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Mosquée Al-Azhar, Le Caire", ar: "الجامع الأزهر، القاهرة" },
   },
   "albanian-coast": {
     src: "https://images.unsplash.com/photo-1556489819-3b1be20e1d54?auto=format&fit=crop&w=1400&q=70",
@@ -44,9 +48,25 @@ const bank = {
     src: "https://images.unsplash.com/photo-1694838877052-1fd4bae14174?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Paysages d'Anatolie", ar: "مناظر الأناضول" },
   },
+  "angel-north": {
+    src: "https://images.unsplash.com/photo-1723976717663-83b358cccdf2?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Angel of the North, Gateshead", ar: "ملاك الشمال، غيتسهيد" },
+  },
+  "antalya-coast": {
+    src: "https://images.unsplash.com/photo-1626968059269-16de28158715?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Littoral d’Antalya", ar: "ساحل أنطاليا" },
+  },
   "antalya-marina": {
     src: "https://images.unsplash.com/photo-1648325129746-abcc1b872380?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Vieux port d'Antalya", ar: "الميناء القديم بأنطاليا" },
+  },
+  "antalya-market": {
+    src: "https://images.unsplash.com/photo-1654161931659-3fe45109187f?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Marché d’Antalya", ar: "سوق أنطاليا" },
+  },
+  "antalya-tram": {
+    src: "https://images.unsplash.com/photo-1663574628997-9f847be3a4a5?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Tramway nostalgique d’Antalya", ar: "ترام أنطاليا التقليدي" },
   },
   aspendos: {
     src: "https://images.unsplash.com/photo-1659375653731-6d88cd30fb8f?auto=format&fit=crop&w=1400&q=70",
@@ -56,9 +76,9 @@ const bank = {
     src: "https://images.unsplash.com/photo-1642588894968-f5946658dba8?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Rivière Azmak à Akyaka", ar: "نهر أزماك في أكياكا" },
   },
-  "beach-sunset": {
-    src: "https://images.unsplash.com/photo-1707990756580-05a469007cb4?auto=format&fit=crop&w=1400&q=70",
-    alt: { fr: "Coucher de soleil sur la plage", ar: "غروب الشمس على الشاطئ" },
+  "beijing-night": {
+    src: "https://images.unsplash.com/photo-1611416457332-946853cc75d6?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Pékin la nuit", ar: "بكين ليلًا" },
   },
   "beijing-skyline": {
     src: "https://images.unsplash.com/photo-1708660367433-01261c964b8d?auto=format&fit=crop&w=1400&q=70",
@@ -67,6 +87,10 @@ const bank = {
   berat: {
     src: "https://images.unsplash.com/photo-1623167428954-be47340e0812?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Berat, la ville aux mille fenêtres", ar: "بيرات، مدينة الألف نافذة" },
+  },
+  "berat-castle": {
+    src: "https://images.unsplash.com/photo-1635159356901-b8d27a599bd0?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Citadelle de Berat", ar: "قلعة بيرات" },
   },
   "big-ben": {
     src: "https://images.unsplash.com/photo-1486299267070-83823f5448dd?auto=format&fit=crop&w=1400&q=70",
@@ -80,6 +104,10 @@ const bank = {
     src: "https://images.unsplash.com/photo-1691446930608-98466a4bdd0f?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Mosquée Bleue, Istanbul", ar: "المسجد الأزرق، إسطنبول" },
   },
+  "bodrum-boat-trip": {
+    src: "https://images.unsplash.com/photo-1591078314943-85c674b3789b?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Goélettes de Bodrum", ar: "مراكب بودروم الشراعية" },
+  },
   "bodrum-castle": {
     src: "https://images.unsplash.com/photo-1760197045829-221c11482607?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Château Saint-Pierre de Bodrum", ar: "قلعة القدّيس بطرس ببودروم" },
@@ -87,6 +115,14 @@ const bank = {
   "bodrum-marina": {
     src: "https://images.unsplash.com/photo-1727713682954-271a2135c375?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Marina de Bodrum", ar: "مارينا بودروم" },
+  },
+  "bodrum-sunset": {
+    src: "https://images.unsplash.com/photo-1627188425286-2e0bea267111?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Coucher de soleil à Bodrum", ar: "غروب الشمس في بودروم" },
+  },
+  "bodrum-town": {
+    src: "https://images.unsplash.com/photo-1598114570969-a4df3e85de9b?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Maisons blanches de Bodrum", ar: "بيوت بودروم البيضاء" },
   },
   "bosphorus-cruise": {
     src: "https://images.unsplash.com/photo-1691324745671-5492378d1695?auto=format&fit=crop&w=1400&q=70",
@@ -103,10 +139,6 @@ const bank = {
   "buckingham-palace": {
     src: "https://images.unsplash.com/photo-1647876761705-d0961f5aab21?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Buckingham Palace", ar: "قصر باكنغهام" },
-  },
-  "budva-beach": {
-    src: "https://images.unsplash.com/photo-1652012787970-584a54206c85?auto=format&fit=crop&w=1400&q=70",
-    alt: { fr: "Plages de Budva", ar: "شواطئ بودفا" },
   },
   "budva-old-town": {
     src: "https://images.unsplash.com/photo-1664958451522-90ce9fd47b2c?auto=format&fit=crop&w=1400&q=70",
@@ -132,37 +164,37 @@ const bank = {
     src: "https://images.unsplash.com/photo-1572252009286-268acec5ca0a?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Citadelle et mosquées du Caire", ar: "قلعة القاهرة ومساجدها" },
   },
-  calligraphy: {
-    src: "https://images.unsplash.com/photo-1546638008-efbe0b62c730?auto=format&fit=crop&w=1400&q=70",
-    alt: { fr: "Atelier de calligraphie chinoise", ar: "ورشة الخطّ الصيني" },
+  "cairo-nile": {
+    src: "https://images.unsplash.com/photo-1713300530540-de1a5d182e94?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Les rives du Nil", ar: "ضفاف النيل" },
+  },
+  "cairo-skyline": {
+    src: "https://images.unsplash.com/photo-1626692880062-35c360fb6afc?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Le Caire et le Nil", ar: "القاهرة والنيل" },
   },
   "cappadocia-balloons": {
     src: "https://images.unsplash.com/photo-1604156789095-3348604c0f43?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Montgolfières au-dessus de la Cappadoce", ar: "مناطيد فوق كابادوكيا" },
   },
+  "casablanca-city": {
+    src: "https://images.unsplash.com/photo-1740602550091-0943d7cfb720?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Le front de mer de Casablanca", ar: "الواجهة البحرية بالدار البيضاء" },
+  },
   "cave-city": {
     src: "https://images.unsplash.com/photo-1669046639202-339a501ae245?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Ville souterraine de Cappadoce", ar: "مدينة كابادوكيا الجوفية" },
-  },
-  "china-bullet-train": {
-    src: "https://images.unsplash.com/photo-1607426083183-74e497672a8f?auto=format&fit=crop&w=1400&q=70",
-    alt: { fr: "Train à grande vitesse chinois", ar: "القطار الصيني فائق السرعة" },
   },
   "china-tea-fields": {
     src: "https://images.unsplash.com/photo-1714241159015-fc7bd2fda53d?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Plantations de thé", ar: "حقول الشاي" },
   },
-  "coach-bus": {
-    src: "https://images.unsplash.com/photo-1730127143554-4342739f2732?auto=format&fit=crop&w=1400&q=70",
-    alt: { fr: "Autocar de tourisme", ar: "حافلة سياحية" },
-  },
   "corfu-old-town": {
     src: "https://images.unsplash.com/photo-1682197289142-424218d0cd7c?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Vieille ville de Corfou", ar: "مدينة كورفو العتيقة" },
   },
-  "countryside-train": {
-    src: "https://images.unsplash.com/photo-1684431186863-64f43181a0ad?auto=format&fit=crop&w=1400&q=70",
-    alt: { fr: "Train à travers la campagne anglaise", ar: "قطار عبر الريف الإنجليزي" },
+  "covent-garden": {
+    src: "https://images.unsplash.com/photo-1662714215815-ca120064ab62?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Covent Garden, Londres", ar: "كوفنت غاردن، لندن" },
   },
   "dinner-cruise": {
     src: "https://images.unsplash.com/photo-1692735678510-03d976e6565e?auto=format&fit=crop&w=1400&q=70",
@@ -184,6 +216,10 @@ const bank = {
     src: "https://images.unsplash.com/photo-1585473568361-b289de1eaa6f?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Cascade de Düden, Antalya", ar: "شلّال دودن، أنطاليا" },
   },
+  "durham-castle": {
+    src: "https://images.unsplash.com/photo-1780422176615-6fcb02d1e6cf?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Durham et sa citadelle", ar: "درم وقلعتها" },
+  },
   "durham-cathedral": {
     src: "https://images.unsplash.com/photo-1699465924373-131dc878dab7?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Cathédrale de Durham", ar: "كاتدرائية درم" },
@@ -191,6 +227,10 @@ const bank = {
   durres: {
     src: "https://images.unsplash.com/photo-1742244563308-abf90bfd42b4?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Bord de mer albanais à Durrës", ar: "الواجهة البحرية بدوريس" },
+  },
+  "durres-amphitheatre": {
+    src: "https://images.unsplash.com/photo-1717607426354-7c5c99b5c0af?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Amphithéâtre romain de Durrës", ar: "المدرّج الروماني بدوريس" },
   },
   "edfu-temple": {
     src: "https://images.unsplash.com/photo-1660705630675-d66d60fdca46?auto=format&fit=crop&w=1400&q=70",
@@ -224,13 +264,25 @@ const bank = {
     src: "https://images.unsplash.com/photo-1614555383820-941c466f1b52?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Cité interdite, Pékin", ar: "المدينة المحرّمة، بكين" },
   },
+  "galata-tower": {
+    src: "https://images.unsplash.com/photo-1582631608254-f75fdf938e19?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Tour de Galata, Istanbul", ar: "برج غلطة، إسطنبول" },
+  },
   "galleria-vittorio": {
     src: "https://images.unsplash.com/photo-1620475655006-0f0c6a10a221?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Galleria Vittorio Emanuele II, Milan", ar: "رواق فيتوريو إيمانويلي الثاني، ميلانو" },
   },
+  "giftun-island": {
+    src: "https://images.unsplash.com/photo-1755545760275-abd2f1b8ed2c?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Île de Giftun", ar: "جزيرة الجفتون" },
+  },
   "giza-pyramids": {
     src: "https://images.unsplash.com/photo-1600520611035-84157ad4084d?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Pyramides de Gizeh", ar: "أهرامات الجيزة" },
+  },
+  "goreme-valley": {
+    src: "https://images.unsplash.com/photo-1664862314441-4da7e58501a1?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Vallée de Göreme, Cappadoce", ar: "وادي غوريمه، كابادوكيا" },
   },
   "grand-bazaar": {
     src: "https://images.unsplash.com/photo-1689760661321-ad2aec0548ae?auto=format&fit=crop&w=1400&q=70",
@@ -244,21 +296,33 @@ const bank = {
     src: "https://images.unsplash.com/photo-1554950113-4f3081cb3a41?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Paysages karstiques de Guilin", ar: "مناظر غويلين الكارستية" },
   },
+  "guilin-pagodas": {
+    src: "https://images.unsplash.com/photo-1599703277928-054fc3e538fd?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Pagodes du Soleil et de la Lune, Guilin", ar: "معبدتا الشمس والقمر، غويلين" },
+  },
+  "hadrian-gate": {
+    src: "https://images.unsplash.com/photo-1722501099327-45fd785485ce?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Porte d’Hadrien, Antalya", ar: "بوابة هادريان، أنطاليا" },
+  },
   "hagia-sophia": {
     src: "https://images.unsplash.com/photo-1683874350903-8151d987fef4?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Sainte-Sophie, Istanbul", ar: "آيا صوفيا، إسطنبول" },
+  },
+  "hassan-ii-mosque": {
+    src: "https://images.unsplash.com/photo-1538230575309-59dfc388ae36?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Mosquée Hassan II, Casablanca", ar: "مسجد الحسن الثاني، الدار البيضاء" },
   },
   hierapolis: {
     src: "https://images.unsplash.com/photo-1723372401041-d94ab970266d?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Théâtre antique de Hiérapolis", ar: "المسرح الأثري بهيرابوليس" },
   },
-  "hotel-room": {
-    src: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1400&q=70",
-    alt: { fr: "Chambre d'hôtel", ar: "غرفة الفندق" },
-  },
   "hurghada-beach": {
     src: "https://images.unsplash.com/photo-1667852976428-3b6f59f0db4f?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Plage de Hurghada", ar: "شاطئ الغردقة" },
+  },
+  "hurghada-marina": {
+    src: "https://images.unsplash.com/photo-1692986171966-eee29a388b66?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Marina de Hurghada", ar: "مارينا الغردقة" },
   },
   "hurghada-resort": {
     src: "https://images.unsplash.com/photo-1738935457539-936fdb320c51?auto=format&fit=crop&w=1400&q=70",
@@ -267,6 +331,10 @@ const bank = {
   hutong: {
     src: "https://images.unsplash.com/photo-1772764058009-e6cb2203d773?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Hutongs de Pékin", ar: "أزقّة الهوتونغ ببكين" },
+  },
+  "istanbul-ferry": {
+    src: "https://images.unsplash.com/photo-1686071973008-e9e7a14bc20b?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Vapur sur le Bosphore", ar: "عبّارة في البوسفور" },
   },
   "istanbul-skyline": {
     src: "https://images.unsplash.com/photo-1589561454226-796a8aa89b05?auto=format&fit=crop&w=1400&q=70",
@@ -279,10 +347,6 @@ const bank = {
   "istiklal-taksim": {
     src: "https://images.unsplash.com/photo-1674714853921-4835e0085763?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Tram de l'avenue Istiklal", ar: "ترام شارع الاستقلال" },
-  },
-  "italy-train": {
-    src: "https://images.unsplash.com/photo-1683539404327-5ef034106d6c?auto=format&fit=crop&w=1400&q=70",
-    alt: { fr: "Train entre les villes italiennes", ar: "قطار بين المدن الإيطالية" },
   },
   kaleici: {
     src: "https://images.unsplash.com/photo-1654162148114-a04db0a49616?auto=format&fit=crop&w=1400&q=70",
@@ -308,6 +372,10 @@ const bank = {
     src: "https://images.unsplash.com/photo-1614122027743-50a9e6e8002f?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Baie de Kotor", ar: "خليج كوتور" },
   },
+  "kruja-bazaar": {
+    src: "https://images.unsplash.com/photo-1762512503128-e848e20ec447?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Bazar traditionnel de Kruja", ar: "سوق كرويا التقليدي" },
+  },
   "kruja-castle": {
     src: "https://images.unsplash.com/photo-1721213784726-915fdee1940d?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Château de Kruja", ar: "قلعة كرويا" },
@@ -315,6 +383,18 @@ const bank = {
   "ksamil-beach": {
     src: "https://images.unsplash.com/photo-1588883233496-ba8945a53460?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Plages de Ksamil", ar: "شواطئ كسميل" },
+  },
+  "kursunlu-waterfall": {
+    src: "https://images.unsplash.com/photo-1671776424185-2cd252baae23?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Cascade de Kurşunlu", ar: "شلّال كورشونلو" },
+  },
+  "lama-temple": {
+    src: "https://images.unsplash.com/photo-1762005709792-057773f60fdb?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Temple des Lamas, Pékin", ar: "معبد اللاما، بكين" },
+  },
+  "lara-beach": {
+    src: "https://images.unsplash.com/photo-1627206829079-487e41d5ba68?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Plage de Lara, Antalya", ar: "شاطئ لارا، أنطاليا" },
   },
   "li-river-raft": {
     src: "https://images.unsplash.com/photo-1772490184745-2c8e0ebbab4d?auto=format&fit=crop&w=1400&q=70",
@@ -332,9 +412,29 @@ const bank = {
     src: "https://images.unsplash.com/photo-1710886324980-997f7742f16c?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Temple de Louxor", ar: "معبد الأقصر" },
   },
+  "lycian-coast": {
+    src: "https://images.unsplash.com/photo-1765041695014-7c1c207a5257?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Côte lycienne", ar: "الساحل الليكي" },
+  },
+  "marmaris-bay": {
+    src: "https://images.unsplash.com/photo-1529528018027-2ee0409703af?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Baie de Marmaris", ar: "خليج مرماريس" },
+  },
+  "marmaris-beach": {
+    src: "https://images.unsplash.com/photo-1657816999487-514d5ee3c9b4?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Plage de Marmaris", ar: "شاطئ مرماريس" },
+  },
+  "marmaris-castle": {
+    src: "https://images.unsplash.com/photo-1636377688172-95a8fb986762?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Château et port de Marmaris", ar: "قلعة وميناء مرماريس" },
+  },
   "marmaris-marina": {
     src: "https://images.unsplash.com/photo-1636377688406-e0d0108eb882?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Marina de Marmaris", ar: "مارينا مرماريس" },
+  },
+  "mediterranean-antalya": {
+    src: "https://images.unsplash.com/photo-1615324949351-632282d2b494?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Méditerranée à Antalya", ar: "البحر المتوسّط بأنطاليا" },
   },
   "milan-city": {
     src: "https://images.unsplash.com/photo-1773160063998-d4f9560ae5ad?auto=format&fit=crop&w=1400&q=70",
@@ -359,6 +459,10 @@ const bank = {
   "naples-bay": {
     src: "https://images.unsplash.com/photo-1610641819167-e9f4f393a7fe?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Baie de Naples et Vésuve", ar: "خليج نابولي وبركان فيزوف" },
+  },
+  "naples-street": {
+    src: "https://images.unsplash.com/photo-1689506859587-3f2ac305b256?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Rues de Naples", ar: "شوارع نابولي" },
   },
   "newcastle-quayside": {
     src: "https://images.unsplash.com/photo-1598964356102-dfb0a21898b1?auto=format&fit=crop&w=1400&q=70",
@@ -448,9 +552,17 @@ const bank = {
     src: "https://images.unsplash.com/photo-1651871756929-09d7bde4e97d?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Récifs coralliens de la mer Rouge", ar: "شعاب البحر الأحمر المرجانية" },
   },
-  "resort-pool": {
-    src: "https://images.unsplash.com/photo-1610641818989-c2051b5e2cfd?auto=format&fit=crop&w=1400&q=70",
-    alt: { fr: "Piscine du resort", ar: "مسبح المنتجع" },
+  "red-sea-desert": {
+    src: "https://images.unsplash.com/photo-1601532400474-ee1656a36f2c?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Désert oriental égyptien", ar: "الصحراء الشرقية بمصر" },
+  },
+  "red-sea-lagoon": {
+    src: "https://images.unsplash.com/photo-1708711973477-1373f8eb65db?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Lagon de la mer Rouge", ar: "بحيرة البحر الأحمر" },
+  },
+  "red-sea-sunset": {
+    src: "https://images.unsplash.com/photo-1667852976355-600df04dca82?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Coucher de soleil sur la mer Rouge", ar: "غروب الشمس على البحر الأحمر" },
   },
   "roman-forum": {
     src: "https://images.unsplash.com/photo-1612021148925-466704654aeb?auto=format&fit=crop&w=1400&q=70",
@@ -459,6 +571,10 @@ const bank = {
   "rome-colosseum": {
     src: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Colisée de Rome", ar: "كولوسيوم روما" },
+  },
+  "rome-street": {
+    src: "https://images.unsplash.com/photo-1691287850810-00fe9fa14c28?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Ruelles de Rome", ar: "أزقّة روما" },
   },
   "saklikent-canyon": {
     src: "https://images.unsplash.com/photo-1713888207724-01a9a4c0e87a?auto=format&fit=crop&w=1400&q=70",
@@ -476,10 +592,6 @@ const bank = {
     src: "https://images.unsplash.com/photo-1706233385855-8153b12194dc?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Sarajevo et ses collines", ar: "سراييفو وتلالها" },
   },
-  "seaside-lunch": {
-    src: "https://images.unsplash.com/photo-1782174177266-0cbab3611789?auto=format&fit=crop&w=1400&q=70",
-    alt: { fr: "Déjeuner au bord de la mer", ar: "غداء على شاطئ البحر" },
-  },
   "sforza-castle": {
     src: "https://images.unsplash.com/photo-1648315574956-9656d61fd447?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Château des Sforza, Milan", ar: "قلعة سفورتسا، ميلانو" },
@@ -488,17 +600,17 @@ const bank = {
     src: "https://images.unsplash.com/photo-1538428494232-9c0d8a3ab403?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Le Bund, Shanghai", ar: "الباوند، شنغهاي" },
   },
+  "shanghai-nanjing-road": {
+    src: "https://images.unsplash.com/photo-1551771279-b47900068e00?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Nanjing Road, Shanghai", ar: "شارع نانجينغ، شنغهاي" },
+  },
   shkoder: {
     src: "https://images.unsplash.com/photo-1724776379053-f8b9b91def34?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Château de Rozafa, Shkodër", ar: "قلعة روزافا، شكودر" },
   },
-  "shopping-mall": {
-    src: "https://images.unsplash.com/photo-1533481405265-e9ce0c044abb?auto=format&fit=crop&w=1400&q=70",
-    alt: { fr: "Centre commercial", ar: "مركز تجاري" },
-  },
-  "sleeper-train": {
-    src: "https://images.unsplash.com/photo-1768750046794-168c1b23d25e?auto=format&fit=crop&w=1400&q=70",
-    alt: { fr: "Train de nuit", ar: "قطار ليلي" },
+  "side-ancient-city": {
+    src: "https://images.unsplash.com/photo-1596093331002-1cd47abe37de?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Cité antique de Side", ar: "مدينة سيدي الأثرية" },
   },
   "spanish-steps": {
     src: "https://images.unsplash.com/photo-1636804907035-8ae6360f1d4f?auto=format&fit=crop&w=1400&q=70",
@@ -512,13 +624,13 @@ const bank = {
     src: "https://images.unsplash.com/photo-1589900586776-53db57559c73?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Marché aux épices d'Istanbul", ar: "سوق التوابل بإسطنبول" },
   },
-  "spice-market": {
-    src: "https://images.unsplash.com/photo-1761289731268-900eba5cf09f?auto=format&fit=crop&w=1400&q=70",
-    alt: { fr: "Étals d'épices", ar: "بسطات التوابل" },
-  },
   "st-marks-square": {
     src: "https://images.unsplash.com/photo-1613808001261-8f302f8aabf6?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Place Saint-Marc, Venise", ar: "ساحة القدّيس مرقس، البندقية" },
+  },
+  "st-pauls": {
+    src: "https://images.unsplash.com/photo-1564955145473-33f1f76b1d16?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Cathédrale Saint-Paul, Londres", ar: "كاتدرائية القدّيس بولس، لندن" },
   },
   "st-peters-square": {
     src: "https://images.unsplash.com/photo-1610655769765-be8a0dd9627a?auto=format&fit=crop&w=1400&q=70",
@@ -532,13 +644,21 @@ const bank = {
     src: "https://images.unsplash.com/photo-1586788630595-bbd71f6f8646?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Palais d'Été, Pékin", ar: "قصر الصيف، بكين" },
   },
-  "sun-loungers": {
-    src: "https://images.unsplash.com/photo-1602002418816-5c0aeef426aa?auto=format&fit=crop&w=1400&q=70",
-    alt: { fr: "Transats face à la mer", ar: "كراسي استرخاء أمام البحر" },
-  },
   "suzhou-garden": {
     src: "https://images.unsplash.com/photo-1733192542649-937b28328c31?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Jardin classique de Suzhou", ar: "حديقة سوجو الكلاسيكية" },
+  },
+  taiji: {
+    src: "https://images.unsplash.com/photo-1757138100328-c246b5795aa3?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Taiji dans un parc de Pékin", ar: "التاي تشي في منتزه ببكين" },
+  },
+  "taurus-mountains": {
+    src: "https://images.unsplash.com/photo-1723997339868-057017955e5a?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Monts Taurus", ar: "جبال طوروس" },
+  },
+  "temple-of-heaven": {
+    src: "https://images.unsplash.com/photo-1584872589930-e99fe5bf4408?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Temple du Ciel, Pékin", ar: "معبد السماء، بكين" },
   },
   "terracotta-warriors": {
     src: "https://images.unsplash.com/photo-1527922891260-918d42a4efc8?auto=format&fit=crop&w=1400&q=70",
@@ -576,25 +696,17 @@ const bank = {
     src: "https://images.unsplash.com/photo-1633894914370-6935b23ccbce?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Tower of London", ar: "برج لندن" },
   },
-  "traditional-dinner": {
-    src: "https://images.unsplash.com/photo-1536392706976-e486e2ba97af?auto=format&fit=crop&w=1400&q=70",
-    alt: { fr: "Dîner traditionnel", ar: "عشاء تقليدي" },
+  "trafalgar-square": {
+    src: "https://images.unsplash.com/photo-1610813328519-0ade655c40c1?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Trafalgar Square, Londres", ar: "ساحة ترافالغار، لندن" },
   },
   "trevi-fountain": {
     src: "https://images.unsplash.com/photo-1596627116790-af6f46dddbda?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Fontaine de Trevi, Rome", ar: "نافورة تريفي، روما" },
   },
-  "turkish-breakfast": {
-    src: "https://images.unsplash.com/photo-1768566108465-dde1e43a0493?auto=format&fit=crop&w=1400&q=70",
-    alt: { fr: "Petit déjeuner turc", ar: "فطور تركي" },
-  },
   "turkish-riviera": {
     src: "https://images.unsplash.com/photo-1582030826675-8b596001240a?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Plages de la Riviera turque", ar: "شواطئ الريفييرا التركية" },
-  },
-  "turkish-tea": {
-    src: "https://images.unsplash.com/photo-1613987108430-b4bb3863e595?auto=format&fit=crop&w=1400&q=70",
-    alt: { fr: "Thé turc", ar: "الشاي التركي" },
   },
   "turquoise-island": {
     src: "https://images.unsplash.com/photo-1591211028625-bf35ca092e43?auto=format&fit=crop&w=1400&q=70",
@@ -636,6 +748,14 @@ const bank = {
     src: "https://images.unsplash.com/photo-1482690205767-61deebe15ef7?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Venise au coucher du soleil", ar: "البندقية عند الغروب" },
   },
+  "xian-bell-tower": {
+    src: "https://images.unsplash.com/photo-1784768143275-be4cb2950596?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Tour de la Cloche, Xi’an", ar: "برج الجرس، شيان" },
+  },
+  "xian-city-wall": {
+    src: "https://images.unsplash.com/photo-1725933014999-e70ae6e57375?auto=format&fit=crop&w=1400&q=70",
+    alt: { fr: "Remparts de Xi’an", ar: "أسوار شيان" },
+  },
   "xian-old-street": {
     src: "https://images.unsplash.com/photo-1762996770562-ffce7254c4cc?auto=format&fit=crop&w=1400&q=70",
     alt: { fr: "Vieilles rues de Xi'an", ar: "شوارع شيان القديمة" },
@@ -659,147 +779,147 @@ type Subject = keyof typeof bank;
 /** Tour slug → day number → the two subjects illustrating it. */
 const byTour: Record<string, Record<number, readonly [Subject, Subject]>> = {
   "istanbul-ete-2026": {
-    1: ["istanbul-skyline", "hotel-room"],
-    2: ["bosphorus-cruise", "shopping-mall"],
-    3: ["blue-mosque", "grand-bazaar"],
+    1: ["hassan-ii-mosque", "istanbul-skyline"],
+    2: ["bosphorus-cruise", "galata-tower"],
+    3: ["blue-mosque", "hagia-sophia"],
     4: ["dinner-cruise", "bosphorus-night"],
     5: ["sultanahmet-square", "topkapi-palace"],
-    6: ["princes-islands", "seaside-lunch"],
+    6: ["princes-islands", "istanbul-ferry"],
     7: ["bursa-mosque", "uludag-cable-car"],
-    8: ["airport-terminal", "airplane-wing"],
+    8: ["istanbul-street", "casablanca-city"],
   },
   "istanbul-antalya-ete-2026": {
-    1: ["istanbul-skyline", "istanbul-street"],
+    1: ["hassan-ii-mosque", "istanbul-skyline"],
     2: ["blue-mosque", "hagia-sophia"],
     3: ["bosphorus-cruise", "istiklal-taksim"],
-    4: ["airplane-wing", "antalya-marina"],
-    5: ["kaleici", "spice-market"],
-    6: ["aspendos", "resort-pool"],
-    7: ["duden-waterfall", "turkish-breakfast"],
-    8: ["turkish-riviera", "beach-sunset"],
-    9: ["shopping-mall", "turquoise-island"],
-    10: ["aegean-cove", "seaside-lunch"],
-    11: ["airport-terminal", "airplane-wing"],
+    4: ["antalya-marina", "antalya-coast"],
+    5: ["kaleici", "antalya-market"],
+    6: ["aspendos", "side-ancient-city"],
+    7: ["duden-waterfall", "kursunlu-waterfall"],
+    8: ["turkish-riviera", "lara-beach"],
+    9: ["mediterranean-antalya", "antalya-tram"],
+    10: ["taurus-mountains", "lycian-coast"],
+    11: ["hadrian-gate", "hassan-ii-mosque"],
   },
   "istanbul-marmaris-bodrum-ete-2026": {
-    1: ["istanbul-skyline", "istanbul-street"],
+    1: ["hassan-ii-mosque", "istanbul-skyline"],
     2: ["blue-mosque", "grand-bazaar"],
     3: ["bosphorus-cruise", "istiklal-taksim"],
-    4: ["airplane-wing", "marmaris-marina"],
-    5: ["turkish-riviera", "spice-market"],
-    6: ["resort-pool", "seaside-lunch"],
-    7: ["coach-bus", "bodrum-marina"],
-    8: ["bodrum-castle", "turkish-tea"],
-    9: ["aegean-cove", "turquoise-island"],
-    10: ["oludeniz-lagoon", "beach-sunset"],
-    11: ["airport-terminal", "airplane-wing"],
+    4: ["marmaris-marina", "marmaris-bay"],
+    5: ["marmaris-beach", "marmaris-castle"],
+    6: ["aegean-beach", "azmak-river"],
+    7: ["bodrum-marina", "bodrum-town"],
+    8: ["bodrum-castle", "bodrum-sunset"],
+    9: ["bodrum-boat-trip", "aegean-cove"],
+    10: ["turquoise-island", "oludeniz-lagoon"],
+    11: ["galata-tower", "hassan-ii-mosque"],
   },
   "turquie-anatolie": {
-    1: ["airplane-wing", "anatolia-landscape"],
+    1: ["hassan-ii-mosque", "goreme-valley"],
     2: ["uchisar", "fairy-chimneys"],
     3: ["cappadocia-balloons", "cave-city"],
-    4: ["konya-mevlana", "spice-market"],
+    4: ["konya-mevlana", "anatolia-landscape"],
     5: ["kaleici", "duden-waterfall"],
-    6: ["turquoise-island", "seaside-lunch"],
-    7: ["saklikent-canyon", "butterfly-valley"],
-    8: ["oludeniz-lagoon", "aegean-cove"],
-    9: ["azmak-river", "marmaris-marina"],
+    6: ["turquoise-island", "adrasan-bay"],
+    7: ["saklikent-canyon", "lycian-coast"],
+    8: ["oludeniz-lagoon", "butterfly-valley"],
+    9: ["azmak-river", "marmaris-bay"],
     10: ["hierapolis", "pamukkale"],
-    11: ["airport-terminal", "istanbul-skyline"],
+    11: ["istanbul-skyline", "galata-tower"],
     12: ["spice-bazaar", "ortakoy-mosque"],
     13: ["hagia-sophia", "grand-bazaar"],
-    14: ["istanbul-street", "airplane-wing"],
+    14: ["istanbul-street", "casablanca-city"],
   },
   "egypte-nil-hurghada": {
-    1: ["airplane-wing", "hotel-room"],
+    1: ["hassan-ii-mosque", "cairo-nile"],
     2: ["giza-pyramids", "sphinx"],
     3: ["cairo-citadel", "egyptian-museum"],
-    4: ["khan-el-khalili", "sleeper-train"],
+    4: ["khan-el-khalili", "al-azhar-mosque"],
     5: ["nubian-village", "nile-cruise"],
     6: ["kom-ombo", "edfu-temple"],
     7: ["valley-of-kings", "karnak-temple"],
-    8: ["luxor-temple", "coach-bus"],
-    9: ["hurghada-beach", "resort-pool"],
-    10: ["red-sea-coral", "red-sea-boat"],
-    11: ["hurghada-resort", "seaside-lunch"],
-    12: ["beach-sunset", "sun-loungers"],
-    13: ["coach-bus", "papyrus-art"],
+    8: ["luxor-temple", "red-sea-desert"],
+    9: ["hurghada-beach", "red-sea-lagoon"],
+    10: ["red-sea-coral", "giftun-island"],
+    11: ["hurghada-resort", "red-sea-boat"],
+    12: ["hurghada-marina", "red-sea-sunset"],
+    13: ["cairo-skyline", "papyrus-art"],
     14: ["qaitbay-citadel", "alexandria-corniche"],
-    15: ["airport-terminal", "airplane-wing"],
+    15: ["casablanca-city", "hassan-ii-mosque"],
   },
   "grand-tour-balkans": {
-    1: ["airplane-wing", "istanbul-skyline"],
-    2: ["airport-terminal", "sarajevo-view"],
+    1: ["hassan-ii-mosque", "galata-tower"],
+    2: ["istanbul-skyline", "sarajevo-view"],
     3: ["sarajevo-mosque", "sarajevo-old-town"],
     4: ["mostar-bridge", "mostar-town"],
-    5: ["dubrovnik-walls", "dubrovnik-adriatic"],
-    6: ["budva-old-town", "budva-beach"],
+    5: ["adriatic-road", "dubrovnik-walls"],
+    6: ["dubrovnik-adriatic", "budva-old-town"],
     7: ["kotor-bay", "our-lady-rocks"],
     8: ["shkoder", "durres"],
-    9: ["albanian-coast", "adriatic-road"],
+    9: ["durres-amphitheatre", "albanian-coast"],
     10: ["butrint", "ksamil-beach"],
     11: ["paleokastritsa", "corfu-old-town"],
-    12: ["berat", "tirana-street"],
-    13: ["tirana-square", "traditional-dinner"],
-    14: ["kruja-castle", "spice-market"],
-    15: ["airport-terminal", "airplane-wing"],
+    12: ["berat", "berat-castle"],
+    13: ["tirana-square", "tirana-street"],
+    14: ["kruja-castle", "kruja-bazaar"],
+    15: ["hagia-sophia", "casablanca-city"],
   },
   "chine-grand-tour": {
-    1: ["airport-terminal", "airplane-wing"],
-    2: ["beijing-skyline", "hotel-room"],
-    3: ["tiananmen", "forbidden-city"],
+    1: ["hassan-ii-mosque", "beijing-skyline"],
+    2: ["beijing-night", "tiananmen"],
+    3: ["forbidden-city", "temple-of-heaven"],
     4: ["great-wall", "summer-palace"],
     5: ["birds-nest", "hutong"],
-    6: ["china-bullet-train", "xian-old-street"],
-    7: ["terracotta-warriors", "calligraphy"],
+    6: ["xian-city-wall", "xian-old-street"],
+    7: ["terracotta-warriors", "xian-bell-tower"],
     8: ["li-river-raft", "xingping"],
     9: ["yangshuo-street", "guilin-landscape"],
-    10: ["china-tea-fields", "airport-terminal"],
+    10: ["china-tea-fields", "guilin-pagodas"],
     11: ["shanghai-bund", "yu-garden"],
     12: ["tongli-canals", "suzhou-garden"],
-    13: ["pudong-skyline", "china-bullet-train"],
-    14: ["beijing-skyline", "airport-terminal"],
-    15: ["airplane-wing", "airport-terminal"],
+    13: ["pudong-skyline", "shanghai-nanjing-road"],
+    14: ["lama-temple", "taiji"],
+    15: ["casablanca-city", "hassan-ii-mosque"],
   },
   "angleterre-ecosse": {
-    1: ["london-skyline", "big-ben"],
-    2: ["buckingham-palace", "london-eye"],
+    1: ["london-skyline", "buckingham-palace"],
+    2: ["big-ben", "london-eye"],
     3: ["tower-of-london", "tower-bridge"],
     4: ["british-museum", "oxford-street"],
-    5: ["shopping-mall", "thames-cruise"],
-    6: ["coach-bus", "newcastle-quayside"],
+    5: ["covent-garden", "trafalgar-square"],
+    6: ["newcastle-quayside", "angel-north"],
     7: ["newcastle-street", "tyne-bridge"],
     8: ["edinburgh-castle", "edinburgh-old-town"],
-    9: ["durham-cathedral", "countryside-train"],
-    10: ["airport-terminal", "airplane-wing"],
+    9: ["durham-cathedral", "durham-castle"],
+    10: ["thames-cruise", "st-pauls"],
   },
   "italie-trio-italien": {
-    1: ["venice-grand-canal", "hotel-room"],
+    1: ["venice-grand-canal", "venice-canal"],
     2: ["st-marks-square", "doges-palace"],
     3: ["florence-duomo", "ponte-vecchio"],
-    4: ["italy-train", "spanish-steps"],
+    4: ["spanish-steps", "rome-street"],
     5: ["rome-colosseum", "trevi-fountain"],
-    6: ["airport-terminal", "airplane-wing"],
+    6: ["st-peters-square", "pantheon"],
   },
   "italie-bella-italia": {
     1: ["milan-city", "sforza-castle"],
     2: ["milan-duomo", "galleria-vittorio"],
-    3: ["italy-train", "venice-canal"],
+    3: ["venice-canal", "venice-grand-canal"],
     4: ["st-marks-square", "venice-gondola"],
     5: ["ponte-vecchio", "florence-skyline"],
     6: ["rome-colosseum", "pantheon"],
     7: ["vatican-museums", "piazza-navona"],
-    8: ["airport-terminal", "airplane-wing"],
+    8: ["st-peters-square", "spanish-steps"],
   },
   "italie-tresors-d-italie": {
-    1: ["naples-bay", "hotel-room"],
+    1: ["naples-bay", "naples-street"],
     2: ["pompeii", "positano"],
     3: ["trevi-fountain", "piazza-navona"],
     4: ["roman-forum", "st-peters-square"],
     5: ["florence-duomo", "piazza-signoria"],
     6: ["st-marks-square", "venice-sunset"],
     7: ["burano", "murano-glass"],
-    8: ["airport-terminal", "airplane-wing"],
+    8: ["venice-grand-canal", "venice-gondola"],
   },
 };
 
