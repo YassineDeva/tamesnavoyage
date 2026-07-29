@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import type { ReactNode } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X, Phone, User } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { navLinks, contact } from "@/lib/site";
@@ -98,15 +98,14 @@ export function Navbar() {
 
             <Link
               href="/contact"
-              aria-label={t("cta")}
               className={cn(
-                "inline-flex h-11 w-11 items-center justify-center rounded-full transition-colors focus-ring",
+                "inline-flex h-11 items-center justify-center rounded-full px-5 text-sm font-semibold tracking-tight transition-colors focus-ring",
                 light
                   ? "bg-white text-navy-700 hover:bg-surface-100"
                   : "bg-navy-600 text-white hover:bg-azure-600",
               )}
             >
-              <User className="h-[18px] w-[18px]" />
+              {t("contact")}
             </Link>
 
             <button
