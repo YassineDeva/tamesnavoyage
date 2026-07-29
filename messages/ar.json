@@ -40,7 +40,9 @@
     "notIncluded": "غير مشمولة",
     "yesIncluded": "مشمولة",
     "departures": "تواريخ انطلاق",
-    "pdfProgram": "برنامج PDF"
+    "pdfProgram": "برنامج PDF",
+    "previous": "السابق",
+    "next": "التالي"
   },
   "home": {
     "hero": {

@@ -40,7 +40,9 @@
     "notIncluded": "Non inclus",
     "yesIncluded": "Inclus",
     "departures": "dates de départ",
-    "pdfProgram": "Programme PDF"
+    "pdfProgram": "Programme PDF",
+    "previous": "Précédent",
+    "next": "Suivant"
   },
   "home": {
     "hero": {
