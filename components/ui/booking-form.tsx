@@ -8,13 +8,7 @@ import type { Locale } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 
 /** Trip inquiry / booking form. Wire `onSubmit` to Resend/API later. */
-export function BookingForm({
-  defaultTour,
-  compact = false,
-}: {
-  defaultTour?: string;
-  compact?: boolean;
-}) {
+export function BookingForm({ defaultTour }: { defaultTour?: string }) {
   const t = useTranslations("booking");
   const locale = useLocale() as Locale;
   const [status, setStatus] = useState<"idle" | "sending" | "done">("idle");
@@ -39,7 +33,7 @@ export function BookingForm({
   }
 
   return (
-    <form onSubmit={onSubmit} className={cn("grid gap-4", compact ? "" : "sm:grid-cols-2")}>
+    <form onSubmit={onSubmit} className="grid gap-4 sm:grid-cols-2">
       <label className="flex flex-col gap-1.5">
         <span className="text-sm font-medium text-navy-700">{t("name")}</span>
         <input required name="name" placeholder={t("namePlaceholder")} className={inputCls} />

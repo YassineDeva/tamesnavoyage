@@ -15,6 +15,7 @@ import {
   FileText,
   FileDown,
   Moon,
+  Send,
 } from "lucide-react";
 import { buildMetadata, JsonLd, SITE_URL, BRAND } from "@/lib/seo";
 import { Media } from "@/components/ui/media";
@@ -467,15 +468,35 @@ export default async function TourDetailPage({ params }: Props) {
                 </a>
               )}
 
-              <h3 className="mt-5 text-lg font-medium text-ink-900">
+              {/* The form itself lives in its own full-width section below —
+                  it is far too wide to stay legible in this rail. */}
+              <a
+                href="#reserver"
+                className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-azure-500 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-azure-600 focus-ring"
+              >
+                <Send className="h-4 w-4 shrink-0 rtl:-scale-x-100" />
                 {t("bookTitle")}
-              </h3>
-              <p className="mt-1 text-sm text-muted-500">{t("bookSubtitle")}</p>
-              <div className="mt-4">
-                <BookingForm defaultTour={tour.slug} compact />
-              </div>
+              </a>
+              <p className="mt-3 text-center text-xs text-muted-500">
+                {t("bookSubtitle")}
+              </p>
             </div>
           </aside>
+        </div>
+      </section>
+
+      {/* Booking */}
+      <section id="reserver" className="scroll-mt-24 pb-20 sm:pb-24">
+        <div className="container-wide">
+          <div className="mx-auto max-w-3xl rounded-[1.75rem] border border-sand-200 bg-sand-50 p-6 shadow-[var(--shadow-soft)] sm:p-10">
+            <Reveal>
+              <h2 className="text-h3 font-medium text-ink-900">{t("bookTitle")}</h2>
+              <p className="mt-2 text-sm text-muted-500">{t("bookSubtitle")}</p>
+            </Reveal>
+            <div className="mt-8">
+              <BookingForm defaultTour={tour.slug} />
+            </div>
+          </div>
         </div>
       </section>
 
