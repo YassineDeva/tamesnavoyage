@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
 
 const nextConfig: NextConfig = {
+  allowedDevOrigins: ["172.29.160.1"],
   images: {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
@@ -11,7 +12,7 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     optimizePackageImports: ["lucide-react", "framer-motion", "@react-three/drei"],
-  },
+  }
 };
 
 const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
