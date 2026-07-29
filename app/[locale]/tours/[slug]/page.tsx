@@ -24,6 +24,7 @@ import { BookingForm } from "@/components/ui/booking-form";
 import { TourCard } from "@/components/ui/tour-card";
 import { Link } from "@/i18n/navigation";
 import { tours, getTour, t as tr } from "@/lib/data";
+import { getDayImages } from "@/lib/itinerary-images";
 import { formatPrice } from "@/lib/utils";
 import { locales, type Locale } from "@/i18n/routing";
 
@@ -184,21 +185,37 @@ export default async function TourDetailPage({ params }: Props) {
             {/* Itinerary timeline */}
             <div className="mt-12">
               <h2 className="text-h3 font-medium text-ink-900">{t("itinerary")}</h2>
-              <ol className="mt-6 space-y-6 border-s border-sand-300 ps-6 rtl:border-s-0 rtl:border-e rtl:ps-0 rtl:pe-6">
-                {tour.itinerary.map((step) => (
-                  <Reveal key={step.day} index={step.day % 4} as="li" className="relative">
-                    <span className="absolute -start-[calc(1.5rem+7px)] top-1 flex h-3.5 w-3.5 items-center justify-center rounded-full border-2 border-terracotta-500 bg-sand-50 rtl:-start-auto rtl:-end-[calc(1.5rem+7px)]" />
-                    <span className="text-xs font-semibold uppercase tracking-wider text-terracotta-500">
-                      {t("day")} {step.day}
-                    </span>
-                    <h3 className="mt-1 text-lg font-medium text-ink-900">
-                      {tr(step.title, locale)}
-                    </h3>
-                    <p className="mt-1 text-sm leading-relaxed text-muted-500">
-                      {tr(step.detail, locale)}
-                    </p>
-                  </Reveal>
-                ))}
+              <ol className="mt-6 space-y-10 border-s border-sand-300 ps-6 rtl:border-s-0 rtl:border-e rtl:ps-0 rtl:pe-6">
+                {tour.itinerary.map((step) => {
+                  const shots = getDayImages(tour.slug, step.day);
+                  return (
+                    <Reveal key={step.day} index={step.day % 4} as="li" className="relative">
+                      <span className="absolute -start-[calc(1.5rem+7px)] top-1 flex h-3.5 w-3.5 items-center justify-center rounded-full border-2 border-terracotta-500 bg-sand-50 rtl:-start-auto rtl:-end-[calc(1.5rem+7px)]" />
+                      <span className="text-xs font-semibold uppercase tracking-wider text-terracotta-500">
+                        {t("day")} {step.day}
+                      </span>
+                      <h3 className="mt-1 text-lg font-medium text-ink-900">
+                        {tr(step.title, locale)}
+                      </h3>
+                      <p className="mt-1 text-sm leading-relaxed text-muted-500">
+                        {tr(step.detail, locale)}
+                      </p>
+                      {shots.length > 0 && (
+                        <div className="mt-4 grid grid-cols-2 gap-3">
+                          {shots.map((shot) => (
+                            <Media
+                              key={shot.src}
+                              src={shot.src}
+                              alt={tr(shot.alt, locale)}
+                              className="aspect-[4/3] h-auto"
+                              sizes="(max-width: 640px) 45vw, (max-width: 1024px) 44vw, 22vw"
+                            />
+                          ))}
+                        </div>
+                      )}
+                    </Reveal>
+                  );
+                })}
               </ol>
             </div>
 
