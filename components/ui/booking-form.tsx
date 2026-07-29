@@ -50,17 +50,24 @@ export function BookingForm({ defaultTour }: { defaultTour?: string }) {
         <span className="text-sm font-medium text-navy-700">{t("travelers")}</span>
         <input name="travelers" type="number" min={1} defaultValue={2} className={inputCls} />
       </label>
-      <label className="flex flex-col gap-1.5 sm:col-span-2">
-        <span className="text-sm font-medium text-navy-700">{t("tour")}</span>
-        <select name="tour" defaultValue={defaultTour ?? ""} className={inputCls}>
-          <option value="">—</option>
-          {tours.map((tour) => (
-            <option key={tour.id} value={tour.slug}>
-              {tr(tour.title, locale)}
-            </option>
-          ))}
-        </select>
-      </label>
+      {defaultTour ? (
+        /* Opened from a circuit's own page: the trip is already settled, so it
+           rides along in the payload rather than offering a choice that could
+           contradict the page the visitor is standing on. */
+        <input type="hidden" name="tour" value={defaultTour} />
+      ) : (
+        <label className="flex flex-col gap-1.5 sm:col-span-2">
+          <span className="text-sm font-medium text-navy-700">{t("tour")}</span>
+          <select name="tour" defaultValue="" className={inputCls}>
+            <option value="">—</option>
+            {tours.map((tour) => (
+              <option key={tour.id} value={tour.slug}>
+                {tr(tour.title, locale)}
+              </option>
+            ))}
+          </select>
+        </label>
+      )}
       <label className="flex flex-col gap-1.5 sm:col-span-2">
         <span className="text-sm font-medium text-navy-700">{t("message")}</span>
         <textarea name="message" rows={4} placeholder={t("messagePlaceholder")} className={cn(inputCls, "h-auto resize-none py-3")} />
