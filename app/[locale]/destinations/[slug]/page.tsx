@@ -16,6 +16,7 @@ import { buildMetadata, JsonLd, SITE_URL, BRAND } from "@/lib/seo";
 import { Reveal } from "@/components/motion/reveal";
 import { GalleryCarousel } from "@/components/ui/gallery-carousel";
 import { DestinationCard } from "@/components/ui/destination-card";
+import { CardSlider } from "@/components/ui/card-slider";
 import { ButtonLink } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import {
@@ -60,6 +61,7 @@ export default async function DestinationDetailPage({ params }: Props) {
   const t = await getTranslations("pages.destinationDetail");
   const tm = await getTranslations("meta");
   const tn = await getTranslations("nav");
+  const tc = await getTranslations("common");
 
   const isMorocco = destinations.some((x) => x.id === d.id);
   const group = isMorocco ? destinations : internationalDestinations;
@@ -239,23 +241,31 @@ export default async function DestinationDetailPage({ params }: Props) {
       {/* Related */}
       <section className="pb-24 sm:pb-28">
         <div className="container-wide">
-          <div className="mb-10 flex items-center justify-between gap-4">
-            <h2 className="text-h2 font-bold text-navy-800">{t("relatedTitle")}</h2>
-            <Link
-              href="/destinations"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-azure-600 hover:text-azure-700"
-            >
-              <ArrowLeft className="h-4 w-4 rtl:rotate-180" />
-              {t("backTo")}
-            </Link>
-          </div>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {/* Four across once they fit; a rail below that, where they don't. */}
+          <CardSlider
+            labelPrev={tc("previous")}
+            labelNext={tc("next")}
+            slideClassName="sm:flex-[0_0_50%] lg:flex-[0_0_25%]"
+            controlsClassName="lg:hidden"
+            header={
+              <h2 className="text-h2 font-bold text-navy-800">{t("relatedTitle")}</h2>
+            }
+            action={
+              <Link
+                href="/destinations"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-azure-600 hover:text-azure-700"
+              >
+                <ArrowLeft className="h-4 w-4 rtl:rotate-180" />
+                {t("backTo")}
+              </Link>
+            }
+          >
             {related.map((r, i) => (
               <Reveal key={r.id} index={i % 4}>
                 <DestinationCard destination={r} className="h-[22rem]" />
               </Reveal>
             ))}
-          </div>
+          </CardSlider>
         </div>
       </section>
     </>

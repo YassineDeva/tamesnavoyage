@@ -23,6 +23,7 @@ import { Reveal } from "@/components/motion/reveal";
 import { StarRating } from "@/components/ui/star-rating";
 import { BookingForm } from "@/components/ui/booking-form";
 import { TourCard } from "@/components/ui/tour-card";
+import { CardSlider } from "@/components/ui/card-slider";
 import { Link } from "@/i18n/navigation";
 import { tours, getTour, t as tr } from "@/lib/data";
 import { getDayImages } from "@/lib/itinerary-images";
@@ -503,14 +504,22 @@ export default async function TourDetailPage({ params }: Props) {
       {/* Related */}
       <section className="bg-dune py-20 sm:py-24">
         <div className="container-wide">
-          <h2 className="text-h2 font-medium text-ink-900">{t("relatedTitle")}</h2>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {/* Three across once they fit; a rail below that, where they don't. */}
+          <CardSlider
+            labelPrev={tc("previous")}
+            labelNext={tc("next")}
+            slideClassName="sm:flex-[0_0_50%] lg:flex-[0_0_33.333%]"
+            controlsClassName="lg:hidden"
+            header={
+              <h2 className="text-h2 font-medium text-ink-900">{t("relatedTitle")}</h2>
+            }
+          >
             {related.map((r, i) => (
               <Reveal key={r.id} index={i}>
                 <TourCard tour={r} className="h-full" />
               </Reveal>
             ))}
-          </div>
+          </CardSlider>
         </div>
       </section>
     </>

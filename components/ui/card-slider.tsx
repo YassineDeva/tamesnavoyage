@@ -15,8 +15,8 @@ import { cn } from "@/lib/utils";
  * The arrows live in the header row rather than over the artwork — cards
  * carry badges in their top corners that an overlaid control would hide.
  *
- * Four across from `xl`; below that the container is too narrow for a card
- * to stay readable, so it steps down to three, two, then one.
+ * By default four across from `xl`; below that the container is too narrow
+ * for a card to stay readable, so it steps down to three, two, then one.
  */
 export function CardSlider({
   children,
@@ -24,6 +24,8 @@ export function CardSlider({
   action,
   labelPrev,
   labelNext,
+  slideClassName = "sm:flex-[0_0_50%] lg:flex-[0_0_33.333%] xl:flex-[0_0_25%]",
+  controlsClassName,
 }: {
   children: React.ReactNode;
   /** Title block, rendered at the start of the header row. */
@@ -32,6 +34,14 @@ export function CardSlider({
   action?: React.ReactNode;
   labelPrev: string;
   labelNext: string;
+  /** Per-breakpoint slide widths. Every slide is full width until overridden. */
+  slideClassName?: string;
+  /**
+   * Applied to the pair of arrows, not to `action`. Use it to drop them at
+   * the breakpoint where every slide already fits — embla stops scrolling
+   * there anyway.
+   */
+  controlsClassName?: string;
 }) {
   const isRtl = useLocale() === "ar";
   const [emblaRef, embla] = useEmblaCarousel({
@@ -51,18 +61,20 @@ export function CardSlider({
         <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
           {header}
           <div className="flex items-center gap-3">
-            <Arrow
-              side="start"
-              label={labelPrev}
-              disabled={!canPrev}
-              onClick={() => embla?.scrollPrev()}
-            />
-            <Arrow
-              side="end"
-              label={labelNext}
-              disabled={!canNext}
-              onClick={() => embla?.scrollNext()}
-            />
+            <div className={cn("flex items-center gap-3", controlsClassName)}>
+              <Arrow
+                side="start"
+                label={labelPrev}
+                disabled={!canPrev}
+                onClick={() => embla?.scrollPrev()}
+              />
+              <Arrow
+                side="end"
+                label={labelNext}
+                disabled={!canNext}
+                onClick={() => embla?.scrollNext()}
+              />
+            </div>
             {action}
           </div>
         </div>
@@ -73,7 +85,10 @@ export function CardSlider({
           {slides.map((slide, i) => (
             <div
               key={i}
-              className="min-w-0 flex-[0_0_100%] pe-5 sm:flex-[0_0_50%] lg:flex-[0_0_33.333%] xl:flex-[0_0_25%]"
+              className={cn(
+                "min-w-0 flex-[0_0_100%] pe-5",
+                slideClassName,
+              )}
             >
               {slide}
             </div>
