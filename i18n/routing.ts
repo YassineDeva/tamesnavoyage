@@ -12,6 +12,15 @@ export const routing = defineRouting({
   locales,
   defaultLocale,
   localePrefix: "always",
+  /**
+   * next-intl would otherwise also emit hreflang as a `Link:` response header,
+   * built from the *request* host. That is a second, competing source of the
+   * same annotations — and where the request host does not match
+   * NEXT_PUBLIC_SITE_URL (preview deploys, www vs apex), Google sees one
+   * language pointing at two URLs and discards the pair. The canonical set
+   * lives in `buildMetadata` and the sitemap, which agree with each other.
+   */
+  alternateLinks: false,
 });
 
 export const localeDirection: Record<Locale, "ltr" | "rtl"> = {

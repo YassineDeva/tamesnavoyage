@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { buildMetadata, JsonLd, BRAND } from "@/lib/seo";
+import {
+  buildMetadata,
+  JsonLd,
+  breadcrumbJsonLd,
+  canonical,
+  ORG_ID,
+  REVIEWS_ARE_VERIFIED,
+} from "@/lib/seo";
 import { PageHeader } from "@/components/sections/page-header";
 import { TestimonialCard } from "@/components/ui/testimonial-card";
 import { Reveal } from "@/components/motion/reveal";
@@ -18,6 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path: "/testimonials",
     title: t("metaTitle"),
     description: t("metaDesc"),
+    image: "/media/lifestyle/travelers.jpg",
   });
 }
 
@@ -26,21 +34,36 @@ export default async function TestimonialsPage({ params }: Props) {
   setRequestLocale(locale);
   const t = await getTranslations("pages.testimonials");
 
+  /**
+   * The page used to declare itself a `Product` carrying a 4.9/412 rating.
+   * Both halves were wrong: an agency is not a product, and reviews a business
+   * publishes about itself are ignored by Google for rich results — an invented
+   * aggregate on top of that is a manual-action risk. So the page describes
+   * itself, and the testimonials are only marked up once somebody has real,
+   * verifiable reviews behind them.
+   */
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Product",
-    name: BRAND,
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "412",
-    },
-    review: testimonials.map((r) => ({
-      "@type": "Review",
-      author: { "@type": "Person", name: r.name },
-      reviewRating: { "@type": "Rating", ratingValue: r.rating, bestRating: 5 },
-      reviewBody: r.quote[locale],
-    })),
+    "@type": "CollectionPage",
+    url: canonical(locale, "/testimonials"),
+    name: t("title"),
+    description: t("metaDesc"),
+    isPartOf: { "@id": ORG_ID },
+    ...(REVIEWS_ARE_VERIFIED
+      ? {
+          mainEntity: testimonials.map((r) => ({
+            "@type": "Review",
+            author: { "@type": "Person", name: r.name },
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: r.rating,
+              bestRating: 5,
+            },
+            reviewBody: r.quote[locale],
+            itemReviewed: { "@id": ORG_ID },
+          })),
+        }
+      : {}),
   };
 
   const stats = [
@@ -52,13 +75,18 @@ export default async function TestimonialsPage({ params }: Props) {
   return (
     <>
       <JsonLd data={jsonLd} />
+      <JsonLd
+        data={breadcrumbJsonLd(locale, [
+          { name: t("breadcrumb"), path: "/testimonials" },
+        ])}
+      />
       <PageHeader
         eyebrow={t("eyebrow")}
         title={t("title")}
         subtitle={t("subtitle")}
         breadcrumb={t("breadcrumb")}
         image="/media/lifestyle/travelers.jpg"
-        imageLabel="Happy travelers at a desert camp"
+        imageLabel={t("imageAlt")}
       />
 
       {/* Stats */}

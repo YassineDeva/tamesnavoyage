@@ -8,7 +8,12 @@ import { routing, localeDirection, type Locale } from "@/i18n/routing";
 import { SmoothScroll } from "@/components/motion/smooth-scroll";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
-import { buildMetadata, JsonLd, organizationJsonLd } from "@/lib/seo";
+import {
+  buildMetadata,
+  JsonLd,
+  organizationJsonLd,
+  websiteJsonLd,
+} from "@/lib/seo";
 
 type Params = { params: Promise<{ locale: string }> };
 
@@ -51,6 +56,7 @@ export default async function LocaleLayout({
     >
       <body className="flex min-h-full flex-col bg-sand-50">
         <JsonLd data={organizationJsonLd(locale)} />
+        <JsonLd data={websiteJsonLd(locale)} />
         <NextIntlClientProvider locale={locale} messages={messages}>
           <SmoothScroll>
             <Navbar />

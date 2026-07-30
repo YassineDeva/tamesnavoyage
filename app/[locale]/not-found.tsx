@@ -5,6 +5,9 @@ export default function NotFound() {
   const t = useTranslations("nav");
   return (
     <section className="zellige flex min-h-[80vh] items-center justify-center px-6 pt-24 text-center">
+      {/* `not-found.tsx` cannot export metadata, so it would otherwise inherit
+          the home page's title and canonical. React hoists this into <head>. */}
+      <meta name="robots" content="noindex, follow" />
       <div>
         <p className="font-display text-[8rem] leading-none text-terracotta-300">404</p>
         <p className="mt-4 text-lg text-ink-800">

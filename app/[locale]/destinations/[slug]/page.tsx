@@ -12,7 +12,15 @@ import {
   ArrowLeft,
   MapPin,
 } from "lucide-react";
-import { buildMetadata, JsonLd, SITE_URL, BRAND } from "@/lib/seo";
+import {
+  buildMetadata,
+  JsonLd,
+  SITE_URL,
+  BRAND,
+  absolute,
+  ogImage,
+  breadcrumbJsonLd,
+} from "@/lib/seo";
 import { Reveal } from "@/components/motion/reveal";
 import { GalleryCarousel } from "@/components/ui/gallery-carousel";
 import { DestinationCard } from "@/components/ui/destination-card";
@@ -87,13 +95,22 @@ export default async function DestinationDetailPage({ params }: Props) {
     "@type": "TouristDestination",
     name: tr(d.name, locale),
     description: detail ? tr(detail.intro, locale) : tr(d.blurb, locale),
-    image: `${SITE_URL}${d.image}`,
+    image: absolute(ogImage(d.image)),
     url: `${SITE_URL}/${locale}/destinations/${d.slug}`,
+    ...(detail
+      ? { touristType: tr(detail.idealFor, locale) }
+      : {}),
   };
 
   return (
     <>
       <JsonLd data={jsonLd} />
+      <JsonLd
+        data={breadcrumbJsonLd(locale, [
+          { name: tn("destinations"), path: "/destinations" },
+          { name: tr(d.name, locale), path: `/destinations/${d.slug}` },
+        ])}
+      />
 
       {/* Hero */}
       <header className="relative flex min-h-[60vh] items-end overflow-hidden bg-navy-800 pb-14 pt-32 sm:min-h-[68vh] sm:pb-20">

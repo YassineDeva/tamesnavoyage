@@ -3,8 +3,8 @@
     "brand": "Tamesna Voyages",
     "tagline": "Tourisme & Events — le monde à portée de main",
     "home": {
-      "title": "Tamesna Voyages — Circuits, hôtels & vols pour un voyage d'exception",
-      "description": "Agence de voyages & d'événementiel. Trouvez les meilleurs circuits, hôtels et vols pour explorer le monde et vivre des expériences inoubliables."
+      "title": "Tamesna Voyages — Agence de voyages & Omra à Tamesna",
+      "description": "Agence de voyages et d'événementiel à Tamesna : circuits organisés, Omra, billetterie, hôtels et voyages d'affaires. Devis sous 24 h, assistance 24/7."
     }
   },
   "nav": {
@@ -228,7 +228,8 @@
       "moroccoSubtitle": "Du désert ocre à l'océan, nos terres de cœur.",
       "intlEyebrow": "Top destinations",
       "intlTitle": "Le monde avec Tamesna",
-      "intlSubtitle": "Nos destinations internationales les plus demandées."
+      "intlSubtitle": "Nos destinations internationales les plus demandées.",
+      "imageAlt": "Toits de la médina de Marrakech au coucher du soleil"
     },
     "destinationDetail": {
       "breadcrumb": "Destinations",
@@ -247,7 +248,7 @@
       "relatedTitle": "Autres destinations"
     },
     "services": {
-      "metaTitle": "Nos services — Voyages d'affaires, MICE, Hajj & Omra | Tamesna Voyages",
+      "metaTitle": "Voyages d'affaires, MICE, Hajj & Omra | Tamesna Voyages",
       "metaDesc": "Voyages d'affaires, séminaires et incentives (MICE), Hajj & Omra et séjours sur-mesure. Une prise en charge complète, une assistance 24/7.",
       "eyebrow": "Nos services",
       "title": "Tous vos voyages, un seul partenaire",
@@ -274,10 +275,38 @@
         "title": "Tout ce qu'il vous faut, à la carte",
         "subtitle": "Billetterie, transport, hôtellerie et bien plus : composez votre voyage élément par élément."
       },
-      "cta": "En savoir plus"
+      "cta": "En savoir plus",
+      "imageAlt": "Conseillère Tamesna Voyages préparant un dossier de voyage",
+      "faqTitle": "Questions fréquentes",
+      "faq": [
+        {
+          "q": "Comment réserver un voyage chez Tamesna Voyages ?",
+          "a": "Envoyez-nous votre demande depuis le formulaire de contact ou depuis la fiche du circuit qui vous intéresse. Un conseiller vous répond sous 24 h avec une proposition, sans engagement de votre part."
+        },
+        {
+          "q": "Quelles sont les modalités de paiement ?",
+          "a": "50 % du montant à la confirmation de la réservation, puis le solde au plus tard 30 jours avant le départ."
+        },
+        {
+          "q": "Quelles sont les conditions d'annulation ?",
+          "a": "De 30 à 15 jours avant le départ, 50 % de frais. De 14 à 8 jours, 70 % de frais. À moins de 7 jours du départ ou en cas de no-show, 100 % de frais."
+        },
+        {
+          "q": "Les prix affichés sont-ils définitifs ?",
+          "a": "Les prix sont indiqués par personne en dirhams. Ils peuvent varier avec le taux de change dans le mois précédant le départ, et certains programmes sont tarifés sur demande selon les vols et les hôtels confirmés."
+        },
+        {
+          "q": "Le vol est-il compris dans les circuits ?",
+          "a": "Cela dépend du circuit : chaque fiche l'indique explicitement. Lorsque le vol n'est pas inclus, nous pouvons le réserver pour vous dans un devis complet."
+        },
+        {
+          "q": "Où se trouve l'agence ?",
+          "a": "Av. Yaâkoub El Mansour, Imm. A, Magasin N°1, Tamesna, Témara. Nous recevons du lundi au samedi, de 9 h à 19 h, et nous assurons une assistance 24/7 pendant vos voyages."
+        }
+      ]
     },
     "tours": {
-      "metaTitle": "Circuits & voyages organisés — Tamesna Voyage",
+      "metaTitle": "Circuits & voyages organisés 2026 | Tamesna Voyages",
       "metaDesc": "Circuits et séjours organisés au départ de Casablanca : Turquie, Égypte, Balkans, Italie, Chine, Royaume-Uni et Maroc. Dates, hôtels et tarifs 2026.",
       "eyebrow": "Nos circuits",
       "title": "Nos voyages organisés",
@@ -289,17 +318,49 @@
       "kindLabel": "Type",
       "kindCircuit": "Circuits",
       "kindSejour": "Séjours",
-      "empty": "Aucun voyage ne correspond à ces filtres."
+      "empty": "Aucun voyage ne correspond à ces filtres.",
+      "imageAlt": "Littoral méditerranéen à l'heure dorée"
     },
     "omra": {
-      "metaTitle": "Omra au départ du Maroc — programmes 2026 / 2027 — Tamesna Voyages",
-      "metaDesc": "Programmes d'Omra de quinze jours entre Médine et La Mecque : visa, assurance, hébergement, transport interne et accompagnement religieux marocain inclus. Tarifs communiqués sur demande.",
+      "metaTitle": "Omra 2026 / 2027 au départ du Maroc | Tamesna Voyages",
+      "metaDesc": "Omra de quinze jours entre Médine et La Mecque : visa, assurance, hôtels, transport interne et accompagnateur marocain inclus. Tarifs sous 24 h.",
       "eyebrow": "Omra & pèlerinage",
       "title": "Omra au départ du Maroc",
       "subtitle": "Quinze jours entre Médine et La Mecque, un accompagnement religieux marocain et un dossier de visa entièrement pris en charge par l'agence.",
       "breadcrumb": "Omra",
       "packagesTitle": "Nos programmes d'Omra",
-      "resultsLabel": "programmes"
+      "resultsLabel": "programmes",
+      "faqTitle": "Questions fréquentes sur l'Omra",
+      "faq": [
+        {
+          "q": "Combien de temps dure l'Omra proposée par Tamesna Voyages ?",
+          "a": "Nos programmes durent quinze jours, répartis entre Médine et La Mecque. Le nombre de nuits par ville sainte est détaillé sur la fiche de chaque programme."
+        },
+        {
+          "q": "Le visa Omra est-il inclus ?",
+          "a": "Oui. Le visa Omra, valable jusqu'à 90 jours, est inclus dans le programme : l'agence dépose le dossier et en assure le suivi pour vous."
+        },
+        {
+          "q": "Un accompagnateur est-il présent sur place ?",
+          "a": "Oui. Un guide religieux marocain arabophone accompagne le groupe du départ au retour et encadre les rites ainsi que les visites."
+        },
+        {
+          "q": "Comment est réservée la Rawda Charifa ?",
+          "a": "La Rawda Charifa est réservée par l'agence via l'application Nusuk. L'ihram et les visites guidées sont également encadrés."
+        },
+        {
+          "q": "L'assurance médicale est-elle comprise ?",
+          "a": "Oui. Une couverture médicale s'applique sur toute la durée du séjour."
+        },
+        {
+          "q": "Quel est le prix d'une Omra au départ du Maroc ?",
+          "a": "Les tarifs de la saison sont communiqués sur demande : ils dépendent des vols et des hôtels confirmés au moment de la réservation. Laissez-nous vos coordonnées et vous recevrez le tarif sous 24 h."
+        },
+        {
+          "q": "Quelles sont les modalités de paiement de l'Omra ?",
+          "a": "50 % à la confirmation de la réservation, puis le solde au plus tard 30 jours avant le départ."
+        }
+      ]
     },
     "tourDetail": {
       "overview": "Aperçu",
@@ -368,13 +429,13 @@
       "contactLink": "nous contacter"
     },
     "about": {
-      "metaTitle": "À propos — Tamesna Voyage, créateur de voyages au Maroc",
-      "metaDesc": "Depuis 2013, Tamesna Voyage conçoit des voyages sur-mesure au Maroc, portés par des experts locaux et une exigence de l'authenticité.",
+      "metaTitle": "À propos — Tamesna Voyages, agence de voyages à Tamesna",
+      "metaDesc": "Depuis 2013, Tamesna Voyages conçoit des voyages sur-mesure au Maroc et à l'international, portés par des experts locaux et le souci de l'authenticité.",
       "eyebrow": "Notre maison",
       "title": "Des artisans du voyage, enracinés au Maroc",
       "lede": "Nous sommes une équipe de passionnés marocains. Notre métier : transformer vos envies en souvenirs qui durent toute une vie.",
       "storyTitle": "Notre histoire",
-      "story1": "Tamesna Voyage est née à Marrakech en 2013, de la conviction qu'un voyage au Maroc ne se résume pas à une liste de sites à cocher. C'est une rencontre — avec des paysages, des saveurs, des gens.",
+      "story1": "Tamesna Voyages est née à Marrakech en 2013, de la conviction qu'un voyage au Maroc ne se résume pas à une liste de sites à cocher. C'est une rencontre — avec des paysages, des saveurs, des gens.",
       "story2": "Aujourd'hui, nous accompagnons chaque année des centaines de voyageurs du monde entier, en tissant des liens durables avec les familles, artisans et guides qui font la richesse de nos itinéraires.",
       "valuesTitle": "Ce qui nous porte",
       "values": {
@@ -420,11 +481,13 @@
         "c2d": "Simplifier vos déplacements, optimiser votre temps et offrir une expérience de voyage fluide, fiable et personnalisée."
       },
       "teamTitle": "L'équipe",
-      "breadcrumb": "À propos"
+      "breadcrumb": "À propos",
+      "imageAlt": "L'équipe de Tamesna Voyages dans la médina",
+      "artisanAlt": "Artisan marocain au travail dans son atelier à Fès"
     },
     "contact": {
-      "metaTitle": "Contact — Planifiez votre voyage au Maroc | Tamesna Voyage",
-      "metaDesc": "Parlez-nous de votre projet de voyage au Maroc. Un conseiller dédié vous répond sous 24 h avec une première proposition d'itinéraire.",
+      "metaTitle": "Contact — Agence de voyages à Tamesna | Tamesna Voyages",
+      "metaDesc": "Agence de voyages à Tamesna, Témara. Parlez-nous de votre projet : un conseiller vous répond sous 24 h avec une première proposition d'itinéraire.",
       "eyebrow": "Parlons de votre voyage",
       "title": "Composons votre Maroc, ensemble",
       "subtitle": "Remplissez le formulaire : un conseiller vous répond sous 24 h.",
@@ -434,18 +497,20 @@
       "phoneLabel": "Téléphone",
       "emailLabel": "E-mail",
       "mapTitle": "Notre localisation",
-      "breadcrumb": "Contact"
+      "breadcrumb": "Contact",
+      "imageAlt": "Accueil au thé à la menthe dans un riad marocain"
     },
     "testimonials": {
-      "metaTitle": "Avis voyageurs — Tamesna Voyage",
-      "metaDesc": "Découvrez les récits de nos voyageurs. Note moyenne de 4,9/5 sur plus de 400 avis vérifiés.",
+      "metaTitle": "Avis voyageurs & témoignages | Tamesna Voyages",
+      "metaDesc": "Les récits de nos voyageurs : circuits au Maroc et à l'international, Omra et voyages d'affaires, racontés par ceux qui les ont vécus avec nous.",
       "eyebrow": "Ils nous ont fait confiance",
       "title": "Des voyages qui laissent une trace",
       "subtitle": "Plus de 400 avis vérifiés, une note moyenne de 4,9/5.",
       "statRating": "Note moyenne",
       "statReviews": "Avis vérifiés",
       "statRepeat": "Voyageurs fidèles",
-      "breadcrumb": "Avis"
+      "breadcrumb": "Avis",
+      "imageAlt": "Voyageurs réunis autour du feu dans un campement du désert"
     }
   },
   "booking": {

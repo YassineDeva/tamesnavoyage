@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { buildMetadata, JsonLd, SITE_URL } from "@/lib/seo";
+import { buildMetadata, JsonLd, SITE_URL, breadcrumbJsonLd } from "@/lib/seo";
 import { PageHeader } from "@/components/sections/page-header";
 import { ToursExplorer } from "@/components/sections/tours-explorer";
 import { CtaBand } from "@/components/sections/cta-band";
@@ -17,6 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path: "/tours",
     title: t("metaTitle"),
     description: t("metaDesc"),
+    image: "/media/hero-santorini.webp",
   });
 }
 
@@ -39,13 +40,18 @@ export default async function ToursPage({ params }: Props) {
   return (
     <>
       <JsonLd data={itemList} />
+      <JsonLd
+        data={breadcrumbJsonLd(locale, [
+          { name: t("breadcrumb"), path: "/tours" },
+        ])}
+      />
       <PageHeader
         eyebrow={t("eyebrow")}
         title={t("title")}
         subtitle={t("subtitle")}
         breadcrumb={t("breadcrumb")}
         image="/media/hero-santorini.webp"
-        imageLabel="Mediterranean coastline at golden hour"
+        imageLabel={t("imageAlt")}
       />
       <ToursExplorer />
       <div className="pb-24 sm:pb-28">

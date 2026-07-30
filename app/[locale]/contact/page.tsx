@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, JsonLd, breadcrumbJsonLd } from "@/lib/seo";
 import { PageHeader } from "@/components/sections/page-header";
 import { BookingForm } from "@/components/ui/booking-form";
 import { Reveal } from "@/components/motion/reveal";
@@ -19,24 +19,30 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path: "/contact",
     title: t("metaTitle"),
     description: t("metaDesc"),
+    image: "/media/lifestyle/tea.jpg",
   });
 }
 
 export default async function ContactPage({ params }: Props) {
-  const { locale } = await params;
+  const { locale } = (await params) as { locale: Locale };
   setRequestLocale(locale);
   const t = await getTranslations("pages.contact");
   const tf = await getTranslations("footer");
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbJsonLd(locale, [
+          { name: t("breadcrumb"), path: "/contact" },
+        ])}
+      />
       <PageHeader
         eyebrow={t("eyebrow")}
         title={t("title")}
         subtitle={t("subtitle")}
         breadcrumb={t("breadcrumb")}
         image="/media/lifestyle/tea.jpg"
-        imageLabel="Mint tea welcome in a riad"
+        imageLabel={t("imageAlt")}
       />
 
       <section className="py-20 sm:py-28">

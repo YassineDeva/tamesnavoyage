@@ -1,8 +1,16 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { BookOpen, FileCheck, ShieldCheck, Users } from "lucide-react";
-import { buildMetadata, JsonLd, SITE_URL } from "@/lib/seo";
+import {
+  buildMetadata,
+  JsonLd,
+  SITE_URL,
+  breadcrumbJsonLd,
+  faqJsonLd,
+  type FaqItem,
+} from "@/lib/seo";
 import { PageHeader } from "@/components/sections/page-header";
+import { Faq } from "@/components/sections/faq";
 import { CtaBand } from "@/components/sections/cta-band";
 import { Reveal } from "@/components/motion/reveal";
 import { TourCard } from "@/components/ui/tour-card";
@@ -47,9 +55,15 @@ export default async function OmraPage({ params }: Props) {
     })),
   };
 
+  const faq = t.raw("faq") as FaqItem[];
+
   return (
     <>
       <JsonLd data={itemList} />
+      <JsonLd
+        data={breadcrumbJsonLd(locale, [{ name: t("breadcrumb"), path: "/omra" }])}
+      />
+      <JsonLd data={faqJsonLd(faq)} />
       <PageHeader
         eyebrow={t("eyebrow")}
         title={t("title")}
@@ -102,7 +116,11 @@ export default async function OmraPage({ params }: Props) {
         </div>
       </section>
 
-      <div className="pb-24 sm:pb-28">
+      <div className="border-t border-sand-200 bg-dune">
+        <Faq title={t("faqTitle")} items={faq} />
+      </div>
+
+      <div className="py-24 sm:py-28">
         <CtaBand />
       </div>
     </>

@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/build-og-images.mjs && next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "og:build": "node scripts/build-og-images.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -29,6 +30,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.10",
     "shadcn": "^4.13.1",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

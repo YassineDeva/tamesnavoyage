@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, JsonLd, breadcrumbJsonLd, SITE_URL } from "@/lib/seo";
 import { PageHeader } from "@/components/sections/page-header";
 import { DestinationCard } from "@/components/ui/destination-card";
 import { Reveal } from "@/components/motion/reveal";
@@ -18,23 +18,44 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path: "/destinations",
     title: t("metaTitle"),
     description: t("metaDesc"),
+    image: "/media/destinations/marrakech.jpg",
   });
 }
 
 export default async function DestinationsPage({ params }: Props) {
-  const { locale } = await params;
+  const { locale } = (await params) as { locale: Locale };
   setRequestLocale(locale);
   const t = await getTranslations("pages.destinations");
 
+  /* Both grids in one list, in the order they are rendered. */
+  const itemList = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: [...destinations, ...internationalDestinations].map(
+      (d, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: d.name[locale],
+        url: `${SITE_URL}/${locale}/destinations/${d.slug}`,
+      }),
+    ),
+  };
+
   return (
     <>
+      <JsonLd data={itemList} />
+      <JsonLd
+        data={breadcrumbJsonLd(locale, [
+          { name: t("breadcrumb"), path: "/destinations" },
+        ])}
+      />
       <PageHeader
         eyebrow={t("eyebrow")}
         title={t("title")}
         subtitle={t("subtitle")}
         breadcrumb={t("breadcrumb")}
         image="/media/destinations/marrakech.jpg"
-        imageLabel="Marrakech medina rooftops"
+        imageLabel={t("imageAlt")}
       />
 
       {/* Morocco */}

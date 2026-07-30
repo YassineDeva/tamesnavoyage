@@ -1,4 +1,4 @@
-# Tamesna Voyage
+# Tamesna Voyages
 
 **Bilingual (FR / AR + RTL)** website for the Tamesna Voyages travel agency,
 built on the official brand charter — navy / azure / olive / amber, globe +

@@ -33,6 +33,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path: `/legal/${doc}`,
     title: `${tr(document.title, locale)} — ${BRAND}`,
     description: tr(document.summary, locale),
+    /* Boilerplate nobody searches for, in two languages, that would otherwise
+       compete for crawl attention with the pages that sell. Still crawlable and
+       still linked from the footer — just kept out of the index. */
+    noindex: true,
   });
 }
 

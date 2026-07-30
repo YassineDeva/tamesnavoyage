@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, JsonLd, breadcrumbJsonLd } from "@/lib/seo";
 import { PageHeader } from "@/components/sections/page-header";
 import { Media } from "@/components/ui/media";
 import { Reveal } from "@/components/motion/reveal";
@@ -17,11 +17,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path: "/about",
     title: t("metaTitle"),
     description: t("metaDesc"),
+    image: "/media/lifestyle/team.jpg",
   });
 }
 
 export default async function AboutPage({ params }: Props) {
-  const { locale } = await params;
+  const { locale } = (await params) as { locale: Locale };
   setRequestLocale(locale);
   const t = await getTranslations("pages.about");
 
@@ -33,13 +34,18 @@ export default async function AboutPage({ params }: Props) {
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbJsonLd(locale, [
+          { name: t("breadcrumb"), path: "/about" },
+        ])}
+      />
       <PageHeader
         eyebrow={t("eyebrow")}
         title={t("title")}
         subtitle={t("lede")}
         breadcrumb={t("breadcrumb")}
         image="/media/lifestyle/team.jpg"
-        imageLabel="Tamesna team in the medina"
+        imageLabel={t("imageAlt")}
       />
 
       {/* Story */}
@@ -49,8 +55,8 @@ export default async function AboutPage({ params }: Props) {
             <div className="relative aspect-[4/5]">
               <Media
                 src="/media/lifestyle/story.jpg"
-                alt="Artisan marocain au travail"
-                label="Artisan at work, Fès"
+                alt={t("artisanAlt")}
+                label={t("artisanAlt")}
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>

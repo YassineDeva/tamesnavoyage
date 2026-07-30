@@ -21,7 +21,17 @@ import {
   BookOpen,
   IdCard,
 } from "lucide-react";
-import { buildMetadata, JsonLd, SITE_URL, BRAND } from "@/lib/seo";
+import {
+  buildMetadata,
+  JsonLd,
+  SITE_URL,
+  BRAND,
+  ORG_ID,
+  absolute,
+  ogImage,
+  breadcrumbJsonLd,
+  REVIEWS_ARE_VERIFIED,
+} from "@/lib/seo";
 import { Media } from "@/components/ui/media";
 import { Reveal } from "@/components/motion/reveal";
 import { StarRating } from "@/components/ui/star-rating";
@@ -89,14 +99,32 @@ export default async function TourDetailPage({ params }: Props) {
   const bookSubtitle =
     tour.status === "soon" ? t("notifySubtitle") : t("bookSubtitle");
 
+  /**
+   * `TouristTrip` is what this actually is; `Product` rides along so the fare
+   * stays eligible for a price snippet. The rating is only published once real
+   * reviews exist behind it — see REVIEWS_ARE_VERIFIED.
+   */
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Product",
+    "@type": ["Product", "TouristTrip"],
     name: tr(tour.title, locale),
     description: tr(tour.summary, locale),
-    image: `${SITE_URL}${tour.image}`,
+    image: absolute(ogImage(tour.image)),
     brand: { "@type": "Brand", name: BRAND },
-    ...(tour.rating !== undefined && tour.reviews !== undefined
+    provider: { "@id": ORG_ID },
+    touristType: tr(tour.level, locale),
+    itinerary: {
+      "@type": "ItemList",
+      numberOfItems: tour.itinerary.length,
+      itemListElement: tour.itinerary.map((step) => ({
+        "@type": "ListItem",
+        position: step.day,
+        name: tr(step.title, locale),
+      })),
+    },
+    ...(REVIEWS_ARE_VERIFIED &&
+    tour.rating !== undefined &&
+    tour.reviews !== undefined
       ? {
           aggregateRating: {
             "@type": "AggregateRating",
@@ -125,6 +153,16 @@ export default async function TourDetailPage({ params }: Props) {
   return (
     <>
       <JsonLd data={jsonLd} />
+      {/* Mirrors the visible trail below, crumb for crumb. */}
+      <JsonLd
+        data={breadcrumbJsonLd(locale, [
+          {
+            name: isOmra ? t("breadcrumbOmra") : t("breadcrumb"),
+            path: isOmra ? "/omra" : "/tours",
+          },
+          { name: tr(tour.title, locale), path: `/tours/${tour.slug}` },
+        ])}
+      />
 
       {/* Hero */}
       <header className="relative flex min-h-[70vh] items-end overflow-hidden pb-14 pt-32 sm:pb-20">
