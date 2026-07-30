@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "../globals.css";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
@@ -15,6 +15,11 @@ type Params = { params: Promise<{ locale: string }> };
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
+
+/** Navy address bar on mobile, matching the favicon plate. */
+export const viewport: Viewport = {
+  themeColor: "#053f5c",
+};
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { locale } = await params;
