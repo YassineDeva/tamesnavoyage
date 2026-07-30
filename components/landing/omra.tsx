@@ -4,6 +4,7 @@ import { Link } from "@/i18n/navigation";
 import { omra } from "@/lib/data";
 import { Reveal } from "@/components/motion/reveal";
 import { TourCard } from "@/components/ui/tour-card";
+import { CardSlider } from "@/components/ui/card-slider";
 
 const TRUST = [
   { key: "visa", Icon: FileCheck },
@@ -24,6 +25,7 @@ const TRUST = [
  */
 export function Omra() {
   const t = useTranslations("landing.omra");
+  const tc = useTranslations("common");
 
   if (!omra.length) return null;
 
@@ -32,17 +34,27 @@ export function Omra() {
       <div className="dotted-field absolute inset-0 opacity-[0.12]" aria-hidden />
 
       <div className="container-wide relative">
-        <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
-          <Reveal>
-            <p className="eyebrow text-amber-300">{t("eyebrow")}</p>
-            <h2 className="mt-4 max-w-2xl text-h2 font-bold leading-[1.08] text-white">
-              {t("title")}
-            </h2>
-            <p className="mt-4 max-w-xl text-base leading-relaxed text-white/70">
-              {t("subtitle")}
-            </p>
-          </Reveal>
-          <Reveal index={1}>
+        {/* Three across once they fit; a rail below that, where they don't. */}
+        <CardSlider
+          labelPrev={tc("previous")}
+          labelNext={tc("next")}
+          tone="dark"
+          slideClassName="sm:flex-[0_0_50%] lg:flex-[0_0_33.333%]"
+          controlsClassName="lg:hidden"
+          header={
+            <Reveal>
+              <div>
+                <p className="eyebrow text-amber-300">{t("eyebrow")}</p>
+                <h2 className="mt-4 max-w-2xl text-h2 font-bold leading-[1.08] text-white">
+                  {t("title")}
+                </h2>
+                <p className="mt-4 max-w-xl text-base leading-relaxed text-white/70">
+                  {t("subtitle")}
+                </p>
+              </div>
+            </Reveal>
+          }
+          action={
             <Link
               href="/omra"
               className="inline-flex items-center gap-2 rounded-full border border-white/25 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:border-amber-300 hover:bg-amber-300 hover:text-navy-900"
@@ -50,16 +62,14 @@ export function Omra() {
               {t("viewAll", { count: omra.length })}
               <ArrowRight className="h-4 w-4 rtl:rotate-180" />
             </Link>
-          </Reveal>
-        </div>
-
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          }
+        >
           {omra.map((pkg, i) => (
-            <Reveal key={pkg.id} index={i}>
+            <Reveal key={pkg.id} index={i} className="h-full">
               <TourCard tour={pkg} className="h-full" />
             </Reveal>
           ))}
-        </div>
+        </CardSlider>
 
         {/* What is settled even while the fare is not */}
         <Reveal index={2}>

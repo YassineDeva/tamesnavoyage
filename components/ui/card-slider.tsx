@@ -26,6 +26,7 @@ export function CardSlider({
   labelNext,
   slideClassName = "sm:flex-[0_0_50%] lg:flex-[0_0_33.333%] xl:flex-[0_0_25%]",
   controlsClassName,
+  tone = "light",
 }: {
   children: React.ReactNode;
   /** Title block, rendered at the start of the header row. */
@@ -36,6 +37,11 @@ export function CardSlider({
   labelNext: string;
   /** Per-breakpoint slide widths. Every slide is full width until overridden. */
   slideClassName?: string;
+  /**
+   * Arrow palette. `dark` is for rails sitting on a navy band, where the
+   * default navy-on-white arrows would disappear into the background.
+   */
+  tone?: "light" | "dark";
   /**
    * Applied to the pair of arrows, not to `action`. Use it to drop them at
    * the breakpoint where every slide already fits — embla stops scrolling
@@ -64,12 +70,14 @@ export function CardSlider({
             <div className={cn("flex items-center gap-3", controlsClassName)}>
               <Arrow
                 side="start"
+                tone={tone}
                 label={labelPrev}
                 disabled={!canPrev}
                 onClick={() => embla?.scrollPrev()}
               />
               <Arrow
                 side="end"
+                tone={tone}
                 label={labelNext}
                 disabled={!canNext}
                 onClick={() => embla?.scrollNext()}
@@ -128,11 +136,13 @@ function useEmblaFlag(
 
 function Arrow({
   side,
+  tone,
   label,
   disabled,
   onClick,
 }: {
   side: "start" | "end";
+  tone: "light" | "dark";
   label: string;
   disabled: boolean;
   onClick: () => void;
@@ -145,9 +155,11 @@ function Arrow({
       disabled={disabled}
       onClick={onClick}
       className={cn(
-        "inline-flex h-10 w-10 items-center justify-center rounded-full border border-navy-900/15 text-navy-700 transition-colors focus-ring",
-        "hover:border-azure-500 hover:bg-azure-50 hover:text-azure-600",
+        "inline-flex h-10 w-10 items-center justify-center rounded-full border transition-colors focus-ring",
         "disabled:pointer-events-none disabled:opacity-30",
+        tone === "dark"
+          ? "border-white/25 text-white hover:border-amber-300 hover:bg-amber-300 hover:text-navy-900"
+          : "border-navy-900/15 text-navy-700 hover:border-azure-500 hover:bg-azure-50 hover:text-azure-600",
       )}
     >
       <Icon className="h-5 w-5 rtl:rotate-180" />
