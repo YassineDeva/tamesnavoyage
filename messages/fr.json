@@ -12,18 +12,13 @@
     "destinations": "Destinations",
     "tours": "Circuits",
     "omra": "Omra",
-    "flights": "Vols",
-    "hotels": "Hôtels",
-    "blog": "Blog",
     "services": "Services",
     "about": "À propos",
     "testimonials": "Avis",
     "contact": "Contact",
-    "cta": "Planifier mon voyage",
     "menu": "Menu",
     "close": "Fermer",
-    "needHelp": "Besoin d'aide ?",
-    "langLabel": "Langue"
+    "needHelp": "Besoin d'aide ?"
   },
   "common": {
     "from": "À partir de",
@@ -50,91 +45,11 @@
     "next": "Suivant"
   },
   "home": {
-    "hero": {
-      "eyebrow": "Explorer · Rêver · Vivre le Maroc",
-      "titleLine1": "Le Maroc,",
-      "titleAccent": "autrement.",
-      "titleLine2": "Des voyages taillés pour vous.",
-      "subtitle": "Du sable ocre de l'Erg Chebbi aux ruelles bleues de Chefchaouen : des itinéraires privés, des riads d'exception et des rencontres qui restent.",
-      "ctaPrimary": "Composer mon voyage",
-      "ctaSecondary": "Voir les circuits",
-      "scroll": "Faites défiler",
-      "stat1": "12 ans d'expertise",
-      "stat2": "2 400+ voyageurs",
-      "stat3": "Note 4,9/5"
-    },
-    "search": {
-      "title": "Où commence votre histoire ?",
-      "destination": "Destination",
-      "destinationPlaceholder": "Marrakech, Sahara, Atlas…",
-      "date": "Dates",
-      "datePlaceholder": "Choisir une période",
-      "travelers": "Voyageurs",
-      "travelersValue": "2 adultes",
-      "style": "Style de voyage",
-      "stylePlaceholder": "Aventure, détente, culture…",
-      "submit": "Rechercher"
-    },
-    "destinations": {
-      "eyebrow": "Destinations phares",
-      "title": "Où irez-vous ?",
-      "subtitle": "Quatre visages du Maroc, une seule promesse : l'émerveillement.",
-      "cta": "Toutes les destinations"
-    },
-    "why": {
-      "eyebrow": "Pourquoi Tamesna",
-      "title": "Un voyage pensé dans le moindre détail",
-      "subtitle": "Nous concevons chaque itinéraire comme une pièce unique, portée par des artisans du voyage.",
-      "items": {
-        "tailor": {
-          "title": "100 % sur-mesure",
-          "desc": "Chaque circuit est dessiné autour de vos envies, votre rythme et votre budget."
-        },
-        "local": {
-          "title": "Experts locaux",
-          "desc": "Des guides marocains passionnés qui ouvrent les portes de leur pays."
-        },
-        "riads": {
-          "title": "Adresses d'exception",
-          "desc": "Riads, kasbahs et camps de luxe sélectionnés un à un."
-        },
-        "care": {
-          "title": "Accompagnement 24/7",
-          "desc": "Un conseiller dédié, présent avant, pendant et après votre voyage."
-        }
-      }
-    },
-    "experiences": {
-      "eyebrow": "Expériences signature",
-      "title": "Des instants que l'on ne raconte pas, on les vit",
-      "subtitle": "Nos expériences les plus demandées, réservables en un clic."
-    },
-    "plan": {
-      "eyebrow": "Sur-mesure",
-      "title": "Un voyage aussi unique que vous",
-      "subtitle": "Confiez-nous vos envies. Nous composons un itinéraire privé, jusqu'au moindre détail.",
-      "cta": "Démarrer la conversation",
-      "step1": "Partagez vos envies",
-      "step2": "Recevez votre itinéraire",
-      "step3": "Partez l'esprit léger"
-    },
-    "testimonials": {
-      "eyebrow": "Ils ont voyagé avec nous",
-      "title": "Ce que disent nos voyageurs",
-      "cta": "Tous les avis"
-    },
     "cta": {
       "eyebrow": "Prêt à partir ?",
       "title": "Votre prochaine aventure marocaine commence ici",
       "subtitle": "Un conseiller vous répond sous 24 h avec une première proposition d'itinéraire.",
       "button": "Planifier mon voyage"
-    },
-    "newsletter": {
-      "title": "Recevez l'inspiration",
-      "subtitle": "Récits, adresses secrètes et offres privées, une fois par mois.",
-      "placeholder": "Votre adresse e-mail",
-      "button": "S'inscrire",
-      "consent": "En vous inscrivant, vous acceptez notre politique de confidentialité."
     },
     "servicesSection": {
       "eyebrow": "Nos services",
@@ -550,37 +465,5 @@
     "sending": "Envoi…",
     "success": "Merci ! Votre demande est bien reçue. Un conseiller vous répond sous 24 h.",
     "required": "Champ requis"
-  },
-  "destinationsData": {
-    "marrakech": {
-      "name": "Marrakech",
-      "region": "La ville rouge",
-      "blurb": "Souks, palais et jardins secrets au pied de l'Atlas."
-    },
-    "sahara": {
-      "name": "Sahara – Merzouga",
-      "region": "Les dunes d'or",
-      "blurb": "Nuit sous les étoiles au cœur de l'Erg Chebbi."
-    },
-    "chefchaouen": {
-      "name": "Chefchaouen",
-      "region": "La perle bleue",
-      "blurb": "Ruelles indigo et douceur de vivre du Rif."
-    },
-    "fes": {
-      "name": "Fès",
-      "region": "La cité impériale",
-      "blurb": "Mille ans d'artisanat dans la plus vieille médina du monde."
-    },
-    "essaouira": {
-      "name": "Essaouira",
-      "region": "L'alizé atlantique",
-      "blurb": "Remparts, embruns et musique gnaoua."
-    },
-    "atlas": {
-      "name": "Haut Atlas",
-      "region": "Les cimes berbères",
-      "blurb": "Villages perchés et vallées émeraude."
-    }
   }
 }

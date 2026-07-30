@@ -41,35 +41,3 @@ export function Reveal({
     </MotionTag>
   );
 }
-
-/** Splits text into words that rise in sequence — for editorial headlines. */
-export function RevealWords({
-  text,
-  className,
-  wordClassName,
-}: {
-  text: string;
-  className?: string;
-  wordClassName?: string;
-}) {
-  const words = text.split(" ");
-  return (
-    <span className={cn("inline", className)} aria-label={text}>
-      {words.map((word, i) => (
-        <span key={`${word}-${i}`} className="inline-block overflow-hidden align-baseline">
-          <motion.span
-            aria-hidden
-            className={cn("inline-block", wordClassName)}
-            initial={{ y: "110%" }}
-            whileInView={{ y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.9, ease: easeExpo, delay: i * 0.06 }}
-          >
-            {word}
-            {i < words.length - 1 ? " " : ""}
-          </motion.span>
-        </span>
-      ))}
-    </span>
-  );
-}

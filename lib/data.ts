@@ -107,14 +107,6 @@ export type Tour = {
   documents?: L[];
 };
 
-export type Experience = {
-  id: string;
-  title: L;
-  desc: L;
-  image: string;
-  meta: L;
-};
-
 export type Testimonial = {
   id: string;
   name: string;
@@ -224,54 +216,6 @@ export const omra: Tour[] = omraPackages;
 
 /** Everything with a `/tours/[slug]` page: circuits + pilgrimages. */
 export const allTours: Tour[] = [...tours, ...omra];
-
-/* -------------------------------------------------------------------------- */
-/*  Experiences                                                              */
-/* -------------------------------------------------------------------------- */
-export const experiences: Experience[] = [
-  {
-    id: "bivouac",
-    title: { fr: "Nuit en bivouac étoilé", ar: "ليلة في مخيّم النجوم" },
-    desc: { fr: "Camp de luxe dans les dunes, dîner berbère et musique.", ar: "مخيّم فاخر بين الكثبان، عشاء أمازيغي وموسيقى." },
-    image: "/media/experiences/bivouac.jpg",
-    meta: { fr: "Sahara · 1 nuit", ar: "الصحراء · ليلة" },
-  },
-  {
-    id: "montgolfiere",
-    title: { fr: "Montgolfière au lever du jour", ar: "منطاد عند الفجر" },
-    desc: { fr: "Survolez la palmeraie de Marrakech au petit matin.", ar: "حلّق فوق واحة مراكش في الصباح الباكر." },
-    image: "/media/experiences/montgolfiere.jpg",
-    meta: { fr: "Marrakech · 4 h", ar: "مراكش · 4 س" },
-  },
-  {
-    id: "cuisine",
-    title: { fr: "Atelier de cuisine marocaine", ar: "ورشة طبخ مغربي" },
-    desc: { fr: "Marché aux épices puis tajine avec une cheffe locale.", ar: "سوق التوابل ثم طاجين مع طاهية محلّية." },
-    image: "/media/experiences/cuisine.jpg",
-    meta: { fr: "Fès · demi-journée", ar: "فاس · نصف يوم" },
-  },
-  {
-    id: "surf",
-    title: { fr: "Surf & yoga sur l'Atlantique", ar: "ركوب أمواج ويوغا على الأطلسي" },
-    desc: { fr: "Sessions de surf et couchers de soleil à Taghazout.", ar: "جلسات ركوب أمواج وغروب في تغازوت." },
-    image: "/media/experiences/surf.jpg",
-    meta: { fr: "Taghazout · 2 jours", ar: "تغازوت · يومان" },
-  },
-  {
-    id: "hammam",
-    title: { fr: "Rituel hammam & argan", ar: "طقس حمّام وأركان" },
-    desc: { fr: "Un moment de bien-être ancestral dans un riad.", ar: "لحظة عافية عريقة في رياض." },
-    image: "/media/experiences/hammam.jpg",
-    meta: { fr: "Marrakech · 2 h", ar: "مراكش · ساعتان" },
-  },
-  {
-    id: "gnaoua",
-    title: { fr: "Soirée gnaoua à Essaouira", ar: "أمسية كناوة بالصويرة" },
-    desc: { fr: "Transe musicale et rythmes ancestraux au coucher.", ar: "طرب صوفي وإيقاعات عريقة عند الغروب." },
-    image: "/media/experiences/gnaoua.jpg",
-    meta: { fr: "Essaouira · soirée", ar: "الصويرة · أمسية" },
-  },
-];
 
 /* -------------------------------------------------------------------------- */
 /*  Testimonials                                                             */
