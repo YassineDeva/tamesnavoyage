@@ -6,6 +6,7 @@ import {
   PlaneTakeoff,
   CalendarRange,
   FileDown,
+  Moon,
 } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Media } from "@/components/ui/media";
@@ -62,6 +63,18 @@ export function TourCard({ tour, className }: { tour: Tour; className?: string }
             {tc("flightNotIncluded")}
           </span>
         )}
+        {/* A departure that cannot be booked yet says so on the photo, rather
+            than letting the visitor discover it at the bottom of the form. */}
+        {tour.status === "soon" && (
+          <span className="absolute bottom-4 start-4 rounded-full bg-amber-400 px-3 py-1 text-xs font-bold text-navy-900">
+            {tc("statusSoon")}
+          </span>
+        )}
+        {tour.status === "full" && (
+          <span className="absolute bottom-4 start-4 rounded-full bg-navy-900/85 px-3 py-1 text-xs font-bold text-white backdrop-blur">
+            {tc("statusFull")}
+          </span>
+        )}
       </div>
 
       <div className="flex flex-1 flex-col p-6">
@@ -74,7 +87,25 @@ export function TourCard({ tour, className }: { tour: Tour; className?: string }
           {tr(tour.summary, locale)}
         </p>
 
-        {tour.rating !== undefined ? (
+        {/* For a pilgrimage the nights-per-holy-city split outranks every other
+            fact on the card: "14 nuits" alone hides whether Makkah or Madinah
+            gets the bulk of the stay. */}
+        {tour.stay?.length ? (
+          <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-1.5">
+            {tour.stay.map((leg, i) => (
+              <li
+                key={i}
+                className="inline-flex items-center gap-1.5 text-xs font-medium text-azure-600"
+              >
+                <Moon className="h-3.5 w-3.5 shrink-0" />
+                {leg.nights} {tc("nights")} · {tr(leg.city, locale)}
+                {leg.walk && (
+                  <span className="text-muted-500">— {tr(leg.walk, locale)}</span>
+                )}
+              </li>
+            ))}
+          </ul>
+        ) : tour.rating !== undefined ? (
           <div className="mt-5 flex items-center gap-2">
             <StarRating value={tour.rating} />
             <span className="text-xs font-semibold text-navy-700">{tour.rating.toFixed(1)}</span>
@@ -93,13 +124,26 @@ export function TourCard({ tour, className }: { tour: Tour; className?: string }
 
         <div className="mt-5 flex items-end justify-between border-t border-surface-200 pt-5">
           <div>
-            <span className="block text-[11px] uppercase tracking-wider text-muted-500">
-              {tc("from")}
-            </span>
-            <span className="text-lg font-bold text-navy-700">
-              {formatPrice(tour.priceMad, locale)}
-            </span>
-            <span className="text-xs text-muted-500"> {tc("perPerson")}</span>
+            {tour.priceOnRequest ? (
+              <>
+                <span className="block text-[11px] uppercase tracking-wider text-muted-500">
+                  {tc("price")}
+                </span>
+                <span className="text-lg font-bold text-navy-700">
+                  {tc("onRequest")}
+                </span>
+              </>
+            ) : (
+              <>
+                <span className="block text-[11px] uppercase tracking-wider text-muted-500">
+                  {tc("from")}
+                </span>
+                <span className="text-lg font-bold text-navy-700">
+                  {formatPrice(tour.priceMad, locale)}
+                </span>
+                <span className="text-xs text-muted-500"> {tc("perPerson")}</span>
+              </>
+            )}
           </div>
           <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-azure-50 text-azure-600 transition-colors group-hover:bg-azure-500 group-hover:text-white">
             <ArrowUpRight className="h-4 w-4 rtl:rotate-90" />

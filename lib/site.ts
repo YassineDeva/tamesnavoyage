@@ -8,6 +8,7 @@ export const navLinks = [
   { key: "destinations", href: "/destinations" },
   { key: "services", href: "/services" },
   { key: "tours", href: "/tours" },
+  { key: "omra", href: "/omra" },
   { key: "about", href: "/about" },
 ] as const;
 

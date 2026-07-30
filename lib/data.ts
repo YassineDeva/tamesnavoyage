@@ -1,5 +1,6 @@
 import type { Locale } from "@/i18n/routing";
 import { voyages2026 } from "./voyages-2026";
+import { omraPackages } from "./omra";
 
 /** A bilingual string. */
 export type L = { fr: string; ar: string };
@@ -16,13 +17,39 @@ export type Destination = {
   span?: "tall" | "wide" | "normal";
 };
 
-/** Guided multi-city touring vs. resort/city stay with free days. */
-export type TourKind = "circuit" | "sejour";
+/** Guided multi-city touring, resort/city stay with free days, or a pilgrimage. */
+export type TourKind = "circuit" | "sejour" | "omra";
 
 export type PriceRow = { label: L; mad: number };
-export type HotelRow = { city: L; name: string; nights: number };
 export type FlightRow = { route: L; time: string };
 export type OptionRow = { label: L; mad: number };
+
+export type HotelRow = {
+  city: L;
+  name: string;
+  nights: number;
+  /** Hotel category, when the programme states one. */
+  stars?: number;
+  /** Walking distance to the Haram — the first thing a pilgrim asks. */
+  walk?: L;
+};
+
+/**
+ * One leg of a pilgrimage. Omra is sold as "so many nights in Madinah, so many
+ * in Makkah" — a single `nights` total hides the only split that matters, so
+ * each city gets its own row on the card and in the detail page.
+ */
+export type StayRow = {
+  city: L;
+  nights: number;
+  hotel?: string;
+  stars?: number;
+  walk?: L;
+  note?: L;
+};
+
+/** Whether a departure is sellable today. */
+export type TourStatus = "open" | "soon" | "full";
 
 export type Tour = {
   id: string;
@@ -31,7 +58,14 @@ export type Tour = {
   summary: L;
   region: L;
   days: number;
+  /** The published "à partir de". Ignored wherever `priceOnRequest` is set. */
   priceMad: number;
+  /**
+   * Set while the programme is confirmed but its fare is not yet published.
+   * Every price slot then reads "sur demande" rather than showing a figure
+   * nobody has signed off on.
+   */
+  priceOnRequest?: boolean;
   /** Only set where real traveller reviews exist — never invented. */
   rating?: number;
   reviews?: number;
@@ -61,6 +95,16 @@ export type Tour = {
   visa?: L;
   /** Public path to the brochure PDF, e.g. "/voyages/turquie-anatolie.pdf". */
   pdf?: string;
+
+  /* --- Pilgrimage (kind: "omra") ----------------------------------------- */
+  /** Defaults to "open" when absent. */
+  status?: TourStatus;
+  /** Nights per holy city — rendered as the "Makkah & Madinah" block. */
+  stay?: StayRow[];
+  /** Rites and guided visits included in the programme. */
+  rituals?: L[];
+  /** Paperwork the pilgrim must supply (passport validity, photo, …). */
+  documents?: L[];
 };
 
 export type Experience = {
@@ -167,6 +211,19 @@ export const destinations: Destination[] = [
  * China, UK, Italy). Kept in `voyages-2026.ts` so this module stays readable.
  */
 export const tours: Tour[] = voyages2026;
+
+/**
+ * Pilgrimages, deliberately kept out of `tours`.
+ *
+ * An Omra is not shopped like a summer circuit — it has its own season, its own
+ * buyer and its own landing page — so it stays out of the `/tours` explorer and
+ * the homepage circuit rail, and gets its own section and `/omra` listing. Both
+ * families still share one detail page, hence `allTours` below.
+ */
+export const omra: Tour[] = omraPackages;
+
+/** Everything with a `/tours/[slug]` page: circuits + pilgrimages. */
+export const allTours: Tour[] = [...tours, ...omra];
 
 /* -------------------------------------------------------------------------- */
 /*  Experiences                                                              */
@@ -768,7 +825,7 @@ export const allDestinations: Destination[] = [
   ...internationalDestinations,
 ];
 
-export const getTour = (slug: string) => tours.find((x) => x.slug === slug);
+export const getTour = (slug: string) => allTours.find((x) => x.slug === slug);
 export const getDestination = (slug: string) =>
   allDestinations.find((x) => x.slug === slug);
 export const getDestinationDetail = (id: string) => destinationDetails[id];

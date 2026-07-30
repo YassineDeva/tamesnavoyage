@@ -11,6 +11,7 @@
     "home": "Accueil",
     "destinations": "Destinations",
     "tours": "Circuits",
+    "omra": "Omra",
     "flights": "Vols",
     "hotels": "Hôtels",
     "blog": "Blog",
@@ -27,6 +28,10 @@
   "common": {
     "from": "À partir de",
     "perPerson": "/ personne",
+    "price": "Tarif",
+    "onRequest": "Sur demande",
+    "statusSoon": "Prochainement",
+    "statusFull": "Complet",
     "days": "jours",
     "nights": "nuits",
     "viewAll": "Voir tout",
@@ -169,6 +174,31 @@
       "title": "Des départs garantis, tout compris",
       "subtitle": "Circuits guidés et séjours au départ de Casablanca. Dates fixes, hôtels sélectionnés et tarifs annoncés — le programme complet est téléchargeable.",
       "viewAll": "Voir les {count} circuits"
+    },
+    "omra": {
+      "eyebrow": "Omra & pèlerinage",
+      "title": "Votre Omra, organisée de bout en bout",
+      "subtitle": "Quinze jours entre Médine et La Mecque, visa et assurance pris en charge, accompagnement religieux marocain du départ au retour. Vous préparez l'intention, nous préparons le reste.",
+      "viewAll": "Voir les {count} programmes",
+      "footnote": "Les tarifs de la saison sont communiqués sur demande : ils dépendent des vols et des hôtels confirmés au moment de la réservation.",
+      "trust": {
+        "visa": {
+          "title": "Visa Omra inclus",
+          "desc": "Jusqu'à 90 jours, dossier déposé et suivi par l'agence."
+        },
+        "insurance": {
+          "title": "Assurance médicale",
+          "desc": "Couverture pour toute la durée du séjour."
+        },
+        "guide": {
+          "title": "Accompagnateur marocain",
+          "desc": "Un guide religieux arabophone présent du départ au retour."
+        },
+        "rituals": {
+          "title": "Rites encadrés",
+          "desc": "Rawda Charifa réservée via Nusuk, ihram et visites guidées."
+        }
+      }
     },
     "trust": {
       "items": {
@@ -346,6 +376,16 @@
       "kindSejour": "Séjours",
       "empty": "Aucun voyage ne correspond à ces filtres."
     },
+    "omra": {
+      "metaTitle": "Omra au départ du Maroc — programmes 2026 / 2027 — Tamesna Voyages",
+      "metaDesc": "Programmes d'Omra de quinze jours entre Médine et La Mecque : visa, assurance, hébergement, transport interne et accompagnement religieux marocain inclus. Tarifs communiqués sur demande.",
+      "eyebrow": "Omra & pèlerinage",
+      "title": "Omra au départ du Maroc",
+      "subtitle": "Quinze jours entre Médine et La Mecque, un accompagnement religieux marocain et un dossier de visa entièrement pris en charge par l'agence.",
+      "breadcrumb": "Omra",
+      "packagesTitle": "Nos programmes d'Omra",
+      "resultsLabel": "programmes"
+    },
     "tourDetail": {
       "overview": "Aperçu",
       "itinerary": "Itinéraire",
@@ -391,7 +431,17 @@
         "c2": "De 14 à 8 jours avant le départ : 70 % de frais",
         "c3": "À moins de 7 jours du départ ou no-show : 100 % de frais"
       },
-      "downloadPdf": "Télécharger le programme (PDF)"
+      "downloadPdf": "Télécharger le programme (PDF)",
+      "breadcrumbOmra": "Omra",
+      "stay": "Séjour à Médine et à La Mecque",
+      "rituals": "Rites et visites encadrés",
+      "documents": "Documents à fournir",
+      "documentsNote": "À remettre à l'agence au moment de l'inscription.",
+      "soonNotice": "Les dates et les tarifs de ce départ sont en cours de confirmation. Laissez-nous vos coordonnées : vous serez prévenu dès l'ouverture des inscriptions.",
+      "priceOnRequestNote": "tarif communiqué sous 24 h",
+      "bookTitleOmra": "Réserver cette Omra",
+      "notifyTitle": "Être prévenu à l'ouverture",
+      "notifySubtitle": "Sans engagement — nous vous contactons dès que les dates et les tarifs sont confirmés."
     },
     "about": {
       "metaTitle": "À propos — Tamesna Voyage, créateur de voyages au Maroc",

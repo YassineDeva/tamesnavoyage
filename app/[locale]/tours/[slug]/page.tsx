@@ -16,6 +16,10 @@ import {
   FileDown,
   Moon,
   Send,
+  Landmark,
+  Footprints,
+  BookOpen,
+  IdCard,
 } from "lucide-react";
 import { buildMetadata, JsonLd, SITE_URL, BRAND } from "@/lib/seo";
 import { Media } from "@/components/ui/media";
@@ -25,7 +29,7 @@ import { BookingForm } from "@/components/ui/booking-form";
 import { TourCard } from "@/components/ui/tour-card";
 import { CardSlider } from "@/components/ui/card-slider";
 import { Link } from "@/i18n/navigation";
-import { tours, getTour, t as tr } from "@/lib/data";
+import { allTours, getTour, t as tr } from "@/lib/data";
 import { getDayImages } from "@/lib/itinerary-images";
 import { formatPrice } from "@/lib/utils";
 import { locales, type Locale } from "@/i18n/routing";
@@ -34,7 +38,7 @@ type Props = { params: Promise<{ locale: string; slug: string }> };
 
 export function generateStaticParams() {
   return locales.flatMap((locale) =>
-    tours.map((tour) => ({ locale, slug: tour.slug })),
+    allTours.map((tour) => ({ locale, slug: tour.slug })),
   );
 }
 
@@ -59,13 +63,31 @@ export default async function TourDetailPage({ params }: Props) {
 
   const t = await getTranslations("pages.tourDetail");
   const tc = await getTranslations("common");
-  /** Prefer siblings from the same zone, then top up with anything else. */
+  const isOmra = tour.kind === "omra";
+
+  /**
+   * Prefer siblings from the same zone, then top up with anything else — but
+   * never cross the pilgrimage/leisure line: a summer circuit is not a sensible
+   * "next step" for someone reading an Omra programme.
+   */
   const zoneKey = (tour.zone ?? tour.region).fr;
-  const others = tours.filter((x) => x.id !== tour.id);
+  const pool = allTours.filter(
+    (x) => x.id !== tour.id && (x.kind === "omra") === isOmra,
+  );
   const related = [
-    ...others.filter((x) => (x.zone ?? x.region).fr === zoneKey),
-    ...others.filter((x) => (x.zone ?? x.region).fr !== zoneKey),
+    ...pool.filter((x) => (x.zone ?? x.region).fr === zoneKey),
+    ...pool.filter((x) => (x.zone ?? x.region).fr !== zoneKey),
   ].slice(0, 3);
+
+  /* A departure that is not open yet collects interest, it does not "book". */
+  const bookTitle =
+    tour.status === "soon"
+      ? t("notifyTitle")
+      : isOmra
+        ? t("bookTitleOmra")
+        : t("bookTitle");
+  const bookSubtitle =
+    tour.status === "soon" ? t("notifySubtitle") : t("bookSubtitle");
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -85,9 +107,17 @@ export default async function TourDetailPage({ params }: Props) {
       : {}),
     offers: {
       "@type": "Offer",
-      price: tour.priceMad,
-      priceCurrency: "MAD",
-      availability: "https://schema.org/InStock",
+      /* An unpublished fare is left out entirely rather than sent to Google
+         as a 0 MAD price. */
+      ...(tour.priceOnRequest
+        ? {}
+        : { price: tour.priceMad, priceCurrency: "MAD" }),
+      availability:
+        tour.status === "soon"
+          ? "https://schema.org/PreOrder"
+          : tour.status === "full"
+            ? "https://schema.org/SoldOut"
+            : "https://schema.org/InStock",
       url: `${SITE_URL}/${locale}/tours/${tour.slug}`,
     },
   };
@@ -109,8 +139,8 @@ export default async function TourDetailPage({ params }: Props) {
                 {BRAND}
               </Link>
               <span className="rtl:rotate-180">›</span>
-              <Link href="/tours" className="hover:text-sand-50">
-                {t("breadcrumb")}
+              <Link href={isOmra ? "/omra" : "/tours"} className="hover:text-sand-50">
+                {isOmra ? t("breadcrumbOmra") : t("breadcrumb")}
               </Link>
               <span className="rtl:rotate-180">›</span>
               <span className="text-gold-300">{tr(tour.title, locale)}</span>
@@ -165,7 +195,57 @@ export default async function TourDetailPage({ params }: Props) {
                   {t("flightNotice")}
                 </p>
               )}
+              {tour.status === "soon" && (
+                <p className="mt-5 flex items-start gap-3 rounded-2xl border border-amber-300 bg-amber-50 p-4 text-sm text-amber-900">
+                  <CalendarRange className="mt-0.5 h-4 w-4 shrink-0" />
+                  {t("soonNotice")}
+                </p>
+              )}
             </Reveal>
+
+            {/* Nights per holy city — the split that decides an Omra */}
+            {tour.stay?.length ? (
+              <div className="mt-12">
+                <h2 className="text-h3 font-medium text-ink-900">{t("stay")}</h2>
+                <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                  {tour.stay.map((leg, i) => (
+                    <Reveal key={i} index={i}>
+                      <div className="h-full rounded-2xl border border-sand-200 bg-sand-50 p-5">
+                        <div className="flex items-baseline justify-between gap-3">
+                          <h3 className="inline-flex items-center gap-2 text-base font-semibold text-ink-900">
+                            <Landmark className="h-4 w-4 shrink-0 text-terracotta-400" />
+                            {tr(leg.city, locale)}
+                          </h3>
+                          <span className="shrink-0 text-sm font-semibold text-clay-600">
+                            {leg.nights} {tc("nights")}
+                          </span>
+                        </div>
+                        {leg.hotel && (
+                          <p
+                            dir="ltr"
+                            className="mt-3 text-sm font-medium text-ink-800 rtl:text-end"
+                          >
+                            {leg.hotel}
+                            {leg.stars ? ` ${leg.stars}★` : ""}
+                          </p>
+                        )}
+                        {leg.walk && (
+                          <p className="mt-2 inline-flex items-center gap-2 text-sm text-muted-500">
+                            <Footprints className="h-4 w-4 shrink-0 text-terracotta-400" />
+                            {tr(leg.walk, locale)}
+                          </p>
+                        )}
+                        {leg.note && (
+                          <p className="mt-2 text-xs leading-relaxed text-muted-500">
+                            {tr(leg.note, locale)}
+                          </p>
+                        )}
+                      </div>
+                    </Reveal>
+                  ))}
+                </div>
+              </div>
+            ) : null}
 
             {/* Highlights */}
             <div className="mt-12">
@@ -183,6 +263,23 @@ export default async function TourDetailPage({ params }: Props) {
                 ))}
               </ul>
             </div>
+
+            {/* Rites and guided visits */}
+            {tour.rituals?.length ? (
+              <div className="mt-12">
+                <h2 className="text-h3 font-medium text-ink-900">{t("rituals")}</h2>
+                <ul className="mt-5 space-y-3">
+                  {tour.rituals.map((r, i) => (
+                    <Reveal key={i} index={i} as="li">
+                      <div className="flex items-start gap-3 rounded-2xl border border-olive-400/40 bg-olive-500/[0.07] p-4">
+                        <BookOpen className="mt-0.5 h-4 w-4 shrink-0 text-olive-600" />
+                        <span className="text-sm text-ink-800">{tr(r, locale)}</span>
+                      </div>
+                    </Reveal>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
 
             {/* Itinerary timeline */}
             <div className="mt-12">
@@ -386,8 +483,27 @@ export default async function TourDetailPage({ params }: Props) {
               </div>
             ) : null}
 
+            {/* Paperwork the pilgrim supplies */}
+            {tour.documents?.length ? (
+              <div className="mt-12">
+                <h2 className="text-h3 font-medium text-ink-900">{t("documents")}</h2>
+                <p className="mt-2 text-sm text-muted-500">{t("documentsNote")}</p>
+                <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+                  {tour.documents.map((d, i) => (
+                    <li
+                      key={i}
+                      className="flex items-start gap-3 rounded-2xl border border-sand-200 bg-sand-50 p-4 text-sm text-ink-800"
+                    >
+                      <IdCard className="mt-0.5 h-4 w-4 shrink-0 text-terracotta-400" />
+                      {tr(d, locale)}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+
             {/* Booking & cancellation terms — identical across the catalogue */}
-            {tour.pricing?.length ? (
+            {tour.pricing?.length || isOmra ? (
               <div className="mt-12">
                 <h2 className="text-h3 font-medium text-ink-900">{t("terms")}</h2>
                 <div className="mt-5 grid gap-4 sm:grid-cols-2">
@@ -417,12 +533,16 @@ export default async function TourDetailPage({ params }: Props) {
               <div className="flex items-end justify-between">
                 <div>
                   <span className="text-xs uppercase tracking-wider text-muted-500">
-                    {tc("from")}
+                    {tour.priceOnRequest ? tc("price") : tc("from")}
                   </span>
                   <p className="text-2xl font-semibold text-clay-600">
-                    {formatPrice(tour.priceMad, locale)}
+                    {tour.priceOnRequest
+                      ? tc("onRequest")
+                      : formatPrice(tour.priceMad, locale)}
                   </p>
-                  <span className="text-xs text-muted-500">{tc("perPerson")}</span>
+                  <span className="text-xs text-muted-500">
+                    {tour.priceOnRequest ? t("priceOnRequestNote") : tc("perPerson")}
+                  </span>
                 </div>
                 {tour.rating !== undefined && <StarRating value={tour.rating} size={16} />}
               </div>
@@ -476,10 +596,10 @@ export default async function TourDetailPage({ params }: Props) {
                 className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-azure-500 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-azure-600 focus-ring"
               >
                 <Send className="h-4 w-4 shrink-0 rtl:-scale-x-100" />
-                {t("bookTitle")}
+                {bookTitle}
               </a>
               <p className="mt-3 text-center text-xs text-muted-500">
-                {t("bookSubtitle")}
+                {bookSubtitle}
               </p>
             </div>
           </aside>
@@ -491,8 +611,8 @@ export default async function TourDetailPage({ params }: Props) {
         <div className="container-wide">
           <div className="mx-auto max-w-3xl rounded-[1.75rem] border border-sand-200 bg-sand-50 p-6 shadow-[var(--shadow-soft)] sm:p-10">
             <Reveal>
-              <h2 className="text-h3 font-medium text-ink-900">{t("bookTitle")}</h2>
-              <p className="mt-2 text-sm text-muted-500">{t("bookSubtitle")}</p>
+              <h2 className="text-h3 font-medium text-ink-900">{bookTitle}</h2>
+              <p className="mt-2 text-sm text-muted-500">{bookSubtitle}</p>
             </Reveal>
             <div className="mt-8">
               <BookingForm defaultTour={tour.slug} />
