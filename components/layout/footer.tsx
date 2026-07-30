@@ -73,9 +73,9 @@ export function Footer() {
 
           <FooterCol title={t("support")}>
             <FooterLink href="/contact">{tn("contact")}</FooterLink>
-            <li className="text-sm text-surface-100/60">{t("legal")}</li>
-            <li className="text-sm text-surface-100/60">{t("privacy")}</li>
-            <li className="text-sm text-surface-100/60">{t("terms")}</li>
+            <FooterLink href="/legal/mentions-legales">{t("legal")}</FooterLink>
+            <FooterLink href="/legal/confidentialite">{t("privacy")}</FooterLink>
+            <FooterLink href="/legal/conditions-generales">{t("terms")}</FooterLink>
           </FooterCol>
 
           <FooterCol title={t("contact")}>

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { locales } from "@/i18n/routing";
 import { allTours, allDestinations } from "@/lib/data";
+import { legalDocs } from "@/lib/legal";
 import { SITE_URL } from "@/lib/seo";
 
 const routes = [
@@ -42,6 +43,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
         url: `${SITE_URL}/${locale}/destinations/${dest.slug}`,
         changeFrequency: "monthly",
         priority: 0.7,
+      });
+    }
+    /* Indexed, but they are not what anyone is searching for. */
+    for (const doc of legalDocs) {
+      entries.push({
+        url: `${SITE_URL}/${locale}/legal/${doc.slug}`,
+        changeFrequency: "yearly",
+        priority: 0.2,
       });
     }
   }

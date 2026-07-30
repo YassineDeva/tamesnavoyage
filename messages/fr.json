@@ -443,6 +443,15 @@
       "notifyTitle": "Être prévenu à l'ouverture",
       "notifySubtitle": "Sans engagement — nous vous contactons dès que les dates et les tarifs sont confirmés."
     },
+    "legal": {
+      "eyebrow": "Informations légales",
+      "breadcrumb": "Informations légales",
+      "updated": "Dernière mise à jour :",
+      "onThisPage": "Sur cette page",
+      "otherDocs": "Autres documents",
+      "contactNote": "Une question sur ce document ou sur vos données ? Écrivez-nous, nous répondons sous 24 h ouvrées —",
+      "contactLink": "nous contacter"
+    },
     "about": {
       "metaTitle": "À propos — Tamesna Voyage, créateur de voyages au Maroc",
       "metaDesc": "Depuis 2013, Tamesna Voyage conçoit des voyages sur-mesure au Maroc, portés par des experts locaux et une exigence de l'authenticité.",
